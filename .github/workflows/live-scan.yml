@@ -26,11 +26,13 @@ jobs:
           python-version: "3.12"
       - run: python -m pip install -e .
       - name: Run live GRAIL watchlist scan
-        run: python -m grail.live_scan --watchlist data/watchlist.json --output artifacts/latest_scan.json --top 10
+        run: python -m grail.live_scan --watchlist data/watchlist.json --output artifacts/latest_scan.json --report artifacts/latest_scan.md --top 10
       - uses: actions/upload-artifact@v4
         if: always()
         with:
           name: grail-live-scan
-          path: artifacts/latest_scan.json
+          path: |
+            artifacts/latest_scan.json
+            artifacts/latest_scan.md
           if-no-files-found: warn
           retention-days: 14
