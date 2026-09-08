@@ -12,21 +12,7 @@ from .mint import mint_score
 from .models import Collectible
 
 
-_MONTHS = {
-    "jan": 1,
-    "feb": 2,
-    "mar": 3,
-    "apr": 4,
-    "may": 5,
-    "jun": 6,
-    "jul": 7,
-    "aug": 8,
-    "sep": 9,
-    "sept": 9,
-    "oct": 10,
-    "nov": 11,
-    "dec": 12,
-}
+_MONTHS = {"jan": 1, "feb": 2, "mar": 3, "apr": 4, "may": 5, "jun": 6, "jul": 7, "aug": 8, "sep": 9, "sept": 9, "oct": 10, "nov": 11, "dec": 12}
 
 
 @dataclass(frozen=True)
@@ -61,10 +47,7 @@ class MintCandidate:
 
 
 def fetch_html(url: str, timeout: float = 20.0) -> str:
-    req = urllib.request.Request(
-        url,
-        headers={"User-Agent": "GRAIL/0.3 mint-sniper (+https://github.com/mikelninh/grail)"},
-    )
+    req = urllib.request.Request(url, headers={"User-Agent": "GRAIL/0.3 mint-sniper (+https://github.com/mikelninh/grail)"})
     with urllib.request.urlopen(req, timeout=timeout) as response:
         return response.read().decode("utf-8", errors="replace")
 
@@ -75,7 +58,6 @@ def _parse_event_date(day: str, month: str, observed_at: str) -> tuple[str | Non
         if observed.tzinfo is None:
             observed = observed.replace(tzinfo=timezone.utc)
         candidate = datetime(observed.year, _MONTHS[month.lower()], int(day), tzinfo=timezone.utc)
-        # Handle year-boundary pages such as a late-December event observed in early January.
         if candidate > observed and (candidate - observed).days > 14:
             candidate = candidate.replace(year=observed.year - 1)
         age = max(0, (observed.date() - candidate.date()).days)
@@ -85,11 +67,7 @@ def _parse_event_date(day: str, month: str, observed_at: str) -> tuple[str | Non
 
 
 def parse_latest_stackr_listings(html: str, collectible: str, source_url: str, observed_at: str | None = None) -> list[EditionListing]:
-    """Parse StackR listing *events* from VeVe Alpha's public latest-listings section.
-
-    These rows are not assumed to still be active inventory. Freshness is captured so downstream
-    ranking can distinguish a recent verify-now candidate from stale historical signal.
-    """
+    """Parse StackR listing events; never assume an event is still active inventory."""
     text = re.sub(r"<[^>]+>", " ", html)
     text = re.sub(r"\s+", " ", text)
     start = text.find("Latest listings")
@@ -146,12 +124,9 @@ def score_mint_listing(listing: EditionListing, market: MarketObservation, colle
     scarcity = 50.0
     if collectible.total_editions:
         scarcity = max(20.0, min(95.0, 100 - collectible.total_editions / 20000.0 * 70.0))
-
     listing_activity = min(100.0, 20.0 + (market.listings_30d or 0) * 1.2)
-    confidence = 63.0
-    confidence += 7 if collectible.total_editions else 0
-    confidence += 7 if signals else 0
-    confidence += 5 if market.listings_30d is not None else 0
+
+    confidence = 63.0 + (7 if collectible.total_editions else 0) + (7 if signals else 0) + (5 if market.listings_30d is not None else 0)
     confidence += 5 if listing.age_days is not None and listing.age_days <= 1 else 0
     confidence = min(87.0, confidence)
 
@@ -162,20 +137,20 @@ def score_mint_listing(listing: EditionListing, market: MarketObservation, colle
         reasons.insert(0, f"listing event ask is {premium:.0%} above current StackR floor")
     else:
         reasons.insert(0, f"listing event ask is {premium:+.0%} vs current StackR floor")
-
     if listing.age_days is not None:
         reasons.insert(0, f"listing event is {listing.age_days}d old")
 
-    total = price_score * 0.38 + mscore * 0.40 + scarcity * 0.12 + listing_activity * 0.10
+    total = (price_score * 0.38 + mscore * 0.40 + scarcity * 0.12 + listing_activity * 0.10)
     total *= 0.78 + 0.22 * confidence / 100.0
 
-    # Hard guardrails: semantics must never rescue absurd price positioning.
+    # Price safety dominates mint semantics.
     if premium > 2.0:
         total = min(total, 20.0)
+        actionability = "reject-price"
     elif premium > 0.5:
         total = min(total, 45.0)
-
-    if listing.age_days is None:
+        actionability = "reject-price"
+    elif listing.age_days is None:
         actionability = "historical-signal"
         total = min(total, 50.0)
     elif listing.age_days <= 1:
@@ -215,27 +190,19 @@ def scan_watchlist(path: str | Path) -> tuple[list[MintCandidate], list[dict[str
             html = fetch_html(url)
             market = parse_vevealpha_html(html, url)
             collectible = _collectible_from_watch(item, market)
-            listings = parse_latest_stackr_listings(html, market.collectible, url, market.observed_at)
-            for listing in listings:
+            for listing in parse_latest_stackr_listings(html, market.collectible, url, market.observed_at):
                 candidates.append(score_mint_listing(listing, market, collectible))
         except Exception as exc:
             errors.append({"url": url, "error": f"{type(exc).__name__}: {exc}"})
-    rank = {"verify-now": 2, "recent-signal": 1, "historical-signal": 0}
+    rank = {"verify-now": 3, "recent-signal": 2, "historical-signal": 1, "reject-price": 0}
     candidates.sort(key=lambda c: (rank[c.actionability], c.opportunity_score, c.mint_score), reverse=True)
     return candidates, errors
 
 
 def write_results(path: str | Path, candidates: list[MintCandidate], errors: list[dict[str, str]]) -> None:
-    Path(path).write_text(
-        json.dumps(
-            {
-                "generated_at": datetime.now(timezone.utc).isoformat(),
-                "mode": "read-only mint intelligence; listing rows are events and must be verified before acting",
-                "candidates": [asdict(c) for c in candidates],
-                "errors": errors,
-            },
-            indent=2,
-            sort_keys=True,
-        ),
-        encoding="utf-8",
-    )
+    Path(path).write_text(json.dumps({
+        "generated_at": datetime.now(timezone.utc).isoformat(),
+        "mode": "read-only mint intelligence; listing rows are events and must be verified before acting",
+        "candidates": [asdict(c) for c in candidates],
+        "errors": errors,
+    }, indent=2, sort_keys=True), encoding="utf-8")
