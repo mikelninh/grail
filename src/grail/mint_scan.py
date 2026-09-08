@@ -8,41 +8,47 @@ from .mint_live import scan_watchlist, write_results
 
 def _report(candidates, errors, top: int) -> str:
     actionable = [c for c in candidates if c.actionability == "verify-now"]
-    recent = [c for c in candidates if c.actionability == "recent-signal"]
-    historical = [c for c in candidates if c.actionability == "historical-signal"]
+    watching = [c for c in candidates if c.actionability == "watch"]
     rejected = [c for c in candidates if c.actionability == "reject-price"]
+    unverified = [c for c in candidates if c.actionability == "pricing-unverified"]
+
+    spot = next((c.omi_usd for c in candidates if c.omi_usd is not None), None)
+    spot_text = f"{spot:.8f}" if spot is not None else "UNAVAILABLE"
 
     lines = [
         "# GRAIL Mint Sniper",
         "",
-        "> Edition-level read-only intelligence. Public rows are listing **events**, not guaranteed active inventory. Always verify on StackR before acting.",
+        "> Latest StackR listing signals reported by the provider, repriced from OMI into USD using the current OMI/USD spot observation. Open StackR and confirm active inventory before acting.",
         "",
-        f"**Verify-now:** {len(actionable)} · **Recent signals:** {len(recent)} · **Historical signals:** {len(historical)} · **Price rejects:** {len(rejected)}",
+        f"**OMI/USD used:** {spot_text}",
         "",
-        "| Rank | Status | Collectible | Mint | Score | Mint score | Event ask | Current floor | vs floor | Age |",
-        "|---:|---|---|---:|---:|---:|---:|---:|---:|---:|",
+        f"**Verify-now:** {len(actionable)} · **Watch:** {len(watching)} · **Price rejects:** {len(rejected)} · **Pricing unverified:** {len(unverified)}",
+        "",
+        "| Rank | Status | Collectible | Mint | Score | Mint score | Current ask | OMI ask | Daily floor snapshot | vs floor | Listed age |",
+        "|---:|---|---|---:|---:|---:|---:|---:|---:|---:|---:|",
     ]
     for idx, c in enumerate(candidates[:top], 1):
         name = c.collectible.replace("|", "\\|")
         age = "?" if c.age_days is None else f"{c.age_days}d"
+        omi = "—" if c.ask_omi is None else f"{c.ask_omi:,}"
         lines.append(
             f"| {idx} | **{c.actionability}** | [{name}]({c.source_url}) | #{c.mint} | {c.opportunity_score:.1f} | {c.mint_score:.0f} | "
-            f"${c.ask_usd:.2f} | ${c.floor_usd:.2f} | {c.premium_to_floor_pct:+.1f}% | {age} |"
+            f"${c.ask_usd:.2f} | {omi} | ${c.floor_usd:.2f} | {c.premium_to_floor_pct:+.1f}% | {age} |"
         )
         if c.reasons:
-            lines.append(f"|  |  | ↳ {'; '.join(c.reasons[:3])} |  |  |  |  |  |  |  |")
+            lines.append(f"|  |  | ↳ {'; '.join(c.reasons[:3])} |  |  |  |  |  |  |  |  |")
     if not candidates:
-        lines.extend(["", "No StackR edition listing events were visible in the current public watchlist pages."])
+        lines.extend(["", "No StackR edition listing signals were visible in the current public watchlist pages."])
     if not actionable:
-        lines.extend(["", "**No verify-now mint candidate is currently supported by this source.** Historical rows remain useful for learning mint-premium behaviour, but are not presented as live snipes."])
+        lines.extend(["", "**No verify-now mint candidate currently clears GRAIL's price guardrails.** That is a valid result; the scanner does not manufacture a snipe."])
     if errors:
-        lines.extend(["", "## Provider errors", ""])
+        lines.extend(["", "## Provider / pricing errors", ""])
         lines.extend(f"- `{e['url']}` — {e['error']}" for e in errors)
     lines.extend([
         "",
         "## Interpretation",
         "",
-        "`verify-now` means the listing event is at most one day old, the price is not already >50% above current StackR floor, and the item merits checking on StackR. It still does not prove the listing remains active. `recent-signal` is 2–3 days old. Older or undated events are historical evidence only. `reject-price` means the price fails GRAIL's margin-of-safety guardrail even when the mint itself is interesting.",
+        "`verify-now` means the latest provider-reported row for that mint has current OMI repricing and sits within GRAIL's price guardrail relative to the provider's daily StackR floor snapshot. It is a prompt to check the live StackR listing and live floor now — not proof the inventory is still active or that a profit is available. `watch` carries a larger premium. `reject-price` fails the margin-of-safety guardrail. `pricing-unverified` is never actionable because a current OMI/USD observation was unavailable.",
     ])
     return "\n".join(lines) + "\n"
 
@@ -67,10 +73,10 @@ def main() -> int:
     print("=================")
     for idx, c in enumerate(candidates[: args.top], 1):
         age = "?" if c.age_days is None else f"{c.age_days}d"
-        print(f"{idx:>2}. [{c.actionability}] {c.collectible} #{c.mint} | {c.opportunity_score:.1f}/100 | ${c.ask_usd:.2f} vs floor ${c.floor_usd:.2f} | mint {c.mint_score:.0f} | age {age}")
-    print(f"\nListing events found: {len(candidates)}")
+        print(f"{idx:>2}. [{c.actionability}] {c.collectible} #{c.mint} | {c.opportunity_score:.1f}/100 | ${c.ask_usd:.2f} vs floor snapshot ${c.floor_usd:.2f} | mint {c.mint_score:.0f} | listed {age}")
+    print(f"\nListing signals observed: {len(candidates)}")
     print(f"Verify-now candidates: {len(actionable)}")
-    print(f"Provider errors: {len(errors)}")
+    print(f"Provider/pricing errors: {len(errors)}")
     print(f"Evidence: {out}")
     print(f"Report: {report}")
     return 0
