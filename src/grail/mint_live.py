@@ -1,8 +1,11 @@
 from __future__ import annotations
 
+import html as html_lib
 import json
 import re
+import urllib.parse
 import urllib.request
+from concurrent.futures import ThreadPoolExecutor, as_completed
 from dataclasses import asdict, dataclass
 from datetime import datetime, timezone
 from pathlib import Path
@@ -47,23 +50,51 @@ class MintCandidate:
     listed_date: str | None
     age_days: int | None
     actionability: str
+    stackr_url: str | None = None
+    veve_url: str | None = None
+    image_url: str | None = None
+    category: str | None = None
 
 
 def fetch_html(url: str, timeout: float = 20.0) -> str:
-    req = urllib.request.Request(url, headers={"User-Agent": "GRAIL/0.4 collector-intelligence (+https://github.com/mikelninh/grail)"})
+    req = urllib.request.Request(url, headers={"User-Agent": "GRAIL/0.5 collector-intelligence (+https://github.com/mikelninh/grail)"})
     with urllib.request.urlopen(req, timeout=timeout) as response:
         return response.read().decode("utf-8", errors="replace")
 
 
 def fetch_omi_usd(timeout: float = 15.0) -> float:
     """Fetch one current OMI/USD spot observation for repricing OMI-denominated asks."""
-    req = urllib.request.Request(_COINGECKO_OMI_URL, headers={"User-Agent": "GRAIL/0.4 collector-intelligence"})
+    req = urllib.request.Request(_COINGECKO_OMI_URL, headers={"User-Agent": "GRAIL/0.5 collector-intelligence"})
     with urllib.request.urlopen(req, timeout=timeout) as response:
         payload = json.loads(response.read().decode("utf-8"))
     price = float(payload["ecomi"]["usd"])
     if not (0 < price < 1):
         raise ValueError(f"implausible OMI/USD price: {price}")
     return price
+
+
+def extract_market_links(html: str) -> tuple[str | None, str | None, str | None]:
+    """Extract direct StackR / VeVe destinations plus the provider's preview image.
+
+    VeVe Alpha exposes outbound product links in its rendered page. We fail open to None rather
+    than inventing a marketplace URL: a shortcut should only be shown when it is actually sourced.
+    """
+    decoded = html_lib.unescape(html)
+    hrefs = re.findall(r'href=["\']([^"\']+)["\']', decoded, re.I)
+    stackr_url = next((u for u in hrefs if "stackr.world/collections/veve/" in u), None)
+    veve_url = next((u for u in hrefs if ("veve.me/collectibles/" in u or "veve.me/comics/" in u)), None)
+
+    image_url = None
+    for pattern in (
+        r'<meta[^>]+property=["\']og:image["\'][^>]+content=["\']([^"\']+)["\']',
+        r'<meta[^>]+content=["\']([^"\']+)["\'][^>]+property=["\']og:image["\']',
+        r'"image"\s*:\s*"(https?://[^"\\]+)"',
+    ):
+        match = re.search(pattern, decoded, re.I)
+        if match:
+            image_url = match.group(1).replace("\\/", "/")
+            break
+    return stackr_url, veve_url, image_url
 
 
 def _parse_event_date(day: str, month: str, observed_at: str) -> tuple[str | None, int | None]:
@@ -97,8 +128,6 @@ def parse_latest_stackr_listings(html: str, collectible: str, source_url: str, o
         re.I,
     )
     now = observed_at or datetime.now(timezone.utc).isoformat()
-    # VeVe Alpha emits newest events first. Repricing/relisting the same edition can create
-    # several rows, so retain only the first (latest) event for each mint.
     seen_mints: set[int] = set()
     rows: list[EditionListing] = []
     for match in pattern.finditer(text):
@@ -135,6 +164,11 @@ def score_mint_listing(
     market: MarketObservation,
     collectible: Collectible,
     omi_usd: float | None = None,
+    *,
+    stackr_url: str | None = None,
+    veve_url: str | None = None,
+    image_url: str | None = None,
+    category: str | None = None,
 ) -> MintCandidate:
     floor = market.stackr_floor_usd
     current_ask = listing.ask_usd
@@ -155,7 +189,8 @@ def score_mint_listing(
     confidence = 58.0 + (7 if collectible.total_editions else 0) + (7 if signals else 0) + (5 if market.listings_30d is not None else 0)
     confidence += 8 if pricing_verified else 0
     confidence += 3 if listing.age_days is not None else 0
-    confidence = min(88.0, confidence)
+    confidence += 2 if stackr_url else 0
+    confidence = min(90.0, confidence)
 
     reasons = [signal.reason for signal in signals[:4]]
     if pricing_verified and listing.ask_omi is not None:
@@ -206,10 +241,68 @@ def score_mint_listing(
         listed_date=listing.listed_date,
         age_days=listing.age_days,
         actionability=actionability,
+        stackr_url=stackr_url,
+        veve_url=veve_url,
+        image_url=image_url,
+        category=category,
     )
 
 
-def scan_watchlist(path: str | Path) -> tuple[list[MintCandidate], list[dict[str, str]]]:
+def parse_stackr_owner_html(html: str, mint: int) -> str | None:
+    """Best-effort owner parse for a StackR listing page.
+
+    This is deliberately conservative. If the page is client-rendered or the row is ambiguous we
+    return None, because an unresolved owner is safer than attaching the wrong collector to a mint.
+    """
+    text = re.sub(r"<[^>]+>", " ", html_lib.unescape(html))
+    text = re.sub(r"\s+", " ", text)
+    tokens = r"(@[A-Za-z0-9_.-]{2,32}|0x[a-fA-F0-9]{4,64}(?:…[a-fA-F0-9]{2,16})?)"
+    patterns = (
+        rf"(?:#\s*)?{mint}\s+{tokens}\s+(?:\d|about|less|over)",
+        rf"Edition\s*(?:#\s*)?{mint}.{{0,80}}?Owner\s*[:\-]?\s*{tokens}",
+    )
+    for pattern in patterns:
+        match = re.search(pattern, text, re.I)
+        if match:
+            return match.group(1)
+    return None
+
+
+def fetch_stackr_owner(stackr_url: str, mint: int, timeout: float = 12.0) -> str | None:
+    parsed = urllib.parse.urlparse(stackr_url)
+    if parsed.scheme != "https" or parsed.hostname not in {"stackr.world", "www.stackr.world"}:
+        raise ValueError("owner lookup only accepts StackR product URLs")
+    if not parsed.path.startswith("/collections/veve/"):
+        raise ValueError("owner lookup only accepts StackR VeVe collection URLs")
+    return parse_stackr_owner_html(fetch_html(stackr_url, timeout=timeout), mint)
+
+
+def _scan_item(item: dict, omi_usd: float | None) -> tuple[list[MintCandidate], dict[str, str] | None]:
+    url = str(item["url"])
+    try:
+        html = fetch_html(url)
+        market = parse_vevealpha_html(html, url)
+        collectible = _collectible_from_watch(item, market)
+        stackr_url, veve_url, image_url = extract_market_links(html)
+        candidates = [
+            score_mint_listing(
+                listing,
+                market,
+                collectible,
+                omi_usd=omi_usd,
+                stackr_url=stackr_url,
+                veve_url=veve_url,
+                image_url=image_url,
+                category=item.get("category") or item.get("brand"),
+            )
+            for listing in parse_latest_stackr_listings(html, market.collectible, url, market.observed_at)
+        ]
+        return candidates, None
+    except Exception as exc:
+        return [], {"url": url, "error": f"{type(exc).__name__}: {exc}"}
+
+
+def scan_watchlist(path: str | Path, max_workers: int = 8) -> tuple[list[MintCandidate], list[dict[str, str]]]:
     payload = json.loads(Path(path).read_text(encoding="utf-8"))
     candidates: list[MintCandidate] = []
     errors: list[dict[str, str]] = []
@@ -219,16 +312,15 @@ def scan_watchlist(path: str | Path) -> tuple[list[MintCandidate], list[dict[str
         omi_usd = None
         errors.append({"url": _COINGECKO_OMI_URL, "error": f"{type(exc).__name__}: {exc}"})
 
-    for item in payload["collectibles"]:
-        url = str(item["url"])
-        try:
-            html = fetch_html(url)
-            market = parse_vevealpha_html(html, url)
-            collectible = _collectible_from_watch(item, market)
-            for listing in parse_latest_stackr_listings(html, market.collectible, url, market.observed_at):
-                candidates.append(score_mint_listing(listing, market, collectible, omi_usd=omi_usd))
-        except Exception as exc:
-            errors.append({"url": url, "error": f"{type(exc).__name__}: {exc}"})
+    items = list(payload["collectibles"])
+    workers = max(1, min(max_workers, len(items)))
+    with ThreadPoolExecutor(max_workers=workers) as pool:
+        futures = [pool.submit(_scan_item, item, omi_usd) for item in items]
+        for future in as_completed(futures):
+            found, error = future.result()
+            candidates.extend(found)
+            if error:
+                errors.append(error)
 
     rank = {"verify-now": 4, "watch": 3, "pricing-unverified": 2, "reject-price": 1}
     candidates.sort(key=lambda c: (rank[c.actionability], c.opportunity_score, c.mint_score), reverse=True)
