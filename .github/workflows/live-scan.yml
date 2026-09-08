@@ -1,0 +1,39 @@
+name: live-scan
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - "main"
+      - "feat/grail-v0.1"
+    paths:
+      - "src/grail/live.py"
+      - "src/grail/live_scan.py"
+      - "data/watchlist.json"
+      - ".github/workflows/live-scan.yml"
+  schedule:
+    - cron: "17 * * * *"
+
+permissions:
+  contents: read
+
+jobs:
+  scan:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: python -m pip install -e .
+      - name: Run live GRAIL watchlist scan
+        run: python -m grail.live_scan --watchlist data/watchlist.json --output artifacts/latest_scan.json --report artifacts/latest_scan.md --top 10
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: grail-live-scan
+          path: |
+            artifacts/latest_scan.json
+            artifacts/latest_scan.md
+          if-no-files-found: warn
+          retention-days: 14
