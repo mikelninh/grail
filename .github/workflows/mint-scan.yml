@@ -5,7 +5,6 @@ on:
   push:
     branches:
       - "main"
-      - "fix/current-omi-valuation"
     paths:
       - "src/grail/mint_live.py"
       - "src/grail/mint_scan.py"
