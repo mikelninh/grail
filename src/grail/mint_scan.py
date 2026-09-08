@@ -10,13 +10,14 @@ def _report(candidates, errors, top: int) -> str:
     actionable = [c for c in candidates if c.actionability == "verify-now"]
     recent = [c for c in candidates if c.actionability == "recent-signal"]
     historical = [c for c in candidates if c.actionability == "historical-signal"]
+    rejected = [c for c in candidates if c.actionability == "reject-price"]
 
     lines = [
         "# GRAIL Mint Sniper",
         "",
         "> Edition-level read-only intelligence. Public rows are listing **events**, not guaranteed active inventory. Always verify on StackR before acting.",
         "",
-        f"**Verify-now:** {len(actionable)} · **Recent signals:** {len(recent)} · **Historical signals:** {len(historical)}",
+        f"**Verify-now:** {len(actionable)} · **Recent signals:** {len(recent)} · **Historical signals:** {len(historical)} · **Price rejects:** {len(rejected)}",
         "",
         "| Rank | Status | Collectible | Mint | Score | Mint score | Event ask | Current floor | vs floor | Age |",
         "|---:|---|---|---:|---:|---:|---:|---:|---:|---:|",
@@ -33,7 +34,7 @@ def _report(candidates, errors, top: int) -> str:
     if not candidates:
         lines.extend(["", "No StackR edition listing events were visible in the current public watchlist pages."])
     if not actionable:
-        lines.extend(["", "**No verify-now mint candidate is currently proven by this source.** Historical rows remain useful for learning mint-premium behaviour, but are not presented as live snipes."])
+        lines.extend(["", "**No verify-now mint candidate is currently supported by this source.** Historical rows remain useful for learning mint-premium behaviour, but are not presented as live snipes."])
     if errors:
         lines.extend(["", "## Provider errors", ""])
         lines.extend(f"- `{e['url']}` — {e['error']}" for e in errors)
@@ -41,7 +42,7 @@ def _report(candidates, errors, top: int) -> str:
         "",
         "## Interpretation",
         "",
-        "`verify-now` means the listing event is at most one day old and merits checking on StackR. It still does not prove the listing remains active. `recent-signal` is 2–3 days old. Older or undated events are historical evidence only.",
+        "`verify-now` means the listing event is at most one day old, the price is not already >50% above current StackR floor, and the item merits checking on StackR. It still does not prove the listing remains active. `recent-signal` is 2–3 days old. Older or undated events are historical evidence only. `reject-price` means the price fails GRAIL's margin-of-safety guardrail even when the mint itself is interesting.",
     ])
     return "\n".join(lines) + "\n"
 
