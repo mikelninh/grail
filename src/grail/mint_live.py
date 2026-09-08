@@ -81,7 +81,7 @@ def _parse_event_date(day: str, month: str, observed_at: str) -> tuple[str | Non
 
 
 def parse_latest_stackr_listings(html: str, collectible: str, source_url: str, observed_at: str | None = None) -> list[EditionListing]:
-    """Parse provider-reported StackR listing rows from the public live-market section."""
+    """Parse latest provider-reported StackR event per mint from the public live-market section."""
     text = re.sub(r"<[^>]+>", " ", html)
     text = re.sub(r"\s+", " ", text)
     start = text.find("Latest listings")
@@ -97,18 +97,19 @@ def parse_latest_stackr_listings(html: str, collectible: str, source_url: str, o
         re.I,
     )
     now = observed_at or datetime.now(timezone.utc).isoformat()
-    seen: set[tuple[int, int, str | None]] = set()
+    # VeVe Alpha emits newest events first. Repricing/relisting the same edition can create
+    # several rows, so retain only the first (latest) event for each mint.
+    seen_mints: set[int] = set()
     rows: list[EditionListing] = []
     for match in pattern.finditer(text):
         day, month = match.group(1), match.group(2)
         mint = int(match.group(3).replace(",", ""))
+        if mint in seen_mints:
+            continue
+        seen_mints.add(mint)
         omi = int(match.group(4).replace(",", ""))
         historical_usd = float(match.group(5).replace(",", ""))
         listed_date, age_days = _parse_event_date(day, month, now) if day and month else (None, None)
-        key = (mint, omi, listed_date)
-        if key in seen:
-            continue
-        seen.add(key)
         rows.append(EditionListing(collectible, mint, "StackR", historical_usd, omi, source_url, now, listed_date, age_days))
     return rows
 
@@ -163,13 +164,13 @@ def score_mint_listing(
         reasons.insert(0, "current OMI/USD unavailable; USD ask is not safe for execution")
 
     if premium <= -0.10:
-        reasons.insert(0, f"current ask is {-premium:.0%} below current StackR floor")
+        reasons.insert(0, f"current ask is {-premium:.0%} below daily StackR floor snapshot — verify live floor")
     elif premium >= 0.20:
-        reasons.insert(0, f"current ask is {premium:.0%} above current StackR floor")
+        reasons.insert(0, f"current ask is {premium:.0%} above daily StackR floor snapshot")
     else:
-        reasons.insert(0, f"current ask is {premium:+.0%} vs current StackR floor")
+        reasons.insert(0, f"current ask is {premium:+.0%} vs daily StackR floor snapshot")
     if listing.age_days is not None:
-        reasons.insert(0, f"provider-reported listing age {listing.age_days}d")
+        reasons.insert(0, f"latest provider-reported event for this mint is {listing.age_days}d old")
 
     total = (price_score * 0.38 + mscore * 0.40 + scarcity * 0.12 + listing_activity * 0.10)
     total *= 0.78 + 0.22 * confidence / 100.0
@@ -237,7 +238,7 @@ def scan_watchlist(path: str | Path) -> tuple[list[MintCandidate], list[dict[str
 def write_results(path: str | Path, candidates: list[MintCandidate], errors: list[dict[str, str]]) -> None:
     Path(path).write_text(json.dumps({
         "generated_at": datetime.now(timezone.utc).isoformat(),
-        "mode": "read-only mint intelligence; provider-reported active listings must still be opened and verified before acting",
+        "mode": "read-only mint intelligence; provider-reported listings and daily floor snapshots must be verified live before acting",
         "candidates": [asdict(c) for c in candidates],
         "errors": errors,
     }, indent=2, sort_keys=True), encoding="utf-8")
