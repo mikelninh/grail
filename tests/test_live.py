@@ -13,6 +13,15 @@ SAMPLE = """
 </body></html>
 """
 
+STRUCTURED_SAMPLE = """
+<html><head>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Product","name":"Spider-Man – Jump into Action","description":"As of September 8, 2026, the floor price of Spider-Man – Jump into Action (RARE) is $59.50 on the VeVe gem market and the StackR floor is $26.45 (120,000 OMI), with 49 listings in the past 30 days and an edition size of 8,999. Chain-verified and sales-validated by VeVe Alpha.","url":"https://vevealpha.com/c/spider-man-jump-into-action"}
+</script>
+<script>window.noise = {"name":"WRONG NAME"};</script>
+</head><body>irrelevant page chrome</body></html>
+"""
+
 
 class LiveMarketTests(unittest.TestCase):
     def test_parse_server_rendered_market_page(self):
@@ -23,6 +32,19 @@ class LiveMarketTests(unittest.TestCase):
         self.assertEqual(obs.veve_floor_usd, 59.50)
         self.assertEqual(obs.stackr_floor_usd, 28.34)
         self.assertEqual(obs.listings_30d, 52)
+
+    def test_structured_product_metadata_wins_over_page_noise(self):
+        obs = parse_vevealpha_html(
+            STRUCTURED_SAMPLE,
+            "https://vevealpha.com/c/spider-man-jump-into-action",
+            "2026-09-08T00:00:00+00:00",
+        )
+        self.assertEqual(obs.collectible, "Spider-Man – Jump into Action")
+        self.assertEqual(obs.rarity, "RARE")
+        self.assertEqual(obs.edition_size, 8999)
+        self.assertEqual(obs.veve_floor_usd, 59.50)
+        self.assertEqual(obs.stackr_floor_usd, 26.45)
+        self.assertEqual(obs.listings_30d, 49)
 
     def test_gap_ranking_preserves_warning(self):
         obs = MarketObservation(
