@@ -5,7 +5,6 @@ on:
   push:
     branches:
       - "main"
-      - "feat/grail-v0.1"
     paths:
       - "src/grail/live.py"
       - "src/grail/live_scan.py"
@@ -28,6 +27,12 @@ jobs:
       - run: python -m pip install -e .
       - name: Run live GRAIL watchlist scan
         run: python -m grail.live_scan --watchlist data/watchlist.json --output artifacts/latest_scan.json --report artifacts/latest_scan.md --top 10
+      - name: Publish report to run summary
+        if: always()
+        run: |
+          if [ -f artifacts/latest_scan.md ]; then
+            cat artifacts/latest_scan.md >> "$GITHUB_STEP_SUMMARY"
+          fi
       - uses: actions/upload-artifact@v4
         if: always()
         with:
@@ -36,4 +41,4 @@ jobs:
             artifacts/latest_scan.json
             artifacts/latest_scan.md
           if-no-files-found: warn
-          retention-days: 14
+          retention-days: 90
