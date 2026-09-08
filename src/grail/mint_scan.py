@@ -18,13 +18,13 @@ def _report(candidates, errors, top: int) -> str:
     lines = [
         "# GRAIL Mint Sniper",
         "",
-        "> Provider-reported active StackR listings, repriced from OMI into USD using the current OMI/USD spot observation. Always open the listing before acting.",
+        "> Latest StackR listing signals reported by the provider, repriced from OMI into USD using the current OMI/USD spot observation. Open StackR and confirm active inventory before acting.",
         "",
         f"**OMI/USD used:** {spot_text}",
         "",
         f"**Verify-now:** {len(actionable)} · **Watch:** {len(watching)} · **Price rejects:** {len(rejected)} · **Pricing unverified:** {len(unverified)}",
         "",
-        "| Rank | Status | Collectible | Mint | Score | Mint score | Current ask | OMI ask | Current floor | vs floor | Listed age |",
+        "| Rank | Status | Collectible | Mint | Score | Mint score | Current ask | OMI ask | Daily floor snapshot | vs floor | Listed age |",
         "|---:|---|---|---:|---:|---:|---:|---:|---:|---:|---:|",
     ]
     for idx, c in enumerate(candidates[:top], 1):
@@ -38,7 +38,7 @@ def _report(candidates, errors, top: int) -> str:
         if c.reasons:
             lines.append(f"|  |  | ↳ {'; '.join(c.reasons[:3])} |  |  |  |  |  |  |  |  |")
     if not candidates:
-        lines.extend(["", "No StackR edition listings were visible in the current public watchlist pages."])
+        lines.extend(["", "No StackR edition listing signals were visible in the current public watchlist pages."])
     if not actionable:
         lines.extend(["", "**No verify-now mint candidate currently clears GRAIL's price guardrails.** That is a valid result; the scanner does not manufacture a snipe."])
     if errors:
@@ -48,7 +48,7 @@ def _report(candidates, errors, top: int) -> str:
         "",
         "## Interpretation",
         "",
-        "`verify-now` means provider-reported active inventory with current OMI repricing and no >20% premium to the current StackR floor. `watch` is still plausible but carries a larger premium. `reject-price` fails the margin-of-safety guardrail. `pricing-unverified` is never actionable because a current OMI/USD observation was unavailable.",
+        "`verify-now` means the latest provider-reported row for that mint has current OMI repricing and sits within GRAIL's price guardrail relative to the provider's daily StackR floor snapshot. It is a prompt to check the live StackR listing and live floor now — not proof the inventory is still active or that a profit is available. `watch` carries a larger premium. `reject-price` fails the margin-of-safety guardrail. `pricing-unverified` is never actionable because a current OMI/USD observation was unavailable.",
     ])
     return "\n".join(lines) + "\n"
 
@@ -73,8 +73,8 @@ def main() -> int:
     print("=================")
     for idx, c in enumerate(candidates[: args.top], 1):
         age = "?" if c.age_days is None else f"{c.age_days}d"
-        print(f"{idx:>2}. [{c.actionability}] {c.collectible} #{c.mint} | {c.opportunity_score:.1f}/100 | ${c.ask_usd:.2f} vs floor ${c.floor_usd:.2f} | mint {c.mint_score:.0f} | listed {age}")
-    print(f"\nListings observed: {len(candidates)}")
+        print(f"{idx:>2}. [{c.actionability}] {c.collectible} #{c.mint} | {c.opportunity_score:.1f}/100 | ${c.ask_usd:.2f} vs floor snapshot ${c.floor_usd:.2f} | mint {c.mint_score:.0f} | listed {age}")
+    print(f"\nListing signals observed: {len(candidates)}")
     print(f"Verify-now candidates: {len(actionable)}")
     print(f"Provider/pricing errors: {len(errors)}")
     print(f"Evidence: {out}")
