@@ -2,6 +2,14 @@ name: live-scan
 
 on:
   workflow_dispatch:
+  push:
+    branches:
+      - "feat/grail-v0.1"
+    paths:
+      - "src/grail/live.py"
+      - "src/grail/live_scan.py"
+      - "data/watchlist.json"
+      - ".github/workflows/live-scan.yml"
   schedule:
     - cron: "17 * * * *"
 
@@ -20,7 +28,9 @@ jobs:
       - name: Run live GRAIL watchlist scan
         run: python -m grail.live_scan --watchlist data/watchlist.json --output artifacts/latest_scan.json --top 10
       - uses: actions/upload-artifact@v4
+        if: always()
         with:
           name: grail-live-scan
           path: artifacts/latest_scan.json
+          if-no-files-found: warn
           retention-days: 14
