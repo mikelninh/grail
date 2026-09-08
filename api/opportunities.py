@@ -13,6 +13,29 @@ sys.path.insert(0, str(ROOT / "src"))
 from grail.mint_live import scan_watchlist  # noqa: E402
 
 
+_THESIS_MINT_MARKERS = (
+    "low edition #",
+    "top ~1% low edition",
+    "first-appearance year",
+    "matches release year",
+    "Earth-616",
+    "Order 66",
+    "501st",
+    "Spider-Man 2099 character identity",
+    "first appeared",
+    "debut",
+)
+
+
+def _has_thesis_mint(candidate: dict) -> bool:
+    """True only for mint reasons strong enough to support a GRAIL thesis.
+
+    Generic palindromes/sequences are intentionally excluded. Pretty number != grail.
+    """
+    reasons = " | ".join(str(x) for x in candidate.get("reasons", ()))
+    return any(marker.lower() in reasons.lower() for marker in _THESIS_MINT_MARKERS)
+
+
 def _signal_class(candidate: dict) -> str:
     action = candidate["actionability"]
     mint = float(candidate["mint_score"])
@@ -23,12 +46,12 @@ def _signal_class(candidate: dict) -> str:
         return "REJECT"
     if action == "pricing-unverified":
         return "UNVERIFIED"
-    # A GRAIL requires genuine collector semantics. Price dislocation alone is never a grail.
-    if mint >= 72 and action == "verify-now" and premium <= 20 and score >= 38:
+    # GRAIL is deliberately rare: thesis-grade mint significance + sane economics.
+    if _has_thesis_mint(candidate) and mint >= 72 and action == "verify-now" and premium <= 20 and score >= 42:
         return "GRAIL"
     if action == "verify-now" and premium <= -15 and score >= 42:
         return "EDGE"
-    if mint >= 65:
+    if mint >= 35:
         return "WATCH"
     return "MARKET"
 
@@ -36,11 +59,11 @@ def _signal_class(candidate: dict) -> str:
 def _why(candidate: dict) -> str:
     signal = candidate["signal_class"]
     if signal == "GRAIL":
-        return "Meaningful mint semantics plus sane price positioning. Verify the live listing and owner before acting."
+        return "Thesis-grade mint significance plus sane price positioning. Verify live inventory, owner and recent realised sales before acting."
     if signal == "EDGE":
         return "Price dislocation versus the latest daily StackR floor snapshot. Useful lead, not proof of a grail."
     if signal == "WATCH":
-        return "Collector-significant mint, but the price or market evidence is not strong enough for an action signal."
+        return "The mint has a collector pattern, but not enough historical/IP significance or economic evidence to call it a grail."
     if signal == "REJECT":
         return "Interesting mint or listing, but the price fails GRAIL's margin-of-safety guardrail."
     if signal == "UNVERIFIED":
