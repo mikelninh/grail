@@ -3,20 +3,19 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <meta name="theme-color" content="#090a0f" />
+  <meta name="theme-color" content="#080a0f" />
   <title>GRAIL — Collector Intelligence</title>
-  <meta name="description" content="Live collector intelligence for VeVe, StackR, OMI and Collect Chain." />
-  <link rel="stylesheet" href="/dashboard/styles.css" />
+  <meta name="description" content="Collector intelligence for VeVe, StackR, OMI and Collect Chain." />
+  <link rel="stylesheet" href="./styles.css" />
 </head>
 <body>
   <div class="noise"></div>
   <header class="topbar">
-    <a class="brand" href="/" aria-label="GRAIL home">
-      <span class="sigil" aria-hidden="true">◇</span>
-      <span><b>GRAIL</b><small>collector intelligence</small></span>
-    </a>
+    <a class="brand" href="./" aria-label="GRAIL home"><span class="sigil">◇</span><span><b>GRAIL</b><small>collector intelligence</small></span></a>
     <div class="top-actions">
-      <span id="liveStatus" class="live-pill"><i></i> scanning</span>
+      <button id="graphBtn" class="ghost-btn">Graph</button>
+      <button id="profileBtn" class="ghost-btn">My GRAIL</button>
+      <span id="liveStatus" class="live-pill"><i></i> loading</span>
       <button id="refreshBtn" class="ghost-btn">↻ Refresh</button>
     </div>
   </header>
@@ -26,85 +25,43 @@
       <div class="hero-copy">
         <p class="eyebrow">VEVE · STACKR · OMI · COLLECT CHAIN</p>
         <h1>Find what the floor<br><em>doesn’t understand.</em></h1>
-        <p class="lede">GRAIL ranks edition-level opportunities using price dislocation, mint semantics and market evidence — while refusing to manufacture alpha when the evidence is weak.</p>
+        <p class="lede">GRAIL separates thesis-grade collector significance from ordinary price gaps. A pretty number is not enough; every strong label needs evidence.</p>
       </div>
-      <div class="hero-orb">
-        <div class="orb-core"><span id="heroScore">—</span><small>top signal</small></div>
-      </div>
+      <div class="hero-orb"><div class="orb-core"><span id="heroScore">—</span><small>top signal</small></div></div>
     </section>
 
-    <section class="metrics" aria-label="Market summary">
-      <article><span class="metric-label">GRAILS</span><strong id="grailCount">—</strong><small>semantic + sane</small></article>
-      <article><span class="metric-label">EDGES</span><strong id="edgeCount">—</strong><small>verify price gap</small></article>
-      <article><span class="metric-label">WATCH</span><strong id="watchCount">—</strong><small>interesting, not ready</small></article>
-      <article><span class="metric-label">OMI / USD</span><strong id="omiPrice">—</strong><small id="scanTime">waiting for scan</small></article>
+    <section class="metrics">
+      <article><span class="metric-label">GRAILS</span><strong id="grailCount">—</strong><small>thesis-grade mint + sane price</small></article>
+      <article><span class="metric-label">EDGES</span><strong id="edgeCount">—</strong><small>verify market dislocation</small></article>
+      <article><span class="metric-label">WATCH</span><strong id="watchCount">—</strong><small>interesting, not enough yet</small></article>
+      <article><span class="metric-label">OMI / USD</span><strong id="omiPrice">—</strong><small id="scanTime">waiting for snapshot</small></article>
     </section>
 
     <section class="toolbar">
-      <div class="tabs" role="tablist">
-        <button class="tab active" data-filter="ALL">All</button>
-        <button class="tab" data-filter="GRAIL">Grails</button>
-        <button class="tab" data-filter="EDGE">Edges</button>
-        <button class="tab" data-filter="WATCH">Watch</button>
-        <button class="tab" data-filter="OWNED">Mine</button>
+      <div class="tabs">
+        <button class="tab active" data-filter="ALL">All</button><button class="tab" data-filter="GRAIL">Grails</button><button class="tab" data-filter="EDGE">Edges</button><button class="tab" data-filter="WATCH">Watch</button><button class="tab" data-filter="OWNED">Mine</button>
       </div>
-      <div class="filters">
-        <select id="categoryFilter" aria-label="Category"><option value="ALL">All universes</option></select>
-        <label class="toggle"><input id="hideOwned" type="checkbox" /><span></span> hide owned</label>
-      </div>
+      <div class="filters"><select id="categoryFilter"><option value="ALL">All universes</option></select><label class="toggle"><input id="hideOwned" type="checkbox" /><span></span> hide owned</label></div>
     </section>
 
     <section class="explain-strip">
-      <div><b>GRAIL</b><span>collector-significant mint + acceptable economics</span></div>
-      <div><b>EDGE</b><span>market gap worth checking; not automatically a grail</span></div>
-      <div><b>WATCH</b><span>interesting signal, insufficient evidence to act</span></div>
+      <div><b>GRAIL</b><span>low / historical / IP-significant mint + acceptable economics</span></div>
+      <div><b>EDGE</b><span>market gap worth checking; mint itself may be ordinary</span></div>
+      <div><b>WATCH</b><span>pattern or collector interest without enough thesis evidence</span></div>
     </section>
 
     <section id="cards" class="card-grid" aria-live="polite"></section>
 
-    <section class="method">
-      <div>
-        <p class="eyebrow">WHY TRUST THE FEED?</p>
-        <h2>No forced alpha.</h2>
-      </div>
-      <p>Every card exposes the evidence behind its score. OMI asks are repriced at current spot. Price rejects stay rejected even when the mint is sexy. Direct marketplace links are only shown when sourced. Owner lookup fails closed to “unresolved” rather than guessing.</p>
-    </section>
+    <section class="method"><div><p class="eyebrow">EVIDENCE FIRST</p><h2>Rare labels. Clear proof.</h2></div><p>OMI asks are repriced at current spot; stale floor snapshots are labelled; generic palindromes are only bonuses; absurd premiums stay rejected. Public graph edges carry sources. Your collection, wallets and friends stay private in your browser unless you export them.</p></section>
   </main>
 
-  <template id="cardTemplate">
-    <article class="opportunity-card">
-      <div class="media">
-        <img alt="" loading="lazy" />
-        <div class="media-fallback"></div>
-        <span class="class-badge"></span>
-        <button class="owned-badge" title="Mark as owned">☆</button>
-      </div>
-      <div class="card-body">
-        <div class="card-topline"><span class="category"></span><span class="confidence"></span></div>
-        <h3></h3>
-        <div class="mint-line"><span class="mint"></span><span class="mint-signal"></span></div>
-        <div class="price-grid">
-          <div><small>ASK</small><strong class="ask"></strong><span class="omi"></span></div>
-          <div><small>STACKR FLOOR*</small><strong class="floor"></strong><span class="spread"></span></div>
-        </div>
-        <p class="why"></p>
-        <div class="owner-row"><span class="owner-state">Owner: unresolved</span><button class="owner-check">Check owner</button></div>
-        <details>
-          <summary>Evidence</summary>
-          <ul class="reasons"></ul>
-          <small class="fineprint">* Floor is a provider daily snapshot; open the marketplace before acting.</small>
-        </details>
-        <div class="actions">
-          <a class="buy stackr" target="_blank" rel="noopener">Open StackR ↗</a>
-          <a class="buy veve" target="_blank" rel="noopener">Open VeVe ↗</a>
-          <a class="evidence" target="_blank" rel="noopener">Evidence ↗</a>
-          <button class="share">Copy</button>
-        </div>
-      </div>
-    </article>
-  </template>
+  <template id="cardTemplate"><article class="opportunity-card"><div class="media"><img alt="" loading="lazy" /><div class="media-fallback"></div><span class="class-badge"></span><button class="owned-badge" title="Mark as owned">☆</button></div><div class="card-body"><div class="card-topline"><span class="category"></span><span class="confidence"></span></div><h3></h3><div class="mint-line"><span class="mint"></span><span class="mint-signal"></span></div><div class="price-grid"><div><small>ASK</small><strong class="ask"></strong><span class="omi"></span></div><div><small>STACKR FLOOR*</small><strong class="floor"></strong><span class="spread"></span></div></div><p class="why"></p><div class="owner-row"><span class="owner-state">Owner: unresolved</span><button class="owner-check">Owner / chain</button></div><details><summary>Evidence</summary><ul class="reasons"></ul><small class="fineprint">* Floor is a provider daily snapshot. Open the marketplace before acting.</small></details><div class="actions"><a class="buy stackr" target="_blank" rel="noopener">Open StackR ↗</a><a class="buy veve" target="_blank" rel="noopener">Open VeVe ↗</a><a class="evidence" target="_blank" rel="noopener">Evidence ↗</a><button class="share">Copy</button></div></div></article></template>
+
+  <dialog id="profileDialog" class="modal"><form method="dialog"><button class="modal-x">×</button></form><p class="eyebrow">PRIVATE LOCAL PROFILE</p><h2>My GRAIL</h2><p class="modal-copy">Your identity overlay lives in this browser. It is not published to GitHub.</p><label>Name<input id="profileName" placeholder="Collector name" /></label><label>Wallet / Collect address<input id="profileWallet" placeholder="0x… (optional)" /></label><label>VeVe / StackR handle<input id="profileHandle" placeholder="optional" /></label><label>Friends<textarea id="profileFriends" placeholder="Bao, Dorian, …"></textarea></label><div class="modal-actions"><button id="saveProfile" type="button">Save locally</button><button id="exportProfile" type="button" class="ghost-btn">Export</button><label class="file-btn">Import<input id="importProfile" type="file" accept="application/json" hidden /></label></div><p id="profileSummary" class="fineprint"></p></dialog>
+
+  <dialog id="graphDialog" class="modal wide"><form method="dialog"><button class="modal-x">×</button></form><p class="eyebrow">COLLECTOR GRAPH</p><h2>Evidence graph</h2><p class="modal-copy">Public market/semantic relationships are generated by GitHub Actions. Your private ownership overlay is merged only in this browser.</p><div id="graphStats" class="graph-stats"></div><div id="graphExamples" class="graph-examples"></div></dialog>
 
   <div id="toast" class="toast" role="status"></div>
-  <script src="/dashboard/app.js" defer></script>
+  <script src="./app.js" defer></script>
 </body>
 </html>
