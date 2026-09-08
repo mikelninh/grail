@@ -6,50 +6,77 @@ from pathlib import Path
 from .mint_live import scan_watchlist, write_results
 
 
-def _report(candidates, errors, top: int) -> str:
-    actionable = [c for c in candidates if c.actionability == "verify-now"]
-    watching = [c for c in candidates if c.actionability == "watch"]
-    rejected = [c for c in candidates if c.actionability == "reject-price"]
-    unverified = [c for c in candidates if c.actionability == "pricing-unverified"]
+def _signal(c) -> str:
+    if c.actionability == "reject-price":
+        return "REJECT"
+    if c.actionability == "pricing-unverified":
+        return "UNVERIFIED"
+    if c.mint_score >= 72 and c.actionability == "verify-now" and c.premium_to_floor_pct <= 20 and c.opportunity_score >= 38:
+        return "GRAIL"
+    if c.actionability == "verify-now" and c.premium_to_floor_pct <= -15 and c.opportunity_score >= 42:
+        return "EDGE"
+    if c.mint_score >= 65:
+        return "WATCH"
+    return "MARKET"
 
+
+def _report(candidates, errors, top: int) -> str:
+    groups = {k: [] for k in ("GRAIL", "EDGE", "WATCH", "MARKET", "REJECT", "UNVERIFIED")}
+    for c in candidates:
+        groups[_signal(c)].append(c)
     spot = next((c.omi_usd for c in candidates if c.omi_usd is not None), None)
     spot_text = f"{spot:.8f}" if spot is not None else "UNAVAILABLE"
 
     lines = [
-        "# GRAIL Mint Sniper",
+        "# GRAIL — Live Collector Intelligence",
         "",
-        "> Latest StackR listing signals reported by the provider, repriced from OMI into USD using the current OMI/USD spot observation. Open StackR and confirm active inventory before acting.",
+        "> Edition-level collector research across VeVe and StackR. OMI asks are repriced at current spot. Floors are provider daily snapshots, not guaranteed executable prices. Open the marketplace before acting.",
         "",
-        f"**OMI/USD used:** {spot_text}",
+        f"**OMI/USD:** {spot_text}  ",
+        f"**Signals:** {len(groups['GRAIL'])} GRAIL · {len(groups['EDGE'])} EDGE · {len(groups['WATCH'])} WATCH · {len(groups['MARKET'])} MARKET · {len(groups['REJECT'])} REJECT",
         "",
-        f"**Verify-now:** {len(actionable)} · **Watch:** {len(watching)} · **Price rejects:** {len(rejected)} · **Pricing unverified:** {len(unverified)}",
+        "## 🏆 GRAIL — mint significance + sane economics",
         "",
-        "| Rank | Status | Collectible | Mint | Score | Mint score | Current ask | OMI ask | Daily floor snapshot | vs floor | Listed age |",
-        "|---:|---|---|---:|---:|---:|---:|---:|---:|---:|---:|",
     ]
-    for idx, c in enumerate(candidates[:top], 1):
-        name = c.collectible.replace("|", "\\|")
-        age = "?" if c.age_days is None else f"{c.age_days}d"
-        omi = "—" if c.ask_omi is None else f"{c.ask_omi:,}"
-        lines.append(
-            f"| {idx} | **{c.actionability}** | [{name}]({c.source_url}) | #{c.mint} | {c.opportunity_score:.1f} | {c.mint_score:.0f} | "
-            f"${c.ask_usd:.2f} | {omi} | ${c.floor_usd:.2f} | {c.premium_to_floor_pct:+.1f}% | {age} |"
-        )
-        if c.reasons:
-            lines.append(f"|  |  | ↳ {'; '.join(c.reasons[:3])} |  |  |  |  |  |  |  |  |")
-    if not candidates:
-        lines.extend(["", "No StackR edition listing signals were visible in the current public watchlist pages."])
-    if not actionable:
-        lines.extend(["", "**No verify-now mint candidate currently clears GRAIL's price guardrails.** That is a valid result; the scanner does not manufacture a snipe."])
+
+    def add_cards(rows, limit):
+        for c in rows[:limit]:
+            lines.extend([
+                f"### {c.collectible} — #{c.mint}",
+                "",
+                f"**Score {c.opportunity_score:.1f}/100 · Mint {c.mint_score:.0f}/100 · Evidence {c.confidence:.0f}%**",
+                "",
+                f"- Ask: **${c.ask_usd:.2f}** / **{c.ask_omi:,} OMI**" if c.ask_omi else f"- Ask: **${c.ask_usd:.2f}**",
+                f"- Daily StackR floor snapshot: **${c.floor_usd:.2f}** ({c.premium_to_floor_pct:+.1f}% positioning)",
+                *[f"- {reason}" for reason in c.reasons[:5]],
+                f"- [Open StackR]({c.stackr_url})" if c.stackr_url else "- StackR shortcut unresolved",
+                f"- [Open VeVe]({c.veve_url})" if c.veve_url else "- VeVe shortcut unresolved",
+                f"- [Inspect evidence]({c.source_url})",
+                "",
+            ])
+
+    if groups["GRAIL"]:
+        add_cards(groups["GRAIL"], top)
+    else:
+        lines.extend(["No candidate currently clears the GRAIL bar. That is a valid result.", ""])
+
+    lines.extend(["## ⚡ EDGE — unusual price positioning to verify", ""])
+    add_cards(groups["EDGE"], min(top, 12))
+    lines.extend(["## 👁 WATCH — interesting mint, insufficient edge", ""])
+    add_cards(groups["WATCH"], min(top, 8))
+
+    lines.extend([
+        "## How to read the labels",
+        "",
+        "**GRAIL** requires collector-significant mint semantics and acceptable economics. **EDGE** is a price anomaly only; it is never promoted to grail without a mint reason. **WATCH** has a collector signal but not enough price evidence. **REJECT** means price sanity failed regardless of mint quality.",
+        "",
+        "## Verification checklist",
+        "",
+        "Before buying: open the direct StackR/VeVe link, confirm the exact edition is still active, inspect owner/provenance where available, check current floor/depth and recent realised sales, then account for fees and transfer/custody constraints.",
+    ])
     if errors:
         lines.extend(["", "## Provider / pricing errors", ""])
         lines.extend(f"- `{e['url']}` — {e['error']}" for e in errors)
-    lines.extend([
-        "",
-        "## Interpretation",
-        "",
-        "`verify-now` means the latest provider-reported row for that mint has current OMI repricing and sits within GRAIL's price guardrail relative to the provider's daily StackR floor snapshot. It is a prompt to check the live StackR listing and live floor now — not proof the inventory is still active or that a profit is available. `watch` carries a larger premium. `reject-price` fails the margin-of-safety guardrail. `pricing-unverified` is never actionable because a current OMI/USD observation was unavailable.",
-    ])
     return "\n".join(lines) + "\n"
 
 
@@ -68,15 +95,13 @@ def main() -> int:
     write_results(out, candidates, errors)
     report.write_text(_report(candidates, errors, args.top), encoding="utf-8")
 
-    actionable = [c for c in candidates if c.actionability == "verify-now"]
-    print("GRAIL MINT SNIPER")
-    print("=================")
-    for idx, c in enumerate(candidates[: args.top], 1):
-        age = "?" if c.age_days is None else f"{c.age_days}d"
-        print(f"{idx:>2}. [{c.actionability}] {c.collectible} #{c.mint} | {c.opportunity_score:.1f}/100 | ${c.ask_usd:.2f} vs floor snapshot ${c.floor_usd:.2f} | mint {c.mint_score:.0f} | listed {age}")
-    print(f"\nListing signals observed: {len(candidates)}")
-    print(f"Verify-now candidates: {len(actionable)}")
-    print(f"Provider/pricing errors: {len(errors)}")
+    counts = {k: sum(1 for c in candidates if _signal(c) == k) for k in ("GRAIL", "EDGE", "WATCH", "MARKET", "REJECT", "UNVERIFIED")}
+    print("GRAIL LIVE COLLECTOR INTELLIGENCE")
+    print("================================")
+    print(" · ".join(f"{v} {k}" for k, v in counts.items()))
+    for idx, c in enumerate(sorted(candidates, key=lambda x: ({"GRAIL":5,"EDGE":4,"WATCH":3,"MARKET":2,"UNVERIFIED":1,"REJECT":0}[_signal(x)], x.opportunity_score), reverse=True)[:args.top], 1):
+        print(f"{idx:>2}. [{_signal(c)}] {c.collectible} #{c.mint} | {c.opportunity_score:.1f}/100 | ${c.ask_usd:.2f} | mint {c.mint_score:.0f}")
+    print(f"\nProvider/pricing errors: {len(errors)}")
     print(f"Evidence: {out}")
     print(f"Report: {report}")
     return 0
