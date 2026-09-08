@@ -12,6 +12,23 @@ from .mint import mint_score
 from .models import Collectible
 
 
+_MONTHS = {
+    "jan": 1,
+    "feb": 2,
+    "mar": 3,
+    "apr": 4,
+    "may": 5,
+    "jun": 6,
+    "jul": 7,
+    "aug": 8,
+    "sep": 9,
+    "sept": 9,
+    "oct": 10,
+    "nov": 11,
+    "dec": 12,
+}
+
+
 @dataclass(frozen=True)
 class EditionListing:
     collectible: str
@@ -21,6 +38,8 @@ class EditionListing:
     ask_omi: int | None
     source_url: str
     observed_at: str
+    listed_date: str | None = None
+    age_days: int | None = None
 
 
 @dataclass(frozen=True)
@@ -36,6 +55,9 @@ class MintCandidate:
     reasons: tuple[str, ...]
     source_url: str
     observed_at: str
+    listed_date: str | None
+    age_days: int | None
+    actionability: str
 
 
 def fetch_html(url: str, timeout: float = 20.0) -> str:
@@ -47,9 +69,27 @@ def fetch_html(url: str, timeout: float = 20.0) -> str:
         return response.read().decode("utf-8", errors="replace")
 
 
+def _parse_event_date(day: str, month: str, observed_at: str) -> tuple[str | None, int | None]:
+    try:
+        observed = datetime.fromisoformat(observed_at.replace("Z", "+00:00"))
+        if observed.tzinfo is None:
+            observed = observed.replace(tzinfo=timezone.utc)
+        candidate = datetime(observed.year, _MONTHS[month.lower()], int(day), tzinfo=timezone.utc)
+        # Handle year-boundary pages such as a late-December event observed in early January.
+        if candidate > observed and (candidate - observed).days > 14:
+            candidate = candidate.replace(year=observed.year - 1)
+        age = max(0, (observed.date() - candidate.date()).days)
+        return candidate.date().isoformat(), age
+    except (ValueError, KeyError):
+        return None, None
+
+
 def parse_latest_stackr_listings(html: str, collectible: str, source_url: str, observed_at: str | None = None) -> list[EditionListing]:
-    # Public VeVe Alpha pages expose latest listing rows in the rendered HTML.
-    # StackR rows include edition, OMI ask and approximate USD value.
+    """Parse StackR listing *events* from VeVe Alpha's public latest-listings section.
+
+    These rows are not assumed to still be active inventory. Freshness is captured so downstream
+    ranking can distinguish a recent verify-now candidate from stale historical signal.
+    """
     text = re.sub(r"<[^>]+>", " ", html)
     text = re.sub(r"\s+", " ", text)
     start = text.find("Latest listings")
@@ -60,21 +100,24 @@ def parse_latest_stackr_listings(html: str, collectible: str, source_url: str, o
         text = text[: min(end_markers)]
 
     pattern = re.compile(
+        r"(?:(\d{1,2})\s+(Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Sept|Oct|Nov|Dec)\s*(?:·|\u00b7)?\s*)?"
         r"#\s*([0-9][0-9,]*)\s*STACKR\s*([0-9][0-9,]*)\s*OMI\s*(?:·|\u00b7)?\s*(?:≈|~)?\s*\$\s*([0-9][0-9,]*(?:\.[0-9]+)?)",
         re.I,
     )
     now = observed_at or datetime.now(timezone.utc).isoformat()
-    seen: set[tuple[int, int]] = set()
+    seen: set[tuple[int, int, str | None]] = set()
     rows: list[EditionListing] = []
     for match in pattern.finditer(text):
-        mint = int(match.group(1).replace(",", ""))
-        omi = int(match.group(2).replace(",", ""))
-        usd = float(match.group(3).replace(",", ""))
-        key = (mint, omi)
+        day, month = match.group(1), match.group(2)
+        mint = int(match.group(3).replace(",", ""))
+        omi = int(match.group(4).replace(",", ""))
+        usd = float(match.group(5).replace(",", ""))
+        listed_date, age_days = _parse_event_date(day, month, now) if day and month else (None, None)
+        key = (mint, omi, listed_date)
         if key in seen:
             continue
         seen.add(key)
-        rows.append(EditionListing(collectible, mint, "StackR", usd, omi, source_url, now))
+        rows.append(EditionListing(collectible, mint, "StackR", usd, omi, source_url, now, listed_date, age_days))
     return rows
 
 
@@ -105,22 +148,44 @@ def score_mint_listing(listing: EditionListing, market: MarketObservation, colle
         scarcity = max(20.0, min(95.0, 100 - collectible.total_editions / 20000.0 * 70.0))
 
     listing_activity = min(100.0, 20.0 + (market.listings_30d or 0) * 1.2)
-    confidence = 68.0
+    confidence = 63.0
     confidence += 7 if collectible.total_editions else 0
     confidence += 7 if signals else 0
     confidence += 5 if market.listings_30d is not None else 0
+    confidence += 5 if listing.age_days is not None and listing.age_days <= 1 else 0
     confidence = min(87.0, confidence)
 
     reasons = [signal.reason for signal in signals[:4]]
     if premium <= -0.10:
-        reasons.insert(0, f"ask is {-premium:.0%} below StackR floor")
+        reasons.insert(0, f"listing event ask is {-premium:.0%} below current StackR floor")
     elif premium >= 0.20:
-        reasons.insert(0, f"ask is {premium:.0%} above StackR floor")
+        reasons.insert(0, f"listing event ask is {premium:.0%} above current StackR floor")
     else:
-        reasons.insert(0, f"ask is {premium:+.0%} vs StackR floor")
+        reasons.insert(0, f"listing event ask is {premium:+.0%} vs current StackR floor")
+
+    if listing.age_days is not None:
+        reasons.insert(0, f"listing event is {listing.age_days}d old")
 
     total = price_score * 0.38 + mscore * 0.40 + scarcity * 0.12 + listing_activity * 0.10
     total *= 0.78 + 0.22 * confidence / 100.0
+
+    # Hard guardrails: semantics must never rescue absurd price positioning.
+    if premium > 2.0:
+        total = min(total, 20.0)
+    elif premium > 0.5:
+        total = min(total, 45.0)
+
+    if listing.age_days is None:
+        actionability = "historical-signal"
+        total = min(total, 50.0)
+    elif listing.age_days <= 1:
+        actionability = "verify-now"
+    elif listing.age_days <= 3:
+        actionability = "recent-signal"
+        total = min(total, 62.0)
+    else:
+        actionability = "historical-signal"
+        total = min(total, 45.0)
 
     return MintCandidate(
         collectible=collectible.name,
@@ -134,6 +199,9 @@ def score_mint_listing(listing: EditionListing, market: MarketObservation, colle
         reasons=tuple(reasons),
         source_url=listing.source_url,
         observed_at=listing.observed_at,
+        listed_date=listing.listed_date,
+        age_days=listing.age_days,
+        actionability=actionability,
     )
 
 
@@ -152,7 +220,8 @@ def scan_watchlist(path: str | Path) -> tuple[list[MintCandidate], list[dict[str
                 candidates.append(score_mint_listing(listing, market, collectible))
         except Exception as exc:
             errors.append({"url": url, "error": f"{type(exc).__name__}: {exc}"})
-    candidates.sort(key=lambda c: (c.opportunity_score, c.mint_score), reverse=True)
+    rank = {"verify-now": 2, "recent-signal": 1, "historical-signal": 0}
+    candidates.sort(key=lambda c: (rank[c.actionability], c.opportunity_score, c.mint_score), reverse=True)
     return candidates, errors
 
 
@@ -161,7 +230,7 @@ def write_results(path: str | Path, candidates: list[MintCandidate], errors: lis
         json.dumps(
             {
                 "generated_at": datetime.now(timezone.utc).isoformat(),
-                "mode": "read-only mint intelligence; verify listing before acting",
+                "mode": "read-only mint intelligence; listing rows are events and must be verified before acting",
                 "candidates": [asdict(c) for c in candidates],
                 "errors": errors,
             },
