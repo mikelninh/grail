@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import html as html_lib
 import json
 import re
 import urllib.request
@@ -89,19 +90,72 @@ def _int_after(label: str, text: str) -> int | None:
     return int(match.group(1).replace(",", "")) if match else None
 
 
+def _jsonld_products(html: str) -> list[dict]:
+    products: list[dict] = []
+    blocks = re.findall(
+        r"<script[^>]+type=[\"']application/ld\+json[\"'][^>]*>(.*?)</script>",
+        html,
+        flags=re.I | re.S,
+    )
+    for raw in blocks:
+        try:
+            payload = json.loads(html_lib.unescape(raw).strip())
+        except (json.JSONDecodeError, TypeError):
+            continue
+        candidates = payload if isinstance(payload, list) else [payload]
+        for item in candidates:
+            if not isinstance(item, dict):
+                continue
+            graph = item.get("@graph") if isinstance(item.get("@graph"), list) else [item]
+            for node in graph:
+                if isinstance(node, dict) and node.get("@type") == "Product":
+                    products.append(node)
+    return products
+
+
+def _product_for_url(html: str, source_url: str) -> dict | None:
+    products = _jsonld_products(html)
+    if not products:
+        return None
+    normalised = source_url.rstrip("/")
+    for product in products:
+        if str(product.get("url", "")).rstrip("/") == normalised:
+            return product
+    return products[-1]
+
+
 def parse_vevealpha_html(html: str, source_url: str, observed_at: str | None = None) -> MarketObservation:
     text = _normalise_text(html)
-    # VeVe Alpha pages are server-rendered. The title precedes the marketplace labels.
-    title_match = re.search(r"(?:Floor Price, Sales History & Market Data \| VeVe Alpha \| Veve Alpha\s*)?#\s*([^#]+?)\s+(?:VeVe gem floor|COMMON|UNCOMMON|RARE|ULTRA_RARE|SECRET_RARE)", text, re.I)
-    if not title_match:
-        # Fallback for pages where the heading is emitted without a literal '#'.
-        title_match = re.search(r"VeVe Alpha\s+(.+?)\s+(?:COMMON|UNCOMMON|RARE|ULTRA_RARE|SECRET_RARE)\s+(?:COLLECTIBLE|COMIC)", text, re.I)
-    collectible = title_match.group(1).strip() if title_match else source_url.rstrip("/").split("/")[-1]
+    product = _product_for_url(html, source_url)
+    structured_text = str(product.get("description", "")) if product else ""
+    evidence_text = structured_text or text
 
-    rarity_match = re.search(r"\b(COMMON|UNCOMMON|RARE|ULTRA_RARE|SECRET_RARE)\b", text)
+    collectible = str(product.get("name", "")).strip() if product else ""
+    if not collectible:
+        heading_match = re.search(r"#\s*(.+?)\s+(?:VeVe gem floor|COMMON|UNCOMMON|RARE|ULTRA_RARE|SECRET_RARE)", text, re.I)
+        collectible = heading_match.group(1).strip() if heading_match else source_url.rstrip("/").split("/")[-1]
+
+    rarity_match = re.search(r"\b(COMMON|UNCOMMON|RARE|ULTRA_RARE|SECRET_RARE)\b", evidence_text)
     rarity = rarity_match.group(1) if rarity_match else None
-    editions_match = re.search(r"\b([0-9][0-9,]*)\s+editions\b", text, re.I)
+
+    editions_match = re.search(r"(?:edition size of|\b)([0-9][0-9,]*)\s+editions?\b", evidence_text, re.I)
+    if not editions_match:
+        editions_match = re.search(r"edition size of\s+([0-9][0-9,]*)", evidence_text, re.I)
     edition_size = int(editions_match.group(1).replace(",", "")) if editions_match else None
+
+    if structured_text:
+        veve_match = re.search(r"floor price of .*? is \$([0-9][0-9,]*(?:\.[0-9]+)?) on the VeVe gem market", structured_text, re.I)
+        stackr_match = re.search(r"StackR floor is \$([0-9][0-9,]*(?:\.[0-9]+)?)", structured_text, re.I)
+        listings_match = re.search(r"with\s+([0-9][0-9,]*)\s+listings in the past 30 days", structured_text, re.I)
+        if not veve_match or not stackr_match:
+            raise ValueError("structured product metadata missing marketplace floors")
+        veve_floor = float(veve_match.group(1).replace(",", ""))
+        stackr_floor = float(stackr_match.group(1).replace(",", ""))
+        listings_30d = int(listings_match.group(1).replace(",", "")) if listings_match else None
+    else:
+        veve_floor = _money_after("VeVe gem floor", text)
+        stackr_floor = _money_after("StackR floor", text)
+        listings_30d = _int_after("Listings 30d", text)
 
     return MarketObservation(
         source="VeVe Alpha",
@@ -109,9 +163,9 @@ def parse_vevealpha_html(html: str, source_url: str, observed_at: str | None = N
         collectible=collectible,
         rarity=rarity,
         edition_size=edition_size,
-        veve_floor_usd=_money_after("VeVe gem floor", text),
-        stackr_floor_usd=_money_after("StackR floor", text),
-        listings_30d=_int_after("Listings 30d", text),
+        veve_floor_usd=veve_floor,
+        stackr_floor_usd=stackr_floor,
+        listings_30d=listings_30d,
         observed_at=observed_at or datetime.now(timezone.utc).isoformat(),
     )
 
@@ -132,18 +186,16 @@ def rank_observation(obs: MarketObservation) -> LiveCandidate:
     ]
     gap = obs.nominal_gap_pct
 
-    # Activity is intentionally conservative: listings are supply/activity evidence, not realised sales.
     listings = obs.listings_30d or 0
     activity = min(100.0, 20.0 + listings * 1.5)
     if listings < 5:
         warnings.append("very low 30d listing activity")
 
-    evidence_points = 3  # two floors + named source
+    evidence_points = 3
     evidence_points += 1 if obs.edition_size else 0
     evidence_points += 1 if obs.listings_30d is not None else 0
     confidence = min(90.0, 42.0 + evidence_points * 9.0)
 
-    # V0.2 ranks cross-market asymmetry, but avoids equating a huge spread with liquidity.
     gap_score = min(100.0, gap * 1.65)
     scarcity = 50.0
     if obs.edition_size:
@@ -172,7 +224,7 @@ def scan_urls(urls: Iterable[str]) -> tuple[list[LiveCandidate], list[dict[str, 
     for url in urls:
         try:
             candidates.append(rank_observation(fetch_vevealpha(url)))
-        except Exception as exc:  # A single provider failure must not kill a watchlist scan.
+        except Exception as exc:
             errors.append({"url": url, "error": f"{type(exc).__name__}: {exc}"})
     candidates.sort(key=lambda x: x.opportunity_score, reverse=True)
     return candidates, errors
