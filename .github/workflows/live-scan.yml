@@ -4,6 +4,7 @@ on:
   workflow_dispatch:
   push:
     branches:
+      - "main"
       - "feat/grail-v0.1"
     paths:
       - "src/grail/live.py"
