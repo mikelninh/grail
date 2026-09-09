@@ -1,14 +1,6 @@
 name: provider-research
 
 on:
-  push:
-    branches: ["sprint/v08-universe-expansion"]
-    paths:
-      - "src/grail/provider_edition.py"
-      - "scripts/discover_catalog_contract.py"
-      - "scripts/probe_market_rpc.py"
-      - "scripts/probe_registry_rpc.py"
-      - ".github/workflows/provider-research.yml"
   workflow_dispatch:
 
 permissions:
