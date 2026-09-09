@@ -1,0 +1,53 @@
+name: hunter-smoke
+
+on:
+  push:
+    branches: ["sprint/v06-hunter"]
+    paths:
+      - "dashboard/**"
+      - "scripts/**"
+      - "src/grail/**"
+      - "api/**"
+      - "data/**"
+      - ".github/workflows/hunter-smoke.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  smoke:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: python -m pip install -e .
+      - run: python -m unittest discover -s tests -v
+      - name: Build live Hunter bundle
+        run: python scripts/build_pages.py
+      - name: Validate Hunter assets and JS
+        run: |
+          test -s site/index.html
+          test -s site/hunter.js
+          test -s site/hunter.css
+          test -s site/404.html
+          grep -q "hunter.js?v=0.6.0" site/index.html
+          grep -q "hunter.css?v=0.6.0" site/index.html
+          node --check site/hunter.js
+          node --check site/app.js
+          node --check site/ownership-proof.js
+      - name: Validate decision-layer data contract
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          p=json.loads(Path('site/data/opportunities.json').read_text())
+          eligible=[r for r in p['candidates'] if r.get('live_status')=='live' and r.get('signal_class') in {'GRAIL','EDGE','WATCH'} and r.get('actionability')!='reject-price']
+          assert eligible, 'Hunter needs at least one live eligible candidate in current smoke data'
+          assert all(r.get('signal_class')!='REJECT' for r in eligible)
+          assert all(r.get('availability_status')!='sold-after-listing' for r in eligible)
+          assert len({r.get('source_url') for r in eligible}) >= min(3,len(eligible))
+          print({'eligible_live':len(eligible),'grails':p['counts'].get('GRAIL',0),'edges':p['counts'].get('EDGE',0),'errors':p.get('errors',[])})
+          PY

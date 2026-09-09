@@ -155,15 +155,17 @@ def main() -> int:
     (site / "data" / "inventory.json").write_text(json.dumps(inventory, indent=2), encoding="utf-8")
     (site / "data" / "graph.json").write_text(json.dumps(graph, indent=2), encoding="utf-8")
 
-    for name in ("index.html", "styles.css", "app.js", "ownership-proof.js"):
+    for name in ("index.html", "styles.css", "app.js", "ownership-proof.js", "hunter.js", "hunter.css"):
         shutil.copy2(ROOT / "dashboard" / name, site / name)
     with (site / "styles.css").open("a", encoding="utf-8") as out:
         out.write("\n")
         out.write((ROOT / "dashboard" / "pages-polish.css").read_text(encoding="utf-8"))
     (site / ".nojekyll").write_text("", encoding="utf-8")
+    # Static fallback makes /grail/404.html render the same resilient shell.
+    shutil.copy2(site / "index.html", site / "404.html")
 
     errors = list(payload.get("errors", [])) + sale_errors
-    print(json.dumps({"candidates": len(payload.get("candidates", [])), "counts": payload.get("counts", {}), "sales": len(sales), "premium_signal_types": len(premiums), "inventory": inventory.get("counts", {}), "graph": graph["stats"], "errors": errors}, indent=2))
+    print(json.dumps({"candidates": len(payload.get("candidates", [])), "counts": payload.get("counts", {}), "sales": len(sales), "premium_signal_types": len(premiums), "inventory": inventory.get("counts", {}), "graph": graph["stats"], "hunter_assets": True, "errors": errors}, indent=2))
     return 0
 
 
