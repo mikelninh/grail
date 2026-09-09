@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <meta name="theme-color" content="#080a0f" />
   <title>GRAIL — Collector Intelligence</title>
-  <meta name="description" content="Collector intelligence for VeVe, StackR, OMI and Collect Chain." />
+  <meta name="description" content="Evidence-first collector intelligence for VeVe, StackR, OMI and Collect Chain." />
   <link rel="stylesheet" href="./styles.css" />
 </head>
 <body>
@@ -14,6 +14,7 @@
     <a class="brand" href="./" aria-label="GRAIL home"><span class="sigil">◇</span><span><b>GRAIL</b><small>collector intelligence</small></span></a>
     <div class="top-actions">
       <button id="alphaBtn" class="ghost-btn">Alpha</button>
+      <button id="portfolioBtn" class="ghost-btn">Portfolio</button>
       <button id="graphBtn" class="ghost-btn">Graph</button>
       <button id="profileBtn" class="ghost-btn">My GRAIL</button>
       <span id="liveStatus" class="live-pill"><i></i> loading</span>
@@ -26,15 +27,15 @@
       <div class="hero-copy">
         <p class="eyebrow">VEVE · STACKR · OMI · COLLECT CHAIN</p>
         <h1>Find what the floor<br><em>doesn’t understand.</em></h1>
-        <p class="lede">GRAIL separates thesis-grade collector significance from ordinary price gaps. A pretty number is not enough; every strong label needs evidence — and every signal is now forward-tested against simple baselines.</p>
+        <p class="lede">GRAIL separates thesis-grade collector significance from ordinary price gaps — then tracks whether the signal was live, who owns the mapped token, what comparable mints realised, and whether GRAIL actually beats simple baselines.</p>
       </div>
-      <div class="hero-orb"><div class="orb-core"><span id="heroScore">—</span><small>top signal</small></div></div>
+      <div class="hero-orb"><div class="orb-core"><span id="heroScore">—</span><small>top live signal</small></div></div>
     </section>
 
     <section class="metrics">
-      <article><span class="metric-label">GRAILS</span><strong id="grailCount">—</strong><small>thesis-grade mint + sane price</small></article>
+      <article><span class="metric-label">GRAILS</span><strong id="grailCount">—</strong><small>thesis-grade + sane economics</small></article>
       <article><span class="metric-label">EDGES</span><strong id="edgeCount">—</strong><small>verify market dislocation</small></article>
-      <article><span class="metric-label">WATCH</span><strong id="watchCount">—</strong><small>interesting, not enough yet</small></article>
+      <article><span class="metric-label">LIVE</span><strong id="liveCount">—</strong><small>seen in latest provider scan</small></article>
       <article><span class="metric-label">OMI / USD</span><strong id="omiPrice">—</strong><small id="scanTime">waiting for snapshot</small></article>
     </section>
 
@@ -48,21 +49,23 @@
     <section class="explain-strip">
       <div><b>GRAIL</b><span>low / historical / IP-significant mint + acceptable economics</span></div>
       <div><b>EDGE</b><span>market gap worth checking; mint itself may be ordinary</span></div>
-      <div><b>HISTORY</b><span>listing consumed by a later realised sale; retained as proof, never actionable</span></div>
+      <div><b>PROOF</b><span>live-state · chain mapping · realised comps · forward outcome</span></div>
     </section>
 
     <section id="cards" class="card-grid" aria-live="polite"></section>
 
-    <section class="method"><div><p class="eyebrow">EVIDENCE FIRST</p><h2>Rare labels. Clear proof.</h2></div><p>OMI asks are repriced at current spot; realised sales invalidate stale listing signals; generic palindromes are only bonuses; absurd premiums stay rejected. Public graph edges carry sources. Your collection, wallets and friends stay private in your browser unless you export them.</p></section>
+    <section class="method"><div><p class="eyebrow">EVIDENCE FIRST</p><h2>Rare labels. Clear proof.</h2></div><p>OMI asks are repriced at current spot. Missing inventory is not a sale. Current owners require an exact edition→Collect token mapping. Mint premiums only affect fair value once sample size is sufficient. Private collections, wallets and friends stay in your browser.</p></section>
   </main>
 
-  <template id="cardTemplate"><article class="opportunity-card"><div class="media"><img alt="" loading="lazy" /><div class="media-fallback"></div><span class="class-badge"></span><button class="owned-badge" title="Mark as owned">☆</button></div><div class="card-body"><div class="card-topline"><span class="category"></span><span class="confidence"></span></div><h3></h3><div class="mint-line"><span class="mint"></span><span class="mint-signal"></span></div><div class="price-grid"><div><small>ASK / LAST SIGNAL</small><strong class="ask"></strong><span class="omi"></span></div><div><small>STACKR FLOOR*</small><strong class="floor"></strong><span class="spread"></span></div></div><p class="why"></p><div class="owner-row"><span class="owner-state">Owner: unresolved</span><button class="owner-check">Owner / chain</button></div><details><summary>Evidence</summary><ul class="reasons"></ul><small class="fineprint">* Floor is a provider daily snapshot. HISTORY cards are not current opportunities.</small></details><div class="actions"><a class="buy stackr" target="_blank" rel="noopener">Open StackR ↗</a><a class="buy veve" target="_blank" rel="noopener">Open VeVe ↗</a><a class="evidence" target="_blank" rel="noopener">Evidence ↗</a><button class="share">Copy</button></div></div></article></template>
+  <template id="cardTemplate"><article class="opportunity-card"><div class="media"><img alt="" loading="lazy" /><div class="media-fallback"></div><span class="class-badge"></span><button class="owned-badge" title="Mark as owned">☆</button></div><div class="card-body"><div class="card-topline"><span class="category"></span><span class="confidence"></span></div><h3></h3><div class="mint-line"><span class="mint"></span><span class="mint-signal"></span></div><div class="proof-strip"><span class="proof-live"></span><span class="proof-chain"></span><span class="proof-alpha"></span></div><div class="price-grid"><div><small>ASK / LAST SIGNAL</small><strong class="ask"></strong><span class="omi"></span></div><div><small>STACKR FLOOR*</small><strong class="floor"></strong><span class="spread"></span></div></div><p class="why"></p><div class="owner-row"><span class="owner-state">Owner: unresolved</span><button class="owner-check">Owner / chain</button></div><details><summary>Evidence & thesis</summary><ul class="reasons"></ul><small class="fineprint">* Floor is a provider snapshot. LIVE means observed in the current provider listing section, not guaranteed executable inventory.</small></details><div class="actions"><a class="buy stackr" target="_blank" rel="noopener">Open StackR ↗</a><a class="buy veve" target="_blank" rel="noopener">Open VeVe ↗</a><a class="evidence" target="_blank" rel="noopener">Evidence ↗</a><button class="share">Copy</button></div></div></article></template>
 
-  <dialog id="profileDialog" class="modal"><form method="dialog"><button class="modal-x">×</button></form><p class="eyebrow">PRIVATE LOCAL PROFILE</p><h2>My GRAIL</h2><p class="modal-copy">Your identity overlay lives in this browser. It is not published to GitHub.</p><label>Name<input id="profileName" placeholder="Collector name" /></label><label>Wallet / Collect address<input id="profileWallet" placeholder="0x… (optional)" /></label><label>VeVe / StackR handle<input id="profileHandle" placeholder="optional" /></label><label>Friends<textarea id="profileFriends" placeholder="Bao, Dorian, …"></textarea></label><div class="modal-actions"><button id="saveProfile" type="button">Save locally</button><button id="exportProfile" type="button" class="ghost-btn">Export</button><label class="file-btn">Import<input id="importProfile" type="file" accept="application/json" hidden /></label></div><p id="profileSummary" class="fineprint"></p></dialog>
+  <dialog id="profileDialog" class="modal"><form method="dialog"><button class="modal-x">×</button></form><p class="eyebrow">PRIVATE LOCAL PROFILE</p><h2>My GRAIL</h2><p class="modal-copy">Identity, collection and friend aliases live only in this browser. Friend format: <code>Name | wallet-or-prefix…suffix</code>.</p><label>Name<input id="profileName" placeholder="Collector name" /></label><label>Wallet / Collect address<input id="profileWallet" placeholder="0x… (optional)" /></label><label>VeVe / StackR handle<input id="profileHandle" placeholder="optional" /></label><label>Friends<textarea id="profileFriends" placeholder="Friend | 0x12…abcd&#10;Another friend | @handle"></textarea></label><div class="modal-actions"><button id="saveProfile" type="button">Save locally</button><button id="exportProfile" type="button" class="ghost-btn">Export</button><label class="file-btn">Import<input id="importProfile" type="file" accept="application/json" hidden /></label></div><p id="profileSummary" class="fineprint"></p></dialog>
 
-  <dialog id="alphaDialog" class="modal wide"><form method="dialog"><button class="modal-x">×</button></form><p class="eyebrow">FORWARD-TESTED ALPHA</p><h2>Does GRAIL actually beat the dumb baseline?</h2><p class="modal-copy">Every GRAIL and EDGE is frozen when first observed. Only a later realised sale for that exact collectible + edition resolves an outcome. Disappearing from a listing window is never counted as a win.</p><div id="alphaStats" class="graph-stats"></div><div id="baselineEvidence" class="premium-evidence"></div><div id="alphaExamples" class="graph-examples"></div></dialog>
+  <dialog id="portfolioDialog" class="modal wide"><form method="dialog"><button class="modal-x">×</button></form><p class="eyebrow">PORTFOLIO INTELLIGENCE</p><h2>Floor is not your exit.</h2><p class="modal-copy">Edition-aware estimates from items marked Mine in this browser. Evidenced mint premiums are used only when the realised-sales model has enough samples.</p><div id="portfolioStats" class="graph-stats"></div><div id="portfolioEvidence" class="premium-evidence"></div><div id="portfolioExamples" class="graph-examples"></div></dialog>
 
-  <dialog id="graphDialog" class="modal wide"><form method="dialog"><button class="modal-x">×</button></form><p class="eyebrow">COLLECTOR GRAPH</p><h2>Evidence graph</h2><p class="modal-copy">Listings, realised sales, exact token mappings, current chain owners and semantic mint evidence are generated by GitHub Actions. Private ownership is merged only in this browser.</p><div id="graphStats" class="graph-stats"></div><div id="premiumEvidence" class="premium-evidence"></div><div id="graphExamples" class="graph-examples"></div></dialog>
+  <dialog id="alphaDialog" class="modal wide"><form method="dialog"><button class="modal-x">×</button></form><p class="eyebrow">FORWARD-TESTED ALPHA</p><h2>Does GRAIL beat the dumb baseline?</h2><p class="modal-copy">Every GRAIL and EDGE is frozen at T0. Only a later realised sale for that exact collectible + edition resolves an outcome. Disappearance never counts as a win.</p><div id="alphaStats" class="graph-stats"></div><div id="baselineEvidence" class="premium-evidence"></div><div id="alphaExamples" class="graph-examples"></div></dialog>
+
+  <dialog id="graphDialog" class="modal wide"><form method="dialog"><button class="modal-x">×</button></form><p class="eyebrow">COLLECTOR GRAPH</p><h2>Evidence graph</h2><p class="modal-copy">Listings, sales, semantic evidence, exact token mappings and chain owners. Historical buyer ≠ current owner.</p><div id="graphStats" class="graph-stats"></div><div id="premiumEvidence" class="premium-evidence"></div><div id="mappingEvidence" class="premium-evidence"></div><div id="graphExamples" class="graph-examples"></div></dialog>
 
   <div id="toast" class="toast" role="status"></div>
   <script src="./app.js" defer></script>
