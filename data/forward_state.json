@@ -1,10 +1,682 @@
 {
-  "version": 1,
-  "updated_at": null,
-  "alerts": [],
+  "alerts": [
+    {
+      "ask_omi": 41500,
+      "ask_usd": 9.15,
+      "baseline_outcomes": {},
+      "baselines": {
+        "cheapest": {
+          "ask_omi": 41990,
+          "ask_usd": 9.26,
+          "mint": 5891,
+          "premium_to_floor_pct": -46.56,
+          "signal_class": "EDGE"
+        },
+        "control": {
+          "ask_omi": 64320,
+          "ask_usd": 14.19,
+          "mint": 7753,
+          "premium_to_floor_pct": -18.14,
+          "signal_class": "MARKET"
+        },
+        "deepest_discount": {
+          "ask_omi": 41990,
+          "ask_usd": 9.26,
+          "mint": 5891,
+          "premium_to_floor_pct": -46.56,
+          "signal_class": "EDGE"
+        }
+      },
+      "collectible": "Dark Lord of the Sith",
+      "confidence": 83.0,
+      "first_seen": "2026-09-09T00:30:52.953256+00:00",
+      "floor_usd": 17.33,
+      "key": "https://vevealpha.com/c/dark-lord-of-the-sith|3479",
+      "last_seen": "2026-09-09T00:30:52.953256+00:00",
+      "latest_ask_usd": 9.15,
+      "latest_floor_usd": 17.33,
+      "listed_date": "2026-09-08",
+      "mint": 3479,
+      "mint_score": 0.0,
+      "opportunity_score": 49.39,
+      "premium_to_floor_pct": -47.18,
+      "resolved_sale": null,
+      "signal_class": "EDGE",
+      "source_url": "https://vevealpha.com/c/dark-lord-of-the-sith",
+      "stackr_url": "https://www.stackr.world/collections/veve/collectible/39caa0d4-acd8-4b57-8c74-77f777370153",
+      "status": "open",
+      "veve_url": "https://www.veve.me/collectibles/en/market/collectibles/39caa0d4-acd8-4b57-8c74-77f777370153"
+    },
+    {
+      "ask_omi": 41990,
+      "ask_usd": 9.26,
+      "baseline_outcomes": {},
+      "baselines": {
+        "cheapest": {
+          "ask_omi": 41500,
+          "ask_usd": 9.15,
+          "mint": 3479,
+          "premium_to_floor_pct": -47.18,
+          "signal_class": "EDGE"
+        },
+        "control": {
+          "ask_omi": 64320,
+          "ask_usd": 14.19,
+          "mint": 7753,
+          "premium_to_floor_pct": -18.14,
+          "signal_class": "MARKET"
+        },
+        "deepest_discount": {
+          "ask_omi": 41500,
+          "ask_usd": 9.15,
+          "mint": 3479,
+          "premium_to_floor_pct": -47.18,
+          "signal_class": "EDGE"
+        }
+      },
+      "collectible": "Dark Lord of the Sith",
+      "confidence": 83.0,
+      "first_seen": "2026-09-09T00:30:52.953256+00:00",
+      "floor_usd": 17.33,
+      "key": "https://vevealpha.com/c/dark-lord-of-the-sith|5891",
+      "last_seen": "2026-09-09T00:30:52.953256+00:00",
+      "latest_ask_usd": 9.26,
+      "latest_floor_usd": 17.33,
+      "listed_date": "2026-09-07",
+      "mint": 5891,
+      "mint_score": 0.0,
+      "opportunity_score": 49.19,
+      "premium_to_floor_pct": -46.56,
+      "resolved_sale": null,
+      "signal_class": "EDGE",
+      "source_url": "https://vevealpha.com/c/dark-lord-of-the-sith",
+      "stackr_url": "https://www.stackr.world/collections/veve/collectible/39caa0d4-acd8-4b57-8c74-77f777370153",
+      "status": "open",
+      "veve_url": "https://www.veve.me/collectibles/en/market/collectibles/39caa0d4-acd8-4b57-8c74-77f777370153"
+    },
+    {
+      "ask_omi": 42000,
+      "ask_usd": 9.26,
+      "baseline_outcomes": {},
+      "baselines": {
+        "cheapest": {
+          "ask_omi": 41500,
+          "ask_usd": 9.15,
+          "mint": 3479,
+          "premium_to_floor_pct": -47.18,
+          "signal_class": "EDGE"
+        },
+        "control": {
+          "ask_omi": 41990,
+          "ask_usd": 9.26,
+          "mint": 5891,
+          "premium_to_floor_pct": -46.56,
+          "signal_class": "EDGE"
+        },
+        "deepest_discount": {
+          "ask_omi": 41500,
+          "ask_usd": 9.15,
+          "mint": 3479,
+          "premium_to_floor_pct": -47.18,
+          "signal_class": "EDGE"
+        }
+      },
+      "collectible": "Dark Lord of the Sith",
+      "confidence": 83.0,
+      "first_seen": "2026-09-09T00:30:52.953256+00:00",
+      "floor_usd": 17.33,
+      "key": "https://vevealpha.com/c/dark-lord-of-the-sith|8719",
+      "last_seen": "2026-09-09T00:30:52.953256+00:00",
+      "latest_ask_usd": 9.26,
+      "latest_floor_usd": 17.33,
+      "listed_date": "2026-09-07",
+      "mint": 8719,
+      "mint_score": 0.0,
+      "opportunity_score": 49.18,
+      "premium_to_floor_pct": -46.55,
+      "resolved_sale": null,
+      "signal_class": "EDGE",
+      "source_url": "https://vevealpha.com/c/dark-lord-of-the-sith",
+      "stackr_url": "https://www.stackr.world/collections/veve/collectible/39caa0d4-acd8-4b57-8c74-77f777370153",
+      "status": "open",
+      "veve_url": "https://www.veve.me/collectibles/en/market/collectibles/39caa0d4-acd8-4b57-8c74-77f777370153"
+    },
+    {
+      "ask_omi": 20000,
+      "ask_usd": 4.41,
+      "baseline_outcomes": {},
+      "baselines": {},
+      "collectible": "Marvel & Disney: What If\u2026? Goofy Became Spider-Man #1",
+      "confidence": 83.0,
+      "first_seen": "2026-09-09T00:30:52.953256+00:00",
+      "floor_usd": 6.68,
+      "key": "https://vevealpha.com/c/marvel-disney-what-if-goofy-became-spider-man-common|851",
+      "last_seen": "2026-09-09T00:30:52.953256+00:00",
+      "latest_ask_usd": 4.41,
+      "latest_floor_usd": 6.68,
+      "listed_date": "2026-09-06",
+      "mint": 851,
+      "mint_score": 0.0,
+      "opportunity_score": 51.9,
+      "premium_to_floor_pct": -33.96,
+      "resolved_sale": null,
+      "signal_class": "EDGE",
+      "source_url": "https://vevealpha.com/c/marvel-disney-what-if-goofy-became-spider-man-common",
+      "stackr_url": "https://www.stackr.world/collections/veve/comic-cover/96efdc03-c20e-4816-9644-248821fcbb9a",
+      "status": "open",
+      "veve_url": "https://www.veve.me/collectibles/en/market/comics/96efdc03-c20e-4816-9644-248821fcbb9a"
+    },
+    {
+      "ask_omi": 29999,
+      "ask_usd": 6.62,
+      "baseline_outcomes": {},
+      "baselines": {},
+      "collectible": "Mickey",
+      "confidence": 83.0,
+      "first_seen": "2026-09-09T00:30:52.953256+00:00",
+      "floor_usd": 12.25,
+      "key": "https://vevealpha.com/c/mickey|735",
+      "last_seen": "2026-09-09T00:30:52.953256+00:00",
+      "latest_ask_usd": 6.62,
+      "latest_floor_usd": 12.25,
+      "listed_date": "2026-09-08",
+      "mint": 735,
+      "mint_score": 0.0,
+      "opportunity_score": 55.66,
+      "premium_to_floor_pct": -45.99,
+      "resolved_sale": null,
+      "signal_class": "EDGE",
+      "source_url": "https://vevealpha.com/c/mickey",
+      "stackr_url": "https://www.stackr.world/collections/veve/collectible/a494f556-ebcd-4252-b4ec-ccd52c331c5c",
+      "status": "open",
+      "veve_url": "https://www.veve.me/collectibles/en/market/collectibles/a494f556-ebcd-4252-b4ec-ccd52c331c5c"
+    },
+    {
+      "ask_omi": 24200,
+      "ask_usd": 5.34,
+      "baseline_outcomes": {},
+      "baselines": {
+        "cheapest": {
+          "ask_omi": 11000,
+          "ask_usd": 2.43,
+          "mint": 2738,
+          "premium_to_floor_pct": -78.22,
+          "signal_class": "EDGE"
+        },
+        "control": {
+          "ask_omi": 22222,
+          "ask_usd": 4.9,
+          "mint": 2772,
+          "premium_to_floor_pct": -56.0,
+          "signal_class": "EDGE"
+        },
+        "deepest_discount": {
+          "ask_omi": 11000,
+          "ask_usd": 2.43,
+          "mint": 2738,
+          "premium_to_floor_pct": -78.22,
+          "signal_class": "EDGE"
+        }
+      },
+      "collectible": "Miles Morales",
+      "confidence": 83.0,
+      "first_seen": "2026-09-09T00:30:52.953256+00:00",
+      "floor_usd": 11.14,
+      "key": "https://vevealpha.com/c/miles-morales|2107",
+      "last_seen": "2026-09-09T00:30:52.953256+00:00",
+      "latest_ask_usd": 5.34,
+      "latest_floor_usd": 11.14,
+      "listed_date": "2026-08-31",
+      "mint": 2107,
+      "mint_score": 0.0,
+      "opportunity_score": 52.45,
+      "premium_to_floor_pct": -52.09,
+      "resolved_sale": null,
+      "signal_class": "EDGE",
+      "source_url": "https://vevealpha.com/c/miles-morales",
+      "stackr_url": "https://www.stackr.world/collections/veve/collectible/c62142c0-cf6b-4d96-92dd-ad0140ab0a41",
+      "status": "open",
+      "veve_url": "https://www.veve.me/collectibles/en/market/collectibles/c62142c0-cf6b-4d96-92dd-ad0140ab0a41"
+    },
+    {
+      "ask_omi": 11000,
+      "ask_usd": 2.43,
+      "baseline_outcomes": {},
+      "baselines": {
+        "cheapest": {
+          "ask_omi": 22222,
+          "ask_usd": 4.9,
+          "mint": 2772,
+          "premium_to_floor_pct": -56.0,
+          "signal_class": "EDGE"
+        },
+        "control": {
+          "ask_omi": 22222,
+          "ask_usd": 4.9,
+          "mint": 2772,
+          "premium_to_floor_pct": -56.0,
+          "signal_class": "EDGE"
+        },
+        "deepest_discount": {
+          "ask_omi": 22222,
+          "ask_usd": 4.9,
+          "mint": 2772,
+          "premium_to_floor_pct": -56.0,
+          "signal_class": "EDGE"
+        }
+      },
+      "collectible": "Miles Morales",
+      "confidence": 83.0,
+      "first_seen": "2026-09-09T00:30:52.953256+00:00",
+      "floor_usd": 11.14,
+      "key": "https://vevealpha.com/c/miles-morales|2738",
+      "last_seen": "2026-09-09T00:30:52.953256+00:00",
+      "latest_ask_usd": 2.43,
+      "latest_floor_usd": 11.14,
+      "listed_date": "2026-08-27",
+      "mint": 2738,
+      "mint_score": 0.0,
+      "opportunity_score": 52.45,
+      "premium_to_floor_pct": -78.22,
+      "resolved_sale": null,
+      "signal_class": "EDGE",
+      "source_url": "https://vevealpha.com/c/miles-morales",
+      "stackr_url": "https://www.stackr.world/collections/veve/collectible/c62142c0-cf6b-4d96-92dd-ad0140ab0a41",
+      "status": "open",
+      "veve_url": "https://www.veve.me/collectibles/en/market/collectibles/c62142c0-cf6b-4d96-92dd-ad0140ab0a41"
+    },
+    {
+      "ask_omi": 22222,
+      "ask_usd": 4.9,
+      "baseline_outcomes": {},
+      "baselines": {
+        "cheapest": {
+          "ask_omi": 11000,
+          "ask_usd": 2.43,
+          "mint": 2738,
+          "premium_to_floor_pct": -78.22,
+          "signal_class": "EDGE"
+        },
+        "control": {
+          "ask_omi": 11000,
+          "ask_usd": 2.43,
+          "mint": 2738,
+          "premium_to_floor_pct": -78.22,
+          "signal_class": "EDGE"
+        },
+        "deepest_discount": {
+          "ask_omi": 11000,
+          "ask_usd": 2.43,
+          "mint": 2738,
+          "premium_to_floor_pct": -78.22,
+          "signal_class": "EDGE"
+        }
+      },
+      "collectible": "Miles Morales",
+      "confidence": 90.0,
+      "first_seen": "2026-09-09T00:30:52.953256+00:00",
+      "floor_usd": 11.14,
+      "key": "https://vevealpha.com/c/miles-morales|2772",
+      "last_seen": "2026-09-09T00:30:52.953256+00:00",
+      "latest_ask_usd": 4.9,
+      "latest_floor_usd": 11.14,
+      "listed_date": "2026-08-30",
+      "mint": 2772,
+      "mint_score": 38.0,
+      "opportunity_score": 68.15,
+      "premium_to_floor_pct": -56.0,
+      "resolved_sale": null,
+      "signal_class": "EDGE",
+      "source_url": "https://vevealpha.com/c/miles-morales",
+      "stackr_url": "https://www.stackr.world/collections/veve/collectible/c62142c0-cf6b-4d96-92dd-ad0140ab0a41",
+      "status": "open",
+      "veve_url": "https://www.veve.me/collectibles/en/market/collectibles/c62142c0-cf6b-4d96-92dd-ad0140ab0a41"
+    },
+    {
+      "ask_omi": 515000,
+      "ask_usd": 113.59,
+      "baseline_outcomes": {},
+      "baselines": {
+        "cheapest": {
+          "ask_omi": 519000,
+          "ask_usd": 114.47,
+          "mint": 1884,
+          "premium_to_floor_pct": -35.77,
+          "signal_class": "EDGE"
+        },
+        "control": {
+          "ask_omi": 520000,
+          "ask_usd": 114.69,
+          "mint": 2049,
+          "premium_to_floor_pct": -35.65,
+          "signal_class": "EDGE"
+        },
+        "deepest_discount": {
+          "ask_omi": 519000,
+          "ask_usd": 114.47,
+          "mint": 1884,
+          "premium_to_floor_pct": -35.77,
+          "signal_class": "EDGE"
+        }
+      },
+      "collectible": "Spider-Man 2099",
+      "confidence": 83.0,
+      "first_seen": "2026-09-09T00:30:52.953256+00:00",
+      "floor_usd": 178.23,
+      "key": "https://vevealpha.com/c/spider-man-2099-secret-rare-41505b|1826",
+      "last_seen": "2026-09-09T00:30:52.953256+00:00",
+      "latest_ask_usd": 113.59,
+      "latest_floor_usd": 178.23,
+      "listed_date": "2026-09-06",
+      "mint": 1826,
+      "mint_score": 0.0,
+      "opportunity_score": 47.54,
+      "premium_to_floor_pct": -36.27,
+      "resolved_sale": null,
+      "signal_class": "EDGE",
+      "source_url": "https://vevealpha.com/c/spider-man-2099-secret-rare-41505b",
+      "stackr_url": "https://www.stackr.world/collections/veve/collectible/41505b27-6b61-4951-835f-d8976df8fcbf",
+      "status": "open",
+      "veve_url": "https://www.veve.me/collectibles/en/market/collectibles/41505b27-6b61-4951-835f-d8976df8fcbf"
+    },
+    {
+      "ask_omi": 519000,
+      "ask_usd": 114.47,
+      "baseline_outcomes": {},
+      "baselines": {
+        "cheapest": {
+          "ask_omi": 515000,
+          "ask_usd": 113.59,
+          "mint": 1826,
+          "premium_to_floor_pct": -36.27,
+          "signal_class": "EDGE"
+        },
+        "control": {
+          "ask_omi": 520000,
+          "ask_usd": 114.69,
+          "mint": 2049,
+          "premium_to_floor_pct": -35.65,
+          "signal_class": "EDGE"
+        },
+        "deepest_discount": {
+          "ask_omi": 515000,
+          "ask_usd": 113.59,
+          "mint": 1826,
+          "premium_to_floor_pct": -36.27,
+          "signal_class": "EDGE"
+        }
+      },
+      "collectible": "Spider-Man 2099",
+      "confidence": 83.0,
+      "first_seen": "2026-09-09T00:30:52.953256+00:00",
+      "floor_usd": 178.23,
+      "key": "https://vevealpha.com/c/spider-man-2099-secret-rare-41505b|1884",
+      "last_seen": "2026-09-09T00:30:52.953256+00:00",
+      "latest_ask_usd": 114.47,
+      "latest_floor_usd": 178.23,
+      "listed_date": "2026-09-06",
+      "mint": 1884,
+      "mint_score": 0.0,
+      "opportunity_score": 47.37,
+      "premium_to_floor_pct": -35.77,
+      "resolved_sale": null,
+      "signal_class": "EDGE",
+      "source_url": "https://vevealpha.com/c/spider-man-2099-secret-rare-41505b",
+      "stackr_url": "https://www.stackr.world/collections/veve/collectible/41505b27-6b61-4951-835f-d8976df8fcbf",
+      "status": "open",
+      "veve_url": "https://www.veve.me/collectibles/en/market/collectibles/41505b27-6b61-4951-835f-d8976df8fcbf"
+    },
+    {
+      "ask_omi": 520000,
+      "ask_usd": 114.69,
+      "baseline_outcomes": {},
+      "baselines": {
+        "cheapest": {
+          "ask_omi": 515000,
+          "ask_usd": 113.59,
+          "mint": 1826,
+          "premium_to_floor_pct": -36.27,
+          "signal_class": "EDGE"
+        },
+        "control": {
+          "ask_omi": 519000,
+          "ask_usd": 114.47,
+          "mint": 1884,
+          "premium_to_floor_pct": -35.77,
+          "signal_class": "EDGE"
+        },
+        "deepest_discount": {
+          "ask_omi": 515000,
+          "ask_usd": 113.59,
+          "mint": 1826,
+          "premium_to_floor_pct": -36.27,
+          "signal_class": "EDGE"
+        }
+      },
+      "collectible": "Spider-Man 2099",
+      "confidence": 83.0,
+      "first_seen": "2026-09-09T00:30:52.953256+00:00",
+      "floor_usd": 178.23,
+      "key": "https://vevealpha.com/c/spider-man-2099-secret-rare-41505b|2049",
+      "last_seen": "2026-09-09T00:30:52.953256+00:00",
+      "latest_ask_usd": 114.69,
+      "latest_floor_usd": 178.23,
+      "listed_date": "2026-09-01",
+      "mint": 2049,
+      "mint_score": 0.0,
+      "opportunity_score": 47.33,
+      "premium_to_floor_pct": -35.65,
+      "resolved_sale": null,
+      "signal_class": "EDGE",
+      "source_url": "https://vevealpha.com/c/spider-man-2099-secret-rare-41505b",
+      "stackr_url": "https://www.stackr.world/collections/veve/collectible/41505b27-6b61-4951-835f-d8976df8fcbf",
+      "status": "open",
+      "veve_url": "https://www.veve.me/collectibles/en/market/collectibles/41505b27-6b61-4951-835f-d8976df8fcbf"
+    },
+    {
+      "ask_omi": 30000000,
+      "ask_usd": 6616.8,
+      "baseline_outcomes": {},
+      "baselines": {
+        "cheapest": {
+          "ask_omi": 27939393,
+          "ask_usd": 6162.31,
+          "mint": 93,
+          "premium_to_floor_pct": -1.0,
+          "signal_class": "GRAIL"
+        },
+        "control": {
+          "ask_omi": 38000000,
+          "ask_usd": 8381.28,
+          "mint": 104,
+          "premium_to_floor_pct": 34.65,
+          "signal_class": "WATCH"
+        },
+        "deepest_discount": {
+          "ask_omi": 27939393,
+          "ask_usd": 6162.31,
+          "mint": 93,
+          "premium_to_floor_pct": -1.0,
+          "signal_class": "GRAIL"
+        }
+      },
+      "collectible": "Spider-Man: Miles Morales - Animated",
+      "confidence": 90.0,
+      "first_seen": "2026-09-09T00:30:52.953256+00:00",
+      "floor_usd": 6224.62,
+      "key": "https://vevealpha.com/c/spider-man-miles-morales-animated|112",
+      "last_seen": "2026-09-09T00:30:52.953256+00:00",
+      "latest_ask_usd": 6616.8,
+      "latest_floor_usd": 6224.62,
+      "listed_date": "2026-09-07",
+      "mint": 112,
+      "mint_score": 74.0,
+      "opportunity_score": 64.14,
+      "premium_to_floor_pct": 6.3,
+      "resolved_sale": null,
+      "signal_class": "GRAIL",
+      "source_url": "https://vevealpha.com/c/spider-man-miles-morales-animated",
+      "stackr_url": "https://www.stackr.world/collections/veve/collectible/7475a966-ed09-4fa8-9b3f-ca6833ea98af",
+      "status": "open",
+      "veve_url": "https://www.veve.me/collectibles/en/market/collectibles/7475a966-ed09-4fa8-9b3f-ca6833ea98af"
+    },
+    {
+      "ask_omi": 27939393,
+      "ask_usd": 6162.31,
+      "baseline_outcomes": {},
+      "baselines": {
+        "cheapest": {
+          "ask_omi": 30000000,
+          "ask_usd": 6616.8,
+          "mint": 112,
+          "premium_to_floor_pct": 6.3,
+          "signal_class": "GRAIL"
+        },
+        "control": {
+          "ask_omi": 30000000,
+          "ask_usd": 6616.8,
+          "mint": 112,
+          "premium_to_floor_pct": 6.3,
+          "signal_class": "GRAIL"
+        },
+        "deepest_discount": {
+          "ask_omi": 30000000,
+          "ask_usd": 6616.8,
+          "mint": 112,
+          "premium_to_floor_pct": 6.3,
+          "signal_class": "GRAIL"
+        }
+      },
+      "collectible": "Spider-Man: Miles Morales - Animated",
+      "confidence": 90.0,
+      "first_seen": "2026-09-09T00:30:52.953256+00:00",
+      "floor_usd": 6224.62,
+      "key": "https://vevealpha.com/c/spider-man-miles-morales-animated|93",
+      "last_seen": "2026-09-09T00:30:52.953256+00:00",
+      "latest_ask_usd": 6162.31,
+      "latest_floor_usd": 6224.62,
+      "listed_date": "2026-09-07",
+      "mint": 93,
+      "mint_score": 86.0,
+      "opportunity_score": 71.28,
+      "premium_to_floor_pct": -1.0,
+      "resolved_sale": null,
+      "signal_class": "GRAIL",
+      "source_url": "https://vevealpha.com/c/spider-man-miles-morales-animated",
+      "stackr_url": "https://www.stackr.world/collections/veve/collectible/7475a966-ed09-4fa8-9b3f-ca6833ea98af",
+      "status": "open",
+      "veve_url": "https://www.veve.me/collectibles/en/market/collectibles/7475a966-ed09-4fa8-9b3f-ca6833ea98af"
+    },
+    {
+      "ask_omi": 600000,
+      "ask_usd": 132.34,
+      "baseline_outcomes": {},
+      "baselines": {
+        "cheapest": {
+          "ask_omi": 650000,
+          "ask_usd": 143.36,
+          "mint": 453,
+          "premium_to_floor_pct": -43.2,
+          "signal_class": "EDGE"
+        },
+        "control": {
+          "ask_omi": 650000,
+          "ask_usd": 143.36,
+          "mint": 453,
+          "premium_to_floor_pct": -43.2,
+          "signal_class": "EDGE"
+        },
+        "deepest_discount": {
+          "ask_omi": 650000,
+          "ask_usd": 143.36,
+          "mint": 453,
+          "premium_to_floor_pct": -43.2,
+          "signal_class": "EDGE"
+        }
+      },
+      "collectible": "Yoda #1",
+      "confidence": 83.0,
+      "first_seen": "2026-09-09T00:30:52.953256+00:00",
+      "floor_usd": 252.41,
+      "key": "https://vevealpha.com/c/yoda-secret-rare|1273",
+      "last_seen": "2026-09-09T00:30:52.953256+00:00",
+      "latest_ask_usd": 132.34,
+      "latest_floor_usd": 252.41,
+      "listed_date": "2026-08-31",
+      "mint": 1273,
+      "mint_score": 0.0,
+      "opportunity_score": 49.83,
+      "premium_to_floor_pct": -47.57,
+      "resolved_sale": null,
+      "signal_class": "EDGE",
+      "source_url": "https://vevealpha.com/c/yoda-secret-rare",
+      "stackr_url": "https://www.stackr.world/collections/veve/comic-cover/4f76b24d-2a16-45b0-9f17-1f62e385ce6a",
+      "status": "open",
+      "veve_url": "https://www.veve.me/collectibles/en/market/comics/4f76b24d-2a16-45b0-9f17-1f62e385ce6a"
+    },
+    {
+      "ask_omi": 650000,
+      "ask_usd": 143.36,
+      "baseline_outcomes": {},
+      "baselines": {
+        "cheapest": {
+          "ask_omi": 600000,
+          "ask_usd": 132.34,
+          "mint": 1273,
+          "premium_to_floor_pct": -47.57,
+          "signal_class": "EDGE"
+        },
+        "control": {
+          "ask_omi": 600000,
+          "ask_usd": 132.34,
+          "mint": 1273,
+          "premium_to_floor_pct": -47.57,
+          "signal_class": "EDGE"
+        },
+        "deepest_discount": {
+          "ask_omi": 600000,
+          "ask_usd": 132.34,
+          "mint": 1273,
+          "premium_to_floor_pct": -47.57,
+          "signal_class": "EDGE"
+        }
+      },
+      "collectible": "Yoda #1",
+      "confidence": 83.0,
+      "first_seen": "2026-09-09T00:30:52.953256+00:00",
+      "floor_usd": 252.41,
+      "key": "https://vevealpha.com/c/yoda-secret-rare|453",
+      "last_seen": "2026-09-09T00:30:52.953256+00:00",
+      "latest_ask_usd": 143.36,
+      "latest_floor_usd": 252.41,
+      "listed_date": "2026-08-29",
+      "mint": 453,
+      "mint_score": 0.0,
+      "opportunity_score": 48.39,
+      "premium_to_floor_pct": -43.2,
+      "resolved_sale": null,
+      "signal_class": "EDGE",
+      "source_url": "https://vevealpha.com/c/yoda-secret-rare",
+      "stackr_url": "https://www.stackr.world/collections/veve/comic-cover/4f76b24d-2a16-45b0-9f17-1f62e385ce6a",
+      "status": "open",
+      "veve_url": "https://www.veve.me/collectibles/en/market/comics/4f76b24d-2a16-45b0-9f17-1f62e385ce6a"
+    }
+  ],
   "summary": {
-    "tracked_alerts": 0,
+    "baseline_sell_through_pct": {
+      "cheapest": 0.0,
+      "control": 0.0,
+      "deepest_discount": 0.0
+    },
+    "edge_sell_through_pct": 0.0,
+    "grail_sell_through_pct": 0.0,
+    "median_days_to_observed_sale": null,
+    "median_return_proxy_pct": null,
+    "overall_sell_through_pct": 0.0,
     "resolved_sales": 0,
-    "status": "collecting"
-  }
+    "status": "collecting",
+    "tracked_alerts": 15
+  },
+  "updated_at": "2026-09-09T00:30:52.953256+00:00",
+  "version": 1
 }
