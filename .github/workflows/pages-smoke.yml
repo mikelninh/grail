@@ -19,7 +19,7 @@ permissions:
 jobs:
   smoke:
     runs-on: ubuntu-latest
-    timeout-minutes: 12
+    timeout-minutes: 8
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -28,18 +28,21 @@ jobs:
       - run: python -m pip install -e .
       - run: python -m unittest discover -s tests -v
       - name: Build live market, inventory and graph
-        run: python scripts/build_pages.py | tee pages-build.txt
+        run: |
+          set -o pipefail
+          python scripts/build_pages.py | tee pages-build.txt
       - name: Enrich provider-chain ownership golden cases
-        run: python scripts/enrich_provider_ownership.py | tee provider-owner-build.txt
-      - name: Discover golden exact-token mappings
-        continue-on-error: true
-        run: python scripts/discover_golden_mappings.py | tee mapping-build.txt
-      - name: Promote discovery registry for smoke
-        run: mv data/token_mappings.next.json data/token_mappings.json
-      - name: Enrich exact Collect ownership where mapped
-        run: python scripts/enrich_ownership.py | tee ownership-build.txt
+        run: |
+          set -o pipefail
+          python scripts/enrich_provider_ownership.py | tee provider-owner-build.txt
+      - name: Enrich exact Collect ownership from verified registry
+        run: |
+          set -o pipefail
+          python scripts/enrich_ownership.py | tee ownership-build.txt
       - name: Build persistent forward-test view
-        run: python scripts/build_forward.py | tee forward-build.txt
+        run: |
+          set -o pipefail
+          python scripts/build_forward.py | tee forward-build.txt
       - name: Validate definition-of-done data contracts
         run: |
           python - <<'PY'
@@ -55,8 +58,8 @@ jobs:
           assert len(p['candidates']) >= 10
           assert g['stats']['nodes'] > 20 and g['stats']['edges'] > 20
           assert g['stats'].get('provider_chain_owners',0) >= 2
-          assert 'verified_chain_owners' in g['stats']
-          assert 'tracked_alerts' in f['summary']
+          assert g['stats'].get('verified_chain_owners',0) >= 1
+          assert 'tracked_alerts' in f['summary'] and 'checkpoint_counts' in f['summary']
           assert 'live' in i['counts'] and 'stale' in i['counts'] and 'sold' in i['counts']
           assert all(r['signal_class'] != 'GRAIL' for r in p['candidates'] if r['mint'] == 2772 and 'Miles Morales' in r['collectible'])
           assert all(r.get('signal_class') not in {'GRAIL','EDGE','WATCH'} for r in p['candidates'] if r.get('availability_status') == 'sold-after-listing')
@@ -64,9 +67,12 @@ jobs:
           g851=by[('https://vevealpha.com/c/marvel-disney-what-if-goofy-became-spider-man-common',851)]
           s777=by[('https://vevealpha.com/c/spider-man-the-amazing-spider-man',777)]
           assert g851.get('owner') and s777.get('owner')
-          assert any(r.get('mint')==777 and r.get('owner_status')=='verified-chain' for r in p['candidates'])
-          assert Path('site/data/forward.json').exists() and Path('site/data/inventory.json').exists()
-          print({'counts':p['counts'],'inventory':i['counts'],'graph':g['stats'],'forward':f['summary'],'provider_owners':po,'exact_ownership':{'resolved':len(o['resolutions']),'errors':len(o['errors'])},'errors':p['errors']})
+          exact=[x for x in o['resolutions'] if x.get('source_url')=='https://vevealpha.com/c/spider-man-the-amazing-spider-man' and x.get('mint')==777]
+          assert exact and exact[0].get('verified') and exact[0].get('token_id')=='13680890'
+          r777=[r for r in p['candidates'] if r.get('source_url')=='https://vevealpha.com/c/spider-man-the-amazing-spider-man' and r.get('mint')==777]
+          assert r777 and r777[0].get('owner_status')=='verified-chain'
+          assert r777[0].get('signal_class')=='REJECT'
+          print({'counts':p['counts'],'inventory':i['counts'],'graph':g['stats'],'forward':f['summary'],'provider_owners':po,'exact_ownership':o,'errors':p['errors']})
           PY
       - uses: actions/upload-artifact@v4
         with:
