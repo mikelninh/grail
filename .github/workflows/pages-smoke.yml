@@ -28,6 +28,9 @@ jobs:
       - run: python -m unittest discover -s tests -v
       - name: Build live market, inventory and graph
         run: python scripts/build_pages.py | tee pages-build.txt
+      - name: Research public edition lookup source
+        continue-on-error: true
+        run: python scripts/discover_provider_edition_endpoint.py | tee provider-edition-research.txt
       - name: Discover golden token mappings
         run: python scripts/discover_golden_mappings.py | tee mapping-build.txt
       - name: Promote discovery registry for smoke
@@ -62,5 +65,7 @@ jobs:
       - uses: actions/upload-artifact@v4
         with:
           name: grail-v05-definition-done
-          path: site
+          path: |
+            site
+            provider-edition-research.txt
           retention-days: 14
