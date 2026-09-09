@@ -42,12 +42,26 @@ class PersonalHunterTests(unittest.TestCase):
         self.assertTrue(any("Star Wars" in x for x in why))
         self.assertTrue(any("ip" in x for x in why))
 
+    def test_watchlist_candidate_gets_priority(self):
+        watched = row(source_url="https://vevealpha.com/c/watched", collectible="Yoda", mint=41, opportunity_score=61)
+        plain = row(source_url="https://vevealpha.com/c/plain", collectible="Vader", mint=66, opportunity_score=70)
+        prefs = HunterPreferences(watch_keys={candidate_key(watched)})
+        picks = rank_personal([plain, watched], prefs, limit=2)
+        self.assertEqual(picks[0]["collectible"], "Yoda")
+        self.assertIn("on your watchlist", picks[0]["personal_why"])
+
     def test_friend_owner_hint_is_detected_and_penalised(self):
         prefs = HunterPreferences(friend_owner_hints={"Dorian": "0x67...9938"})
         score1, why1 = score_personal(row(current_owner="0x67abcdef9938"), prefs)
         score2, _ = score_personal(row(current_owner="0x9912340000"), prefs)
         self.assertLess(score1, score2)
         self.assertTrue(any("Dorian" in x for x in why1))
+
+    def test_unicode_wallet_ellipsis_supported(self):
+        prefs = HunterPreferences(friend_owner_hints={"Dorian": "0x67…9938"})
+        score, why = score_personal(row(owner="0x67abcdef9938"), prefs)
+        self.assertTrue(any("Dorian" in x for x in why))
+        self.assertGreater(score, 0)
 
     def test_rank_deduplicates_collectible(self):
         rows = [row(mint=66), row(mint=501, opportunity_score=69), row(source_url="https://vevealpha.com/c/other", collectible="Yoda", mint=41)]
