@@ -29,6 +29,7 @@ def main() -> int:
     nodes = {n["id"]: n for n in graph.get("nodes", [])}
     edges = list(graph.get("edges", []))
     seen = {(e.get("source"), e.get("relation"), e.get("target")) for e in edges}
+    conflicts: list[dict[str, Any]] = []
 
     def node(node_id: str, kind: str, label: str, **attrs) -> None:
         nodes.setdefault(node_id, {"id": node_id, "kind": kind, "label": label, **attrs})
@@ -52,6 +53,25 @@ def main() -> int:
         edge(mint_id, "mapped_to_token", token_id, resolution.evidence_url)
 
         if row is not None:
+            provider_owner = row.get("owner") if row.get("owner_evidence_level") == "provider-chain" else row.get("provider_owner")
+            if provider_owner:
+                row["provider_owner"] = provider_owner
+                row["provider_owner_evidence_url"] = row.get("provider_owner_evidence_url") or row.get("source_url")
+            if provider_owner and resolution.owner and str(provider_owner).lower() != str(resolution.owner).lower():
+                conflict = {
+                    "source_url": resolution.source_url,
+                    "mint": resolution.mint,
+                    "provider_owner": provider_owner,
+                    "exact_token_owner": resolution.owner,
+                    "preferred_source": "collectscan-exact-token",
+                    "reason": "provider edition owner differs from independently resolved exact Collect token owner",
+                }
+                conflicts.append(conflict)
+                row["owner_source_conflict"] = True
+                row["owner_conflict"] = conflict
+            else:
+                row["owner_source_conflict"] = False
+
             row["chain_mapping_status"] = "verified" if resolution.verified else "mapped-unresolved-owner"
             row["collect_contract"] = resolution.contract
             row["collect_token_id"] = resolution.token_id
@@ -87,20 +107,24 @@ def main() -> int:
     graph["edges"] = edges
     graph.setdefault("stats", {})["verified_chain_owners"] = sum(1 for r in resolutions if r.verified)
     graph["stats"]["token_mappings"] = len(resolutions)
+    graph["stats"]["owner_source_conflicts"] = len(conflicts)
     graph["ownership_errors"] = errors
+    graph["owner_source_conflicts"] = conflicts
 
     graph_path.write_text(json.dumps(graph, indent=2), encoding="utf-8")
     opportunities_path.write_text(json.dumps(payload, indent=2), encoding="utf-8")
     (ROOT / "site" / "data" / "ownership.json").write_text(json.dumps({
         "resolutions": [public_resolution(r) for r in resolutions],
+        "conflicts": conflicts,
         "errors": errors,
         "rules": [
             "No VeVe edition-to-token inference.",
             "Only evidence-registered exact mappings can produce exact-token current-owner edges.",
+            "When provider-chain and exact-token owners disagree, exact-token evidence is preferred and the conflict is surfaced.",
         ],
     }, indent=2), encoding="utf-8")
 
-    print(json.dumps({"mappings": len(resolutions), "verified_owners": sum(1 for r in resolutions if r.verified), "errors": errors}, indent=2))
+    print(json.dumps({"mappings": len(resolutions), "verified_owners": sum(1 for r in resolutions if r.verified), "owner_source_conflicts": len(conflicts), "errors": errors}, indent=2))
     return 0
 
 
