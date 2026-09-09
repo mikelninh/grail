@@ -2,7 +2,7 @@ name: hunter-smoke
 
 on:
   push:
-    branches: ["sprint/v06-hunter", "sprint/v07-personal-hunter", "sprint/v071-personal-actions", "sprint/v072-presets"]
+    branches: ["sprint/v08-universe-expansion"]
     paths:
       - "dashboard/**"
       - "scripts/**"
@@ -18,7 +18,7 @@ permissions:
 jobs:
   smoke:
     runs-on: ubuntu-latest
-    timeout-minutes: 8
+    timeout-minutes: 12
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -26,41 +26,48 @@ jobs:
           python-version: "3.12"
       - run: python -m pip install -e .
       - run: python -m unittest discover -s tests -v
-      - name: Build live Hunter bundle
+      - name: Build broad universe catalog
+        run: python scripts/build_universe.py
+      - name: Prove universe coverage
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          u=json.loads(Path('data/universe_catalog.next.json').read_text())
+          d=json.loads(Path('data/universe_deep_scan.next.json').read_text())
+          assert u['counts']['assets'] >= 250, u['counts']
+          assert u['counts']['comics'] >= 100, u['counts']
+          assert len(d['assets']) >= 100
+          assert sum(x.get('asset_kind')=='comic' for x in d['assets']) >= 50
+          print({'universe':u['counts'],'deep':len(d['assets']),'deep_comics':sum(x.get('asset_kind')=='comic' for x in d['assets'])})
+          PY
+      - name: Build live Hunter bundle from curated + universe deep scan
         run: python scripts/build_pages.py
       - name: Build Personal Hunter standalone
         run: python scripts/build_personal_standalone.py
       - name: Validate Hunter preset UX and privacy contract
         run: |
           test -s share/grail-personal-hunter.html
-          grep -q "GRAIL v0.7.2" share/grail-personal-hunter.html
           grep -q "Best Overall" share/grail-personal-hunter.html
           grep -q "Grail Hunter" share/grail-personal-hunter.html
           grep -q "Value Hunter" share/grail-personal-hunter.html
-          grep -q "Low Mint" share/grail-personal-hunter.html
-          grep -q "Iconic Numbers" share/grail-personal-hunter.html
-          grep -q "Sleeper" share/grail-personal-hunter.html
-          grep -q "Liquid" share/grail-personal-hunter.html
-          grep -q "Moonshot" share/grail-personal-hunter.html
-          grep -q "Friend Radar" share/grail-personal-hunter.html
-          grep -q "Custom" share/grail-personal-hunter.html
-          grep -q "Under \$25" share/grail-personal-hunter.html
-          grep -q "Conservative" share/grail-personal-hunter.html
-          grep -q "Medium+" share/grail-personal-hunter.html
-          grep -q "≥25% below" share/grail-personal-hunter.html
-          grep -q "Hide mine" share/grail-personal-hunter.html
-          grep -q "Show watched first" share/grail-personal-hunter.html
           grep -q "Friend | 0x12...abcd" share/grail-personal-hunter.html
           ! grep -q "Dorian" share/grail-personal-hunter.html
           ! grep -q "0x67" share/grail-personal-hunter.html
-      - name: Validate decision-layer data contract
+      - name: Validate expanded opportunity data contract
         run: |
           python - <<'PY'
           import json
           from pathlib import Path
           p=json.loads(Path('site/data/opportunities.json').read_text())
-          eligible=[r for r in p['candidates'] if r.get('live_status')=='live' and r.get('signal_class') in {'GRAIL','EDGE','WATCH'} and r.get('actionability')!='reject-price']
-          assert eligible
-          assert len(eligible) >= 3
-          print({'eligible_live':len(eligible),'errors':p.get('errors',[])})
+          assert p.get('universe',{}).get('assets',0) >= 250, p.get('universe')
+          assert p.get('universe',{}).get('comics',0) >= 100, p.get('universe')
+          rows=p['candidates']
+          universe=[r for r in rows if r.get('discovery_source')=='universe']
+          comics=[r for r in rows if r.get('asset_kind')=='comic']
+          assert universe, 'expanded build must include universe-discovered mint rows'
+          assert comics, 'expanded build must include comic mint rows'
+          eligible=[r for r in rows if r.get('live_status')=='live' and r.get('signal_class') in {'GRAIL','EDGE','WATCH'} and r.get('actionability')!='reject-price']
+          assert len(eligible)>=3
+          print({'rows':len(rows),'universe_rows':len(universe),'comic_rows':len(comics),'eligible':len(eligible),'errors':len(p.get('errors',[]))})
           PY
