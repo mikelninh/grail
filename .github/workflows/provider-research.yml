@@ -4,7 +4,9 @@ on:
   push:
     branches: ["sprint/v05-definition-done"]
     paths:
+      - "src/grail/provider_edition.py"
       - "scripts/discover_provider_edition_endpoint.py"
+      - "scripts/lookup_golden_provider.py"
       - ".github/workflows/provider-research.yml"
   workflow_dispatch:
 
@@ -22,8 +24,13 @@ jobs:
           python-version: "3.12"
       - name: Discover public edition lookup implementation
         run: python scripts/discover_provider_edition_endpoint.py | tee provider-edition-research.txt
+      - name: Query golden edition 851
+        continue-on-error: true
+        run: python scripts/lookup_golden_provider.py | tee golden-851-provider.txt
       - uses: actions/upload-artifact@v4
         with:
           name: provider-edition-research
-          path: provider-edition-research.txt
+          path: |
+            provider-edition-research.txt
+            golden-851-provider.txt
           retention-days: 7
