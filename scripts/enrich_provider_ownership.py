@@ -27,12 +27,12 @@ def main() -> int:
     def add_node(node_id: str, kind: str, label: str, **attrs) -> None:
         nodes.setdefault(node_id, {"id": node_id, "kind": kind, "label": label, **attrs})
 
-    def add_edge(source: str, relation: str, target: str, evidence: str, **attrs) -> None:
-        key = (source, relation, target)
+    def add_edge(source_id: str, relation: str, target_id: str, evidence: str, **attrs) -> None:
+        key = (source_id, relation, target_id)
         if key in seen:
             return
         seen.add(key)
-        edges.append({"source": source, "relation": relation, "target": target, "evidence": evidence, **attrs})
+        edges.append({"source": source_id, "relation": relation, "target": target_id, "evidence": evidence, **attrs})
 
     for target in targets:
         source_url = str(target["source_url"])
@@ -41,6 +41,7 @@ def main() -> int:
             result = lookup_edition(source_url, mint, timeout=20)
             public = asdict(result)
             public.pop("raw", None)
+            public["source_url"] = source_url
             public["label"] = target.get("label")
             public["verification_level"] = "provider-chain" if result.owner else "provider-seen"
             results.append(public)
@@ -72,7 +73,7 @@ def main() -> int:
                 wallet_id = f"wallet:{result.owner.lower()}"
                 add_node(wallet_id, "wallet", result.owner)
                 add_edge(mint_id, "owned_by", wallet_id, result.evidence_url,
-                         verification_level="provider-chain", source="find_edition_v2")
+                         verification_level="provider-chain", provider_source="find_edition_v2")
         except Exception as exc:
             errors.append({"source_url": source_url, "mint": mint, "label": target.get("label"), "error": f"{type(exc).__name__}: {exc}"})
 
