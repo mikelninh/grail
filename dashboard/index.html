@@ -4,14 +4,15 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <meta name="theme-color" content="#080a0f" />
-  <title>GRAIL — Collector Intelligence</title>
-  <meta name="description" content="Evidence-first collector intelligence for VeVe, StackR, OMI and Collect Chain." />
-  <link rel="stylesheet" href="./styles.css" />
+  <title>GRAIL Hunter — Collector Intelligence</title>
+  <meta name="description" content="Three collector opportunities worth looking at today, backed by VeVe, StackR, OMI and Collect Chain evidence." />
+  <link rel="stylesheet" href="./styles.css?v=0.6.0" />
+  <link rel="stylesheet" href="./hunter.css?v=0.6.0" />
 </head>
 <body>
   <div class="noise"></div>
   <header class="topbar">
-    <a class="brand" href="./" aria-label="GRAIL home"><span class="sigil">◇</span><span><b>GRAIL</b><small>collector intelligence</small></span></a>
+    <a class="brand" href="./" aria-label="GRAIL home"><span class="sigil">◇</span><span><b>GRAIL</b><small>hunter · collector intelligence</small></span></a>
     <div class="top-actions">
       <button id="alphaBtn" class="ghost-btn">Alpha</button>
       <button id="portfolioBtn" class="ghost-btn">Portfolio</button>
@@ -25,9 +26,9 @@
   <main>
     <section class="hero">
       <div class="hero-copy">
-        <p class="eyebrow">VEVE · STACKR · OMI · COLLECT CHAIN</p>
-        <h1>Find what the floor<br><em>doesn’t understand.</em></h1>
-        <p class="lede">GRAIL separates thesis-grade collector significance from ordinary price gaps — then tracks whether the signal was live, who owns the mapped edition, what comparable mints realised, and whether GRAIL actually beats simple baselines.</p>
+        <p class="eyebrow">GRAIL HUNTER · VEVE · STACKR · OMI · COLLECT CHAIN</p>
+        <h1>Don’t scan the market.<br><em>Know where to look.</em></h1>
+        <p class="lede">Hunter compresses the market into the few things that deserve attention now — thesis, live evidence, price, ownership and risk first. The full research terminal is still underneath when you want it.</p>
       </div>
       <div class="hero-orb"><div class="orb-core"><span id="heroScore">—</span><small>top live signal</small></div></div>
     </section>
@@ -68,7 +69,8 @@
   <dialog id="graphDialog" class="modal wide"><form method="dialog"><button class="modal-x">×</button></form><p class="eyebrow">COLLECTOR GRAPH</p><h2>Evidence graph</h2><p class="modal-copy">Listings, sales, semantic evidence, provider-chain ownership, exact token mappings and current owners. Historical buyer ≠ current owner; conflicting owner sources remain visible.</p><div id="graphStats" class="graph-stats"></div><div id="premiumEvidence" class="premium-evidence"></div><div id="mappingEvidence" class="premium-evidence"></div><div id="graphExamples" class="graph-examples"></div></dialog>
 
   <div id="toast" class="toast" role="status"></div>
-  <script src="./app.js" defer></script>
-  <script src="./ownership-proof.js" defer></script>
+  <script src="./app.js?v=0.6.0" defer></script>
+  <script src="./ownership-proof.js?v=0.6.0" defer></script>
+  <script src="./hunter.js?v=0.6.0" defer></script>
 </body>
 </html>
