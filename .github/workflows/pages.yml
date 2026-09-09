@@ -10,9 +10,7 @@ on:
       - "src/grail/**"
       - "data/watchlist.json"
       - "data/token_mappings.json"
-      - "scripts/build_pages.py"
-      - "scripts/enrich_ownership.py"
-      - "scripts/build_forward.py"
+      - "scripts/**"
       - ".github/workflows/pages.yml"
   schedule:
     - cron: "37 * * * *"
@@ -36,22 +34,34 @@ jobs:
           python-version: "3.12"
       - run: python -m pip install -e .
       - run: python -m unittest discover -s tests -v
-      - name: Build live static site + graph snapshot
+
+      - name: Build live market, sales, inventory and evidence graph
         run: python scripts/build_pages.py
-      - name: Resolve exact Collect Chain ownership mappings
+
+      - name: Discover evidence-backed golden token mappings
+        run: python scripts/discover_golden_mappings.py
+
+      - name: Promote discovered mapping registry for this build
+        run: mv data/token_mappings.next.json data/token_mappings.json
+
+      - name: Resolve exact Collect Chain owners and transfers
         run: python scripts/enrich_ownership.py
+
       - name: Update forward-test alpha ledger
         run: python scripts/build_forward.py
-      - name: Persist forward evidence
+
+      - name: Persist evidence state
         run: |
           mv data/forward_state.next.json data/forward_state.json
+          mv data/inventory_state.next.json data/inventory_state.json
           git config user.name "grail-evidence-bot"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/forward_state.json
+          git add data/forward_state.json data/inventory_state.json data/token_mappings.json
           if ! git diff --cached --quiet; then
-            git commit -m "data: update GRAIL forward evidence [skip ci]"
+            git commit -m "data: update GRAIL evidence state [skip ci]"
             git push
           fi
+
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v4
         with:
