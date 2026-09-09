@@ -1,6 +1,7 @@
 name: pages
 
-# v0.6.1 Hunter production gate
+# GRAIL production data/build pipeline. GitHub Pages remains a secondary host;
+# the canonical share artifact is share/grail-personal-hunter.html.
 on:
   workflow_dispatch:
   push:
@@ -44,21 +45,23 @@ jobs:
         run: python scripts/enrich_ownership.py
       - name: Update forward-test alpha ledger
         run: python scripts/build_forward.py
+      - name: Build Personal Hunter standalone
+        run: python scripts/build_personal_standalone.py
       - name: Publish immutable static entrypoints
         run: |
           cp site/index.html site/hunter-v061-static.html
           cp site/research.html site/research-v061-static.html
-      - name: Persist evidence state without blocking deploy
+      - name: Persist evidence and standalone Hunter without blocking deploy
         continue-on-error: true
         run: |
           mv data/forward_state.next.json data/forward_state.json
           mv data/inventory_state.next.json data/inventory_state.json
           git config user.name "grail-evidence-bot"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/forward_state.json data/inventory_state.json
+          git add data/forward_state.json data/inventory_state.json share/grail-personal-hunter.html
           if ! git diff --cached --quiet; then
-            git commit -m "data: update GRAIL evidence state [skip ci]"
-            git push || echo "Evidence push raced with a newer main commit; deploy continues and next run will reconcile."
+            git commit -m "data: refresh GRAIL evidence + Personal Hunter [skip ci]"
+            git push || echo "Evidence/share push raced with a newer main commit; deploy continues and next run will reconcile."
           fi
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v4
