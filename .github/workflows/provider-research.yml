@@ -6,6 +6,7 @@ on:
     paths:
       - "src/grail/provider_edition.py"
       - "scripts/discover_catalog_contract.py"
+      - "scripts/probe_market_rpc.py"
       - ".github/workflows/provider-research.yml"
   workflow_dispatch:
 
@@ -15,7 +16,7 @@ permissions:
 jobs:
   research:
     runs-on: ubuntu-latest
-    timeout-minutes: 5
+    timeout-minutes: 7
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -24,8 +25,12 @@ jobs:
       - run: python -m pip install -e .
       - name: Discover public catalog contract
         run: python scripts/discover_catalog_contract.py | tee catalog-contract.txt
+      - name: Probe market-wide listings RPC
+        run: python scripts/probe_market_rpc.py | tee market-rpc.txt
       - uses: actions/upload-artifact@v4
         with:
-          name: catalog-contract-research
-          path: catalog-contract.txt
+          name: universe-research
+          path: |
+            catalog-contract.txt
+            market-rpc.txt
           retention-days: 7
