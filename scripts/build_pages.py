@@ -115,9 +115,10 @@ def build_graph(payload: dict, sales: list, premium_stats: dict, inventory: dict
             edge(sale_id, "bought_by", buyer_id, sale.source_url, sale.observed_at)
             edge(mint_id, "last_observed_buyer", buyer_id, sale.source_url, sale.observed_at)
 
-    for kind, stat in premium_stats.items():
-        node_id = f"premium:{kind}"
-        _node(nodes, node_id, "realised_premium_evidence", kind, **stat)
+    for signal_kind, stat in premium_stats.items():
+        node_id = f"premium:{signal_kind}"
+        attrs = {k: v for k, v in stat.items() if k != "kind"}
+        _node(nodes, node_id, "realised_premium_evidence", signal_kind, **attrs)
 
     return {
         "generated_at": payload.get("generated_at"), "nodes": list(nodes.values()), "edges": edges,
