@@ -30,6 +30,7 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
+    timeout-minutes: 12
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -37,6 +38,21 @@ jobs:
           python-version: "3.12"
       - run: python -m pip install -e .
       - run: python -m unittest discover -s tests -v
+      - name: Discover broad universe and select deep-scan cohort
+        run: python scripts/build_universe.py
+      - name: Validate universe coverage gate
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          p=json.loads(Path('data/universe_catalog.next.json').read_text())
+          assert p['counts']['assets'] >= 250, p['counts']
+          assert p['counts']['comics'] >= 100, p['counts']
+          d=json.loads(Path('data/universe_deep_scan.next.json').read_text())
+          assert len(d['assets']) >= 100, len(d['assets'])
+          assert sum(x.get('asset_kind')=='comic' for x in d['assets']) >= 50
+          print({'universe':p['counts'],'deep_scan':len(d['assets'])})
+          PY
       - name: Build live market, sales, inventory and evidence graph
         run: python scripts/build_pages.py
       - name: Enrich provider-chain ownership golden cases
@@ -51,16 +67,18 @@ jobs:
         run: |
           cp site/index.html site/hunter-v061-static.html
           cp site/research.html site/research-v061-static.html
-      - name: Persist evidence and standalone Hunter without blocking deploy
+      - name: Persist evidence, universe cache and standalone Hunter without blocking deploy
         continue-on-error: true
         run: |
           mv data/forward_state.next.json data/forward_state.json
           mv data/inventory_state.next.json data/inventory_state.json
+          mv data/universe_catalog.next.json data/universe_catalog.json
+          mv data/universe_deep_scan.next.json data/universe_deep_scan.json
           git config user.name "grail-evidence-bot"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/forward_state.json data/inventory_state.json share/grail-personal-hunter.html
+          git add data/forward_state.json data/inventory_state.json data/universe_catalog.json data/universe_deep_scan.json share/grail-personal-hunter.html
           if ! git diff --cached --quiet; then
-            git commit -m "data: refresh GRAIL evidence + Personal Hunter [skip ci]"
+            git commit -m "data: refresh GRAIL universe + evidence + Hunter [skip ci]"
             git push || echo "Evidence/share push raced with a newer main commit; deploy continues and next run will reconcile."
           fi
       - uses: actions/configure-pages@v5
