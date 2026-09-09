@@ -39,12 +39,7 @@ jobs:
         run: python scripts/build_pages.py
       - name: Enrich provider-chain ownership golden cases
         run: python scripts/enrich_provider_ownership.py
-      - name: Discover evidence-backed exact token mappings
-        continue-on-error: true
-        run: python scripts/discover_golden_mappings.py
-      - name: Promote discovered mapping registry for this build
-        run: mv data/token_mappings.next.json data/token_mappings.json
-      - name: Resolve exact Collect Chain owners and transfers where mapped
+      - name: Resolve exact Collect Chain owners and transfers from verified registry
         run: python scripts/enrich_ownership.py
       - name: Update forward-test alpha ledger
         run: python scripts/build_forward.py
@@ -54,7 +49,7 @@ jobs:
           mv data/inventory_state.next.json data/inventory_state.json
           git config user.name "grail-evidence-bot"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/forward_state.json data/inventory_state.json data/token_mappings.json
+          git add data/forward_state.json data/inventory_state.json
           if ! git diff --cached --quiet; then
             git commit -m "data: update GRAIL evidence state [skip ci]"
             git push
