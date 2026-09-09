@@ -14,23 +14,35 @@ from grail.mint_live import scan_watchlist  # noqa: E402
 from grail.universe_scan import scan_universe_selection  # noqa: E402
 
 
-_THESIS_MINT_MARKERS = (
-    "low edition #",
-    "top ~1% low edition",
+_GENERIC_LOW_MINT_MARKERS = ("low edition #", "top ~1% low edition")
+_STRONG_THESIS_MARKERS = (
     "first-appearance year",
     "matches release year",
-    "Earth-616",
-    "Order 66",
+    "earth-616",
+    "order 66",
     "501st",
-    "Spider-Man 2099 character identity",
+    "spider-man 2099 character identity",
     "first appeared",
     "debut",
 )
 
 
+def _reason_text(candidate: dict) -> str:
+    return " | ".join(str(x).lower() for x in candidate.get("reasons", ()))
+
+
+def _has_generic_low_mint(candidate: dict) -> bool:
+    text=_reason_text(candidate)
+    return any(marker in text for marker in _GENERIC_LOW_MINT_MARKERS)
+
+
+def _has_strong_thesis(candidate: dict) -> bool:
+    text=_reason_text(candidate)
+    return any(marker in text for marker in _STRONG_THESIS_MARKERS)
+
+
 def _has_thesis_mint(candidate: dict) -> bool:
-    reasons = " | ".join(str(x) for x in candidate.get("reasons", ()))
-    return any(marker.lower() in reasons.lower() for marker in _THESIS_MINT_MARKERS)
+    return _has_generic_low_mint(candidate) or _has_strong_thesis(candidate)
 
 
 def _signal_class(candidate: dict) -> str:
@@ -40,11 +52,32 @@ def _signal_class(candidate: dict) -> str:
     premium = float(candidate["premium_to_floor_pct"])
     if action == "reject-price": return "REJECT"
     if action == "pricing-unverified": return "UNVERIFIED"
-    if _has_thesis_mint(candidate) and mint >= 72 and action == "verify-now" and premium <= 20 and score >= 42:
-        return "GRAIL"
+
+    sane = action == "verify-now" and premium <= 20 and score >= 42
+    broad = candidate.get("discovery_source") == "universe"
+
+    # Curated assets retain the established behavior because their low-mint semantics were
+    # explicitly chosen and reviewed. Broad discovery is intentionally stricter: a generic
+    # low edition from an unknown asset is not enough to earn our rarest label.
+    if not broad:
+        if _has_thesis_mint(candidate) and mint >= 72 and sane:
+            return "GRAIL"
+    else:
+        strong_semantic = _has_strong_thesis(candidate)
+        provider_grail = bool(candidate.get("provider_grail"))
+        provider_alpha = bool(candidate.get("provider_alpha"))
+        provider_fa = candidate.get("catalog_is_fa") is True
+        if strong_semantic and mint >= 78 and sane and score >= 48:
+            return "GRAIL"
+        if provider_grail and mint >= 84 and sane and score >= 52:
+            return "GRAIL"
+        if provider_grail and provider_alpha and provider_fa and mint >= 75 and sane and score >= 50:
+            return "GRAIL"
+
     if action == "verify-now" and premium <= -15 and score >= 42:
         return "EDGE"
-    if mint >= 35: return "WATCH"
+    if mint >= 35:
+        return "WATCH"
     return "MARKET"
 
 
@@ -78,7 +111,6 @@ def _scan_all() -> tuple[list, list[dict]]:
     if selection.exists():
         found,broad_errors=scan_universe_selection(selection,max_workers=18)
         broad=found; errors.extend(broad_errors)
-    # Same edition can arrive through curated + discovered paths. Prefer the richer/higher mint score row.
     dedup={}
     for c in [*broad,*curated]:
         key=(c.source_url,c.mint)
@@ -97,7 +129,15 @@ def build_payload(limit: int = 120) -> dict:
         row["asset_kind"]=meta.get("kind") or ("comic" if row.get("category")=="Comics" else "collectible")
         row["catalog_mcap"]=meta.get("mcap")
         row["catalog_floor_usd"]=meta.get("floor_usd")
+        row["catalog_supply"]=meta.get("supply")
+        row["catalog_holders"]=meta.get("holders")
+        row["catalog_sales30"]=meta.get("sales30")
+        row["catalog_grade"]=meta.get("grade")
+        row["catalog_is_fa"]=meta.get("is_fa")
         row["provider_grail"]=bool(meta.get("provider_grail"))
+        row["provider_alpha"]=bool(meta.get("provider_alpha"))
+        row["provider_alpha_why"]=meta.get("alpha_why") or []
+        row["catalog_floor_vs_sales_pct"]=meta.get("floor_vs_sales_pct")
         row["discovery_source"]="universe" if meta else "curated"
         row["signal_class"]=_signal_class(row)
         row["why"]=_why(row)
