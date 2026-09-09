@@ -7,6 +7,7 @@ on:
       - "src/grail/provider_edition.py"
       - "scripts/discover_catalog_contract.py"
       - "scripts/probe_market_rpc.py"
+      - "scripts/probe_registry_rpc.py"
       - ".github/workflows/provider-research.yml"
   workflow_dispatch:
 
@@ -16,7 +17,7 @@ permissions:
 jobs:
   research:
     runs-on: ubuntu-latest
-    timeout-minutes: 7
+    timeout-minutes: 8
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -27,10 +28,13 @@ jobs:
         run: python scripts/discover_catalog_contract.py | tee catalog-contract.txt
       - name: Probe market-wide listings RPC
         run: python scripts/probe_market_rpc.py | tee market-rpc.txt
+      - name: Probe paginated registry RPC
+        run: python scripts/probe_registry_rpc.py | tee registry-rpc.txt
       - uses: actions/upload-artifact@v4
         with:
           name: universe-research
           path: |
             catalog-contract.txt
             market-rpc.txt
+            registry-rpc.txt
           retention-days: 7
