@@ -63,6 +63,8 @@ jobs:
         run: python scripts/build_forward.py
       - name: Build Personal Hunter standalone
         run: python scripts/build_personal_standalone.py
+      - name: Add universe coverage and Comics / Collectibles filter
+        run: python scripts/enhance_universe_hunter.py
       - name: Publish immutable static entrypoints
         run: |
           cp site/index.html site/hunter-v061-static.html
