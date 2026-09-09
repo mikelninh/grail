@@ -85,7 +85,7 @@ jobs:
           for attempt in 1 2 3 4 5 6; do
             html=$(curl -fsSL --max-time 20 "${PAGE_URL}?health=${GITHUB_RUN_ID}" || true)
             json=$(curl -fsSL --max-time 20 "${PAGE_URL}data/opportunities.json?health=${GITHUB_RUN_ID}" || true)
-            if echo "$html" | grep -q "GRAIL" && echo "$json" | grep -q '"candidates"'; then
+            if [[ "$html" == *"GRAIL"* && "$json" == *'"candidates"'* ]]; then
               echo "PUBLIC HEALTH PASS on attempt ${attempt}"
               exit 0
             fi
