@@ -10,6 +10,7 @@ on:
       - "scripts/**"
       - "data/watchlist.json"
       - "data/token_mappings.json"
+      - "data/provider_owner_targets.json"
       - ".github/workflows/pages-smoke.yml"
 
 permissions:
@@ -28,14 +29,14 @@ jobs:
       - run: python -m unittest discover -s tests -v
       - name: Build live market, inventory and graph
         run: python scripts/build_pages.py | tee pages-build.txt
-      - name: Research public edition lookup source
+      - name: Enrich provider-chain ownership golden cases
+        run: python scripts/enrich_provider_ownership.py | tee provider-owner-build.txt
+      - name: Discover golden exact-token mappings
         continue-on-error: true
-        run: python scripts/discover_provider_edition_endpoint.py | tee provider-edition-research.txt
-      - name: Discover golden token mappings
         run: python scripts/discover_golden_mappings.py | tee mapping-build.txt
       - name: Promote discovery registry for smoke
         run: mv data/token_mappings.next.json data/token_mappings.json
-      - name: Enrich verified Collect ownership
+      - name: Enrich exact Collect ownership where mapped
         run: python scripts/enrich_ownership.py | tee ownership-build.txt
       - name: Build persistent forward-test view
         run: python scripts/build_forward.py | tee forward-build.txt
@@ -48,24 +49,27 @@ jobs:
           g=json.loads(Path('site/data/graph.json').read_text())
           f=json.loads(Path('site/data/forward.json').read_text())
           o=json.loads(Path('site/data/ownership.json').read_text())
+          po=json.loads(Path('site/data/provider_ownership.json').read_text())
           i=json.loads(Path('site/data/inventory.json').read_text())
-          m=json.loads(Path('site/data/mapping_discovery.json').read_text())
           assert Path('site/index.html').exists()
           assert len(p['candidates']) >= 10
           assert g['stats']['nodes'] > 20 and g['stats']['edges'] > 20
+          assert g['stats'].get('provider_chain_owners',0) >= 2
           assert 'verified_chain_owners' in g['stats']
           assert 'tracked_alerts' in f['summary']
           assert 'live' in i['counts'] and 'stale' in i['counts'] and 'sold' in i['counts']
           assert all(r['signal_class'] != 'GRAIL' for r in p['candidates'] if r['mint'] == 2772 and 'Miles Morales' in r['collectible'])
           assert all(r.get('signal_class') not in {'GRAIL','EDGE','WATCH'} for r in p['candidates'] if r.get('availability_status') == 'sold-after-listing')
-          assert any(t['mint']==851 for t in m['targets'])
+          by={(x.get('source_url'),x.get('edition')):x for x in po['resolutions']}
+          g851=by[('https://vevealpha.com/c/marvel-disney-what-if-goofy-became-spider-man-common',851)]
+          s777=by[('https://vevealpha.com/c/spider-man-the-amazing-spider-man',777)]
+          assert g851.get('owner') and s777.get('owner')
+          assert any(r.get('mint')==777 and r.get('owner_status')=='verified-chain' for r in p['candidates'])
           assert Path('site/data/forward.json').exists() and Path('site/data/inventory.json').exists()
-          print({'counts':p['counts'],'inventory':i['counts'],'graph':g['stats'],'forward':f['summary'],'mapping':m,'ownership':{'resolved':len(o['resolutions']),'errors':len(o['errors'])},'errors':p['errors']})
+          print({'counts':p['counts'],'inventory':i['counts'],'graph':g['stats'],'forward':f['summary'],'provider_owners':po,'exact_ownership':{'resolved':len(o['resolutions']),'errors':len(o['errors'])},'errors':p['errors']})
           PY
       - uses: actions/upload-artifact@v4
         with:
           name: grail-v05-definition-done
-          path: |
-            site
-            provider-edition-research.txt
+          path: site
           retention-days: 14
