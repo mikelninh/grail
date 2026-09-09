@@ -1,0 +1,19 @@
+{
+  "version": 1,
+  "chain": "Collect Chain",
+  "explorer": "https://collectscan.com",
+  "known_contracts": [
+    {
+      "name": "VeVe",
+      "standard": "ERC-721",
+      "contract": "0xbcFEbA7A9dA14f5C9453bDA72E2098537867B3c7",
+      "evidence": "https://collectscan.com/token/0xbcFEbA7A9dA14f5C9453bDA72E2098537867B3c7/instance/13530112"
+    }
+  ],
+  "mappings": [],
+  "rules": [
+    "Never assume a VeVe edition number equals a Collect token ID.",
+    "Every mapping requires an HTTPS evidence URL and explicit mapping method.",
+    "Only exact mapped tokens may emit current owned_by edges."
+  ]
+}
