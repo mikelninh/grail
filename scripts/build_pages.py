@@ -124,7 +124,7 @@ def build_graph(payload: dict, sales: list, premium_stats: dict, inventory: dict
         "generated_at": payload.get("generated_at"), "nodes": list(nodes.values()), "edges": edges,
         "stats": {"nodes": len(nodes), "edges": len(edges), "sales": len(sales), "premium_signal_types": len(premium_stats), "inventory": inventory.get("counts", {})},
         "premium_stats": premium_stats,
-        "note": "Evidence graph. Historical buyers are not current owners. Current owned_by requires exact Collect token mapping. Private friend/user overlays remain browser-local.",
+        "note": "Evidence graph. Historical buyers are not current owners. Provider-chain and exact-token owner evidence are tracked separately; exact-token conflicts are surfaced. Private friend/user overlays remain browser-local.",
     }
 
 
@@ -155,7 +155,7 @@ def main() -> int:
     (site / "data" / "inventory.json").write_text(json.dumps(inventory, indent=2), encoding="utf-8")
     (site / "data" / "graph.json").write_text(json.dumps(graph, indent=2), encoding="utf-8")
 
-    for name in ("index.html", "styles.css", "app.js"):
+    for name in ("index.html", "styles.css", "app.js", "ownership-proof.js"):
         shutil.copy2(ROOT / "dashboard" / name, site / name)
     with (site / "styles.css").open("a", encoding="utf-8") as out:
         out.write("\n")
