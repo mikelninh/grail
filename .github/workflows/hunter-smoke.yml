@@ -45,9 +45,14 @@ jobs:
         run: python scripts/build_pages.py
       - name: Build Personal Hunter standalone
         run: python scripts/build_personal_standalone.py
-      - name: Validate Hunter preset UX and privacy contract
+      - name: Add universe coverage and type filter
+        run: python scripts/enhance_universe_hunter.py
+      - name: Validate Hunter universe UX and privacy contract
         run: |
           test -s share/grail-personal-hunter.html
+          grep -q "UNIVERSE v0.8" share/grail-personal-hunter.html
+          grep -q "Comics" share/grail-personal-hunter.html
+          grep -q "Collectibles" share/grail-personal-hunter.html
           grep -q "Best Overall" share/grail-personal-hunter.html
           grep -q "Grail Hunter" share/grail-personal-hunter.html
           grep -q "Value Hunter" share/grail-personal-hunter.html
