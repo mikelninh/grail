@@ -1,0 +1,29 @@
+name: provider-research
+
+on:
+  push:
+    branches: ["sprint/v05-definition-done"]
+    paths:
+      - "scripts/discover_provider_edition_endpoint.py"
+      - ".github/workflows/provider-research.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  research:
+    runs-on: ubuntu-latest
+    timeout-minutes: 4
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Discover public edition lookup implementation
+        run: python scripts/discover_provider_edition_endpoint.py | tee provider-edition-research.txt
+      - uses: actions/upload-artifact@v4
+        with:
+          name: provider-edition-research
+          path: provider-edition-research.txt
+          retention-days: 7
