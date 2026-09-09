@@ -1,5 +1,6 @@
 name: pages
 
+# v0.6.1 Hunter production gate
 on:
   workflow_dispatch:
   push:
