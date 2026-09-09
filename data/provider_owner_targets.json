@@ -1,0 +1,15 @@
+{
+  "version": 1,
+  "targets": [
+    {
+      "source_url": "https://vevealpha.com/c/marvel-disney-what-if-goofy-became-spider-man-common",
+      "mint": 851,
+      "label": "Goofy Spider-Man #851"
+    },
+    {
+      "source_url": "https://vevealpha.com/c/spider-man-the-amazing-spider-man",
+      "mint": 777,
+      "label": "Spider-Man #777"
+    }
+  ]
+}

@@ -10,10 +10,20 @@
       "evidence": "https://collectscan.com/token/0xbcFEbA7A9dA14f5C9453bDA72E2098537867B3c7/instance/13530112"
     }
   ],
-  "mappings": [],
+  "mappings": [
+    {
+      "source_url": "https://vevealpha.com/c/spider-man-the-amazing-spider-man",
+      "mint": 777,
+      "contract": "0xbcFEbA7A9dA14f5C9453bDA72E2098537867B3c7",
+      "token_id": "13680890",
+      "evidence_url": "https://collectscan.com/token/0xbcFEbA7A9dA14f5C9453bDA72E2098537867B3c7/instance/13680890?tab=metadata",
+      "mapping_method": "collectscan-metadata-edition+name-exact",
+      "expected_name": "Spider-Man – The Amazing Spider-Man"
+    }
+  ],
   "rules": [
     "Never assume a VeVe edition number equals a Collect token ID.",
     "Every mapping requires an HTTPS evidence URL and explicit mapping method.",
-    "Only exact mapped tokens may emit current owned_by edges."
+    "Only exact mapped tokens may emit exact-token current owned_by edges."
   ]
 }
