@@ -18,6 +18,7 @@ class HunterPreferences:
     mint_preferences: set[str] = field(default_factory=set)
     exclude_owned: bool = True
     owned_keys: set[str] = field(default_factory=set)
+    watch_keys: set[str] = field(default_factory=set)
     friend_owner_hints: dict[str, str] = field(default_factory=dict)
 
 
@@ -51,16 +52,17 @@ def _mint_match(row: dict, prefs: HunterPreferences) -> tuple[float, list[str]]:
 
 
 def _friend_match(row: dict, prefs: HunterPreferences) -> str | None:
-    owner = str(row.get("current_owner") or row.get("onchain_owner") or "").lower()
+    owner = str(row.get("current_owner") or row.get("onchain_owner") or row.get("owner") or "").lower()
     if not owner:
         return None
     for name, hint in prefs.friend_owner_hints.items():
         h = hint.lower().strip()
         if not h:
             continue
-        if "..." in h:
-            pre, suf = h.split("...", 1)
-            if owner.startswith(pre) and owner.endswith(suf):
+        if "..." in h or "…" in h:
+            parts = h.replace("…", "...").split("...", 1)
+            pre, suf = parts[0], parts[1] if len(parts) > 1 else ""
+            if (not pre or owner.startswith(pre)) and (not suf or owner.endswith(suf)):
                 return name
         elif owner == h:
             return name
@@ -88,6 +90,10 @@ def score_personal(row: dict, prefs: HunterPreferences) -> tuple[float, list[str
         score += 16; why.append("thesis-grade GRAIL")
     elif row.get("signal_class") == "EDGE":
         score += 6; why.append("live price edge")
+
+    if key in prefs.watch_keys:
+        score += 12
+        why.append("on your watchlist")
 
     category = str(row.get("category") or "")
     if prefs.categories and category in prefs.categories:
