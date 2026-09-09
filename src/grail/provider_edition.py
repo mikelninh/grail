@@ -42,7 +42,7 @@ def _jwt_payload(token: str) -> dict[str, Any] | None:
 
 
 def discover_public_supabase_config(page_url: str, timeout: float = 20.0) -> PublicSupabaseConfig:
-    """Read the same public client config shipped to every browser; never use service-role credentials."""
+    """Read the same public browser config shipped to visitors; never use service-role credentials."""
     page=_get(page_url,timeout)
     scripts=re.findall(r'<script[^>]+src=["\']([^"\']+)["\']',page,re.I)
     hosts=[]; keys=[]
@@ -77,7 +77,6 @@ def extract_collectible_id(page_url: str, timeout: float = 20.0) -> str:
     for pat in patterns:
         m=re.search(pat,html,re.I)
         if m: return m.group(1)
-    # Fall back to product UUID exposed by the direct VeVe / StackR URLs.
     hrefs=re.findall(r'href=["\']([^"\']+)["\']',html_lib.unescape(html),re.I)
     for href in hrefs:
         m=re.search(r'/([0-9a-fA-F-]{36})(?:[/?#]|$)',href)
@@ -117,6 +116,6 @@ def lookup_edition(page_url: str, edition: int, timeout: float = 20.0) -> Editio
     if returned is not None and int(returned)!=int(edition):
         raise ValueError(f"provider returned edition {returned}, expected {edition}")
     name=_pick(raw,("name","collectible_name","title"))
-    owner=_pick(raw,("owner","owner_address","wallet","holder","holder_address"))
+    owner=_pick(raw,("onchain_owner","last_owner_address","owner","owner_address","wallet","holder","holder_address"))
     token_id=_pick(raw,("token_id","tokenId","collect_token_id","nft_token_id"))
     return EditionLookup(collectible_id,int(edition),str(name) if name else None,str(owner) if owner else None,str(token_id) if token_id else None,raw,page_url+f"#edition-{edition}")
