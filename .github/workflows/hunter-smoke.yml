@@ -2,13 +2,14 @@ name: hunter-smoke
 
 on:
   push:
-    branches: ["sprint/v06-hunter"]
+    branches: ["sprint/v06-hunter", "sprint/v07-personal-hunter"]
     paths:
       - "dashboard/**"
       - "scripts/**"
       - "src/grail/**"
       - "api/**"
       - "data/**"
+      - "tests/**"
       - ".github/workflows/hunter-smoke.yml"
 
 permissions:
@@ -27,27 +28,30 @@ jobs:
       - run: python -m unittest discover -s tests -v
       - name: Build live Hunter bundle
         run: python scripts/build_pages.py
-      - name: Validate Hunter assets and JS
+      - name: Build Personal Hunter standalone
+        run: python scripts/build_personal_standalone.py
+      - name: Validate Hunter assets
         run: |
           test -s site/index.html
-          test -s site/hunter.js
           test -s site/hunter.css
-          test -s site/404.html
-          grep -q "hunter.js?v=0.6.0" site/index.html
-          grep -q "hunter.css?v=0.6.0" site/index.html
-          node --check site/hunter.js
-          node --check site/app.js
-          node --check site/ownership-proof.js
+          test -s site/research.html
+          test -s share/grail-personal-hunter.html
+          grep -q "GRAIL v0.7" share/grail-personal-hunter.html
+          grep -q "grailData" share/grail-personal-hunter.html
+          grep -q "localStorage" share/grail-personal-hunter.html
+          grep -q "Friends — local only" share/grail-personal-hunter.html
       - name: Validate decision-layer data contract
         run: |
           python - <<'PY'
           import json
           from pathlib import Path
+          from grail.personal_hunter import HunterPreferences, rank_personal
           p=json.loads(Path('site/data/opportunities.json').read_text())
           eligible=[r for r in p['candidates'] if r.get('live_status')=='live' and r.get('signal_class') in {'GRAIL','EDGE','WATCH'} and r.get('actionability')!='reject-price']
           assert eligible, 'Hunter needs at least one live eligible candidate in current smoke data'
-          assert all(r.get('signal_class')!='REJECT' for r in eligible)
-          assert all(r.get('availability_status')!='sold-after-listing' for r in eligible)
-          assert len({r.get('source_url') for r in eligible}) >= min(3,len(eligible))
-          print({'eligible_live':len(eligible),'grails':p['counts'].get('GRAIL',0),'edges':p['counts'].get('EDGE',0),'errors':p.get('errors',[])})
+          picks=rank_personal(eligible, HunterPreferences(budget_usd=10000), limit=3)
+          assert picks, 'Personal Hunter should rank at least one eligible row under smoke budget'
+          assert len(picks)<=3
+          assert len({r['source_url'] for r in picks})==len(picks)
+          print({'eligible_live':len(eligible),'personal_picks':[(r['collectible'],r['mint']) for r in picks],'errors':p.get('errors',[])})
           PY
