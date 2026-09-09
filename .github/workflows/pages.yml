@@ -9,13 +9,16 @@ on:
       - "api/**"
       - "src/grail/**"
       - "data/watchlist.json"
+      - "data/token_mappings.json"
       - "scripts/build_pages.py"
+      - "scripts/enrich_ownership.py"
+      - "scripts/build_forward.py"
       - ".github/workflows/pages.yml"
   schedule:
     - cron: "37 * * * *"
 
 permissions:
-  contents: read
+  contents: write
   pages: write
   id-token: write
 
@@ -35,6 +38,20 @@ jobs:
       - run: python -m unittest discover -s tests -v
       - name: Build live static site + graph snapshot
         run: python scripts/build_pages.py
+      - name: Resolve exact Collect Chain ownership mappings
+        run: python scripts/enrich_ownership.py
+      - name: Update forward-test alpha ledger
+        run: python scripts/build_forward.py
+      - name: Persist forward evidence
+        run: |
+          mv data/forward_state.next.json data/forward_state.json
+          git config user.name "grail-evidence-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/forward_state.json
+          if ! git diff --cached --quiet; then
+            git commit -m "data: update GRAIL forward evidence [skip ci]"
+            git push
+          fi
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v4
         with:
