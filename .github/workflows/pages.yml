@@ -10,6 +10,7 @@ on:
       - "src/grail/**"
       - "data/watchlist.json"
       - "data/token_mappings.json"
+      - "data/provider_owner_targets.json"
       - "scripts/**"
       - ".github/workflows/pages.yml"
   schedule:
@@ -34,22 +35,19 @@ jobs:
           python-version: "3.12"
       - run: python -m pip install -e .
       - run: python -m unittest discover -s tests -v
-
       - name: Build live market, sales, inventory and evidence graph
         run: python scripts/build_pages.py
-
-      - name: Discover evidence-backed golden token mappings
+      - name: Enrich provider-chain ownership golden cases
+        run: python scripts/enrich_provider_ownership.py
+      - name: Discover evidence-backed exact token mappings
+        continue-on-error: true
         run: python scripts/discover_golden_mappings.py
-
       - name: Promote discovered mapping registry for this build
         run: mv data/token_mappings.next.json data/token_mappings.json
-
-      - name: Resolve exact Collect Chain owners and transfers
+      - name: Resolve exact Collect Chain owners and transfers where mapped
         run: python scripts/enrich_ownership.py
-
       - name: Update forward-test alpha ledger
         run: python scripts/build_forward.py
-
       - name: Persist evidence state
         run: |
           mv data/forward_state.next.json data/forward_state.json
@@ -61,7 +59,6 @@ jobs:
             git commit -m "data: update GRAIL evidence state [skip ci]"
             git push
           fi
-
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v4
         with:
