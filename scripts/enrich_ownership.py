@@ -58,6 +58,9 @@ def main() -> int:
             row["collectscan_url"] = collectscan_url
             row["owner_status"] = "verified-chain" if resolution.verified else "unresolved"
             row["owner"] = resolution.owner if resolution.verified else None
+            if resolution.verified:
+                row["owner_evidence_level"] = "exact-token"
+                row["owner_source"] = "collectscan-exact-token"
 
         if resolution.owner:
             owner_id = f"wallet:{resolution.owner.lower()}"
@@ -93,7 +96,7 @@ def main() -> int:
         "errors": errors,
         "rules": [
             "No VeVe edition-to-token inference.",
-            "Only evidence-registered exact mappings can produce current-owner edges.",
+            "Only evidence-registered exact mappings can produce exact-token current-owner edges.",
         ],
     }, indent=2), encoding="utf-8")
 
