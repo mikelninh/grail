@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="theme-color" content="#080a0f" />
+  <title>GRAIL Research — Collector Intelligence</title>
+  <meta name="description" content="Full GRAIL collector intelligence research feed for VeVe, StackR, OMI and Collect Chain." />
+  <link rel="stylesheet" href="./styles.css?v=0.6.1" />
+</head>
+<body>
+  <div class="noise"></div>
+  <header class="topbar">
+    <a class="brand" href="./" aria-label="Back to Hunter"><span class="sigil">◇</span><span><b>GRAIL</b><small>research terminal</small></span></a>
+    <div class="top-actions">
+      <a class="ghost-btn" href="./">← Hunter</a>
+      <button id="alphaBtn" class="ghost-btn">Alpha</button>
+      <button id="portfolioBtn" class="ghost-btn">Portfolio</button>
+      <button id="graphBtn" class="ghost-btn">Graph</button>
+      <button id="profileBtn" class="ghost-btn">My GRAIL</button>
+      <span id="liveStatus" class="live-pill"><i></i> loading</span>
+      <button id="refreshBtn" class="ghost-btn">↻ Refresh</button>
+    </div>
+  </header>
+  <main>
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow">FULL RESEARCH FEED</p>
+        <h1>See the evidence.<br><em>Then decide.</em></h1>
+        <p class="lede">The full market feed behind Hunter: live inventory, semantic mint evidence, realised sales, ownership and forward-test context.</p>
+      </div>
+      <div class="hero-orb"><div class="orb-core"><span id="heroScore">—</span><small>top live signal</small></div></div>
+    </section>
+    <section class="metrics">
+      <article><span class="metric-label">GRAILS</span><strong id="grailCount">—</strong><small>thesis-grade + sane economics</small></article>
+      <article><span class="metric-label">EDGES</span><strong id="edgeCount">—</strong><small>verify market dislocation</small></article>
+      <article><span class="metric-label">LIVE</span><strong id="liveCount">—</strong><small>seen in latest provider scan</small></article>
+      <article><span class="metric-label">OMI / USD</span><strong id="omiPrice">—</strong><small id="scanTime">waiting for snapshot</small></article>
+    </section>
+    <section class="toolbar">
+      <div class="tabs"><button class="tab active" data-filter="ALL">All</button><button class="tab" data-filter="GRAIL">Grails</button><button class="tab" data-filter="EDGE">Edges</button><button class="tab" data-filter="WATCH">Watch</button><button class="tab" data-filter="HISTORY">History</button><button class="tab" data-filter="OWNED">Mine</button></div>
+      <div class="filters"><select id="categoryFilter"><option value="ALL">All universes</option></select><label class="toggle"><input id="hideOwned" type="checkbox" /><span></span> hide owned</label></div>
+    </section>
+    <section class="explain-strip"><div><b>GRAIL</b><span>thesis-grade mint + acceptable economics</span></div><div><b>EDGE</b><span>market gap worth checking</span></div><div><b>PROOF</b><span>live-state · chain owner · realised comps · outcome</span></div></section>
+    <section id="cards" class="card-grid" aria-live="polite"></section>
+  </main>
+  <template id="cardTemplate"><article class="opportunity-card"><div class="media"><img alt="" loading="lazy" /><div class="media-fallback"></div><span class="class-badge"></span><button class="owned-badge" title="Mark as owned">☆</button></div><div class="card-body"><div class="card-topline"><span class="category"></span><span class="confidence"></span></div><h3></h3><div class="mint-line"><span class="mint"></span><span class="mint-signal"></span></div><div class="proof-strip"><span class="proof-live"></span><span class="proof-chain"></span><span class="proof-alpha"></span></div><div class="price-grid"><div><small>ASK / LAST SIGNAL</small><strong class="ask"></strong><span class="omi"></span></div><div><small>STACKR FLOOR*</small><strong class="floor"></strong><span class="spread"></span></div></div><p class="why"></p><div class="owner-row"><span class="owner-state">Owner: unresolved</span><button class="owner-check">Owner / chain</button></div><details><summary>Evidence & thesis</summary><ul class="reasons"></ul></details><div class="actions"><a class="buy stackr" target="_blank" rel="noopener">Open StackR ↗</a><a class="buy veve" target="_blank" rel="noopener">Open VeVe ↗</a><a class="evidence" target="_blank" rel="noopener">Evidence ↗</a><button class="share">Copy</button></div></div></article></template>
+  <dialog id="profileDialog" class="modal"><form method="dialog"><button class="modal-x">×</button></form><p class="eyebrow">PRIVATE LOCAL PROFILE</p><h2>My GRAIL</h2><label>Name<input id="profileName" /></label><label>Wallet / Collect address<input id="profileWallet" /></label><label>VeVe / StackR handle<input id="profileHandle" /></label><label>Friends<textarea id="profileFriends"></textarea></label><div class="modal-actions"><button id="saveProfile" type="button">Save locally</button><button id="exportProfile" type="button" class="ghost-btn">Export</button><label class="file-btn">Import<input id="importProfile" type="file" accept="application/json" hidden /></label></div><p id="profileSummary" class="fineprint"></p></dialog>
+  <dialog id="portfolioDialog" class="modal wide"><form method="dialog"><button class="modal-x">×</button></form><p class="eyebrow">PORTFOLIO INTELLIGENCE</p><h2>Floor is not your exit.</h2><div id="portfolioStats" class="graph-stats"></div><div id="portfolioEvidence" class="premium-evidence"></div><div id="portfolioExamples" class="graph-examples"></div></dialog>
+  <dialog id="alphaDialog" class="modal wide"><form method="dialog"><button class="modal-x">×</button></form><p class="eyebrow">FORWARD-TESTED ALPHA</p><h2>Does GRAIL beat the dumb baseline?</h2><div id="alphaStats" class="graph-stats"></div><div id="baselineEvidence" class="premium-evidence"></div><div id="alphaExamples" class="graph-examples"></div></dialog>
+  <dialog id="graphDialog" class="modal wide"><form method="dialog"><button class="modal-x">×</button></form><p class="eyebrow">COLLECTOR GRAPH</p><h2>Evidence graph</h2><div id="graphStats" class="graph-stats"></div><div id="premiumEvidence" class="premium-evidence"></div><div id="mappingEvidence" class="premium-evidence"></div><div id="graphExamples" class="graph-examples"></div></dialog>
+  <div id="toast" class="toast" role="status"></div>
+  <script src="./app.js?v=0.6.1" defer></script>
+  <script src="./ownership-proof.js?v=0.6.1" defer></script>
+</body>
+</html>
