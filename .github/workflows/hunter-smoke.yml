@@ -2,7 +2,7 @@ name: hunter-smoke
 
 on:
   push:
-    branches: ["sprint/v06-hunter", "sprint/v07-personal-hunter"]
+    branches: ["sprint/v06-hunter", "sprint/v07-personal-hunter", "sprint/v071-personal-actions"]
     paths:
       - "dashboard/**"
       - "scripts/**"
@@ -30,16 +30,22 @@ jobs:
         run: python scripts/build_pages.py
       - name: Build Personal Hunter standalone
         run: python scripts/build_personal_standalone.py
-      - name: Validate Hunter assets
+      - name: Validate Hunter assets and privacy contract
         run: |
           test -s site/index.html
           test -s site/hunter.css
           test -s site/research.html
           test -s share/grail-personal-hunter.html
-          grep -q "GRAIL v0.7" share/grail-personal-hunter.html
+          grep -q "GRAIL v0.7.1" share/grail-personal-hunter.html
           grep -q "grailData" share/grail-personal-hunter.html
           grep -q "localStorage" share/grail-personal-hunter.html
           grep -q "Friends — local only" share/grail-personal-hunter.html
+          grep -q "Friend | 0x12...abcd" share/grail-personal-hunter.html
+          grep -q "Watch" share/grail-personal-hunter.html
+          grep -q "Export profile" share/grail-personal-hunter.html
+          grep -q "Copy alert rules" share/grail-personal-hunter.html
+          ! grep -q "Dorian" share/grail-personal-hunter.html
+          ! grep -q "0x67" share/grail-personal-hunter.html
       - name: Validate decision-layer data contract
         run: |
           python - <<'PY'
@@ -49,7 +55,9 @@ jobs:
           p=json.loads(Path('site/data/opportunities.json').read_text())
           eligible=[r for r in p['candidates'] if r.get('live_status')=='live' and r.get('signal_class') in {'GRAIL','EDGE','WATCH'} and r.get('actionability')!='reject-price']
           assert eligible, 'Hunter needs at least one live eligible candidate in current smoke data'
-          picks=rank_personal(eligible, HunterPreferences(budget_usd=10000), limit=3)
+          watched=eligible[-1]
+          key=f"{watched['source_url']}#{watched['mint']}"
+          picks=rank_personal(eligible, HunterPreferences(budget_usd=10000, watch_keys={key}), limit=3)
           assert picks, 'Personal Hunter should rank at least one eligible row under smoke budget'
           assert len(picks)<=3
           assert len({r['source_url'] for r in picks})==len(picks)
