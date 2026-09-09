@@ -2,13 +2,16 @@ name: pages-smoke
 
 on:
   push:
-    branches: ["feat/graph-pages-v2"]
+    branches: ["sprint/ownership-alpha-v1"]
     paths:
       - "dashboard/**"
       - "api/**"
       - "src/grail/**"
       - "scripts/build_pages.py"
+      - "scripts/enrich_ownership.py"
+      - "scripts/build_forward.py"
       - "data/watchlist.json"
+      - "data/token_mappings.json"
       - ".github/workflows/pages-smoke.yml"
 
 permissions:
@@ -25,6 +28,10 @@ jobs:
       - run: python -m pip install -e .
       - name: Build live GitHub Pages bundle
         run: python scripts/build_pages.py | tee pages-build.txt
+      - name: Enrich verified Collect ownership
+        run: python scripts/enrich_ownership.py | tee ownership-build.txt
+      - name: Build persistent forward-test view
+        run: python scripts/build_forward.py | tee forward-build.txt
       - name: Validate site data
         run: |
           python - <<'PY'
@@ -32,11 +39,16 @@ jobs:
           from pathlib import Path
           p=json.loads(Path('site/data/opportunities.json').read_text())
           g=json.loads(Path('site/data/graph.json').read_text())
+          f=json.loads(Path('site/data/forward.json').read_text())
+          o=json.loads(Path('site/data/ownership.json').read_text())
           assert Path('site/index.html').exists()
           assert len(p['candidates']) >= 10
           assert g['stats']['nodes'] > 20 and g['stats']['edges'] > 20
+          assert 'verified_chain_owners' in g['stats']
+          assert 'tracked_alerts' in f['summary']
           assert all(r['signal_class'] != 'GRAIL' for r in p['candidates'] if r['mint'] == 2772 and 'Miles Morales' in r['collectible'])
-          print({'counts':p['counts'],'graph':g['stats'],'rows':len(p['candidates']),'errors':p['errors']})
+          assert all(r.get('signal_class') not in {'GRAIL','EDGE','WATCH'} for r in p['candidates'] if r.get('availability_status') == 'sold-after-listing')
+          print({'counts':p['counts'],'graph':g['stats'],'forward':f['summary'],'ownership':{'resolved':len(o['resolutions']),'errors':len(o['errors'])},'rows':len(p['candidates']),'errors':p['errors']})
           PY
       - uses: actions/upload-artifact@v4
         with:
