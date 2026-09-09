@@ -2,14 +2,12 @@ name: pages-smoke
 
 on:
   push:
-    branches: ["sprint/ownership-alpha-v1"]
+    branches: ["sprint/v05-definition-done"]
     paths:
       - "dashboard/**"
       - "api/**"
       - "src/grail/**"
-      - "scripts/build_pages.py"
-      - "scripts/enrich_ownership.py"
-      - "scripts/build_forward.py"
+      - "scripts/**"
       - "data/watchlist.json"
       - "data/token_mappings.json"
       - ".github/workflows/pages-smoke.yml"
@@ -20,19 +18,25 @@ permissions:
 jobs:
   smoke:
     runs-on: ubuntu-latest
+    timeout-minutes: 12
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
       - run: python -m pip install -e .
-      - name: Build live GitHub Pages bundle
+      - run: python -m unittest discover -s tests -v
+      - name: Build live market, inventory and graph
         run: python scripts/build_pages.py | tee pages-build.txt
+      - name: Discover golden token mappings
+        run: python scripts/discover_golden_mappings.py | tee mapping-build.txt
+      - name: Promote discovery registry for smoke
+        run: mv data/token_mappings.next.json data/token_mappings.json
       - name: Enrich verified Collect ownership
         run: python scripts/enrich_ownership.py | tee ownership-build.txt
       - name: Build persistent forward-test view
         run: python scripts/build_forward.py | tee forward-build.txt
-      - name: Validate site data
+      - name: Validate definition-of-done data contracts
         run: |
           python - <<'PY'
           import json
@@ -41,17 +45,22 @@ jobs:
           g=json.loads(Path('site/data/graph.json').read_text())
           f=json.loads(Path('site/data/forward.json').read_text())
           o=json.loads(Path('site/data/ownership.json').read_text())
+          i=json.loads(Path('site/data/inventory.json').read_text())
+          m=json.loads(Path('site/data/mapping_discovery.json').read_text())
           assert Path('site/index.html').exists()
           assert len(p['candidates']) >= 10
           assert g['stats']['nodes'] > 20 and g['stats']['edges'] > 20
           assert 'verified_chain_owners' in g['stats']
           assert 'tracked_alerts' in f['summary']
+          assert 'live' in i['counts'] and 'stale' in i['counts'] and 'sold' in i['counts']
           assert all(r['signal_class'] != 'GRAIL' for r in p['candidates'] if r['mint'] == 2772 and 'Miles Morales' in r['collectible'])
           assert all(r.get('signal_class') not in {'GRAIL','EDGE','WATCH'} for r in p['candidates'] if r.get('availability_status') == 'sold-after-listing')
-          print({'counts':p['counts'],'graph':g['stats'],'forward':f['summary'],'ownership':{'resolved':len(o['resolutions']),'errors':len(o['errors'])},'rows':len(p['candidates']),'errors':p['errors']})
+          assert any(t['mint']==851 for t in m['targets'])
+          assert Path('site/data/forward.json').exists() and Path('site/data/inventory.json').exists()
+          print({'counts':p['counts'],'inventory':i['counts'],'graph':g['stats'],'forward':f['summary'],'mapping':m,'ownership':{'resolved':len(o['resolutions']),'errors':len(o['errors'])},'errors':p['errors']})
           PY
       - uses: actions/upload-artifact@v4
         with:
-          name: grail-pages-smoke
+          name: grail-v05-definition-done
           path: site
           retention-days: 14
