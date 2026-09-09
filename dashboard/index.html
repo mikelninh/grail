@@ -25,7 +25,7 @@
       <div class="hero-copy">
         <p class="eyebrow">VEVE · STACKR · OMI · COLLECT CHAIN</p>
         <h1>Find what the floor<br><em>doesn’t understand.</em></h1>
-        <p class="lede">GRAIL separates thesis-grade collector significance from ordinary price gaps. A pretty number is not enough; every strong label needs evidence.</p>
+        <p class="lede">GRAIL separates thesis-grade collector significance from ordinary price gaps. A pretty number is not enough; every strong label needs evidence — and sold opportunities automatically become history.</p>
       </div>
       <div class="hero-orb"><div class="orb-core"><span id="heroScore">—</span><small>top signal</small></div></div>
     </section>
@@ -39,7 +39,7 @@
 
     <section class="toolbar">
       <div class="tabs">
-        <button class="tab active" data-filter="ALL">All</button><button class="tab" data-filter="GRAIL">Grails</button><button class="tab" data-filter="EDGE">Edges</button><button class="tab" data-filter="WATCH">Watch</button><button class="tab" data-filter="OWNED">Mine</button>
+        <button class="tab active" data-filter="ALL">All</button><button class="tab" data-filter="GRAIL">Grails</button><button class="tab" data-filter="EDGE">Edges</button><button class="tab" data-filter="WATCH">Watch</button><button class="tab" data-filter="HISTORY">History</button><button class="tab" data-filter="OWNED">Mine</button>
       </div>
       <div class="filters"><select id="categoryFilter"><option value="ALL">All universes</option></select><label class="toggle"><input id="hideOwned" type="checkbox" /><span></span> hide owned</label></div>
     </section>
@@ -47,19 +47,19 @@
     <section class="explain-strip">
       <div><b>GRAIL</b><span>low / historical / IP-significant mint + acceptable economics</span></div>
       <div><b>EDGE</b><span>market gap worth checking; mint itself may be ordinary</span></div>
-      <div><b>WATCH</b><span>pattern or collector interest without enough thesis evidence</span></div>
+      <div><b>HISTORY</b><span>listing consumed by a later realised sale; retained as proof, never actionable</span></div>
     </section>
 
     <section id="cards" class="card-grid" aria-live="polite"></section>
 
-    <section class="method"><div><p class="eyebrow">EVIDENCE FIRST</p><h2>Rare labels. Clear proof.</h2></div><p>OMI asks are repriced at current spot; stale floor snapshots are labelled; generic palindromes are only bonuses; absurd premiums stay rejected. Public graph edges carry sources. Your collection, wallets and friends stay private in your browser unless you export them.</p></section>
+    <section class="method"><div><p class="eyebrow">EVIDENCE FIRST</p><h2>Rare labels. Clear proof.</h2></div><p>OMI asks are repriced at current spot; realised sales invalidate stale listing signals; generic palindromes are only bonuses; absurd premiums stay rejected. Public graph edges carry sources. Your collection, wallets and friends stay private in your browser unless you export them.</p></section>
   </main>
 
-  <template id="cardTemplate"><article class="opportunity-card"><div class="media"><img alt="" loading="lazy" /><div class="media-fallback"></div><span class="class-badge"></span><button class="owned-badge" title="Mark as owned">☆</button></div><div class="card-body"><div class="card-topline"><span class="category"></span><span class="confidence"></span></div><h3></h3><div class="mint-line"><span class="mint"></span><span class="mint-signal"></span></div><div class="price-grid"><div><small>ASK</small><strong class="ask"></strong><span class="omi"></span></div><div><small>STACKR FLOOR*</small><strong class="floor"></strong><span class="spread"></span></div></div><p class="why"></p><div class="owner-row"><span class="owner-state">Owner: unresolved</span><button class="owner-check">Owner / chain</button></div><details><summary>Evidence</summary><ul class="reasons"></ul><small class="fineprint">* Floor is a provider daily snapshot. Open the marketplace before acting.</small></details><div class="actions"><a class="buy stackr" target="_blank" rel="noopener">Open StackR ↗</a><a class="buy veve" target="_blank" rel="noopener">Open VeVe ↗</a><a class="evidence" target="_blank" rel="noopener">Evidence ↗</a><button class="share">Copy</button></div></div></article></template>
+  <template id="cardTemplate"><article class="opportunity-card"><div class="media"><img alt="" loading="lazy" /><div class="media-fallback"></div><span class="class-badge"></span><button class="owned-badge" title="Mark as owned">☆</button></div><div class="card-body"><div class="card-topline"><span class="category"></span><span class="confidence"></span></div><h3></h3><div class="mint-line"><span class="mint"></span><span class="mint-signal"></span></div><div class="price-grid"><div><small>ASK / LAST SIGNAL</small><strong class="ask"></strong><span class="omi"></span></div><div><small>STACKR FLOOR*</small><strong class="floor"></strong><span class="spread"></span></div></div><p class="why"></p><div class="owner-row"><span class="owner-state">Owner: unresolved</span><button class="owner-check">Owner / chain</button></div><details><summary>Evidence</summary><ul class="reasons"></ul><small class="fineprint">* Floor is a provider daily snapshot. HISTORY cards are not current opportunities.</small></details><div class="actions"><a class="buy stackr" target="_blank" rel="noopener">Open StackR ↗</a><a class="buy veve" target="_blank" rel="noopener">Open VeVe ↗</a><a class="evidence" target="_blank" rel="noopener">Evidence ↗</a><button class="share">Copy</button></div></div></article></template>
 
   <dialog id="profileDialog" class="modal"><form method="dialog"><button class="modal-x">×</button></form><p class="eyebrow">PRIVATE LOCAL PROFILE</p><h2>My GRAIL</h2><p class="modal-copy">Your identity overlay lives in this browser. It is not published to GitHub.</p><label>Name<input id="profileName" placeholder="Collector name" /></label><label>Wallet / Collect address<input id="profileWallet" placeholder="0x… (optional)" /></label><label>VeVe / StackR handle<input id="profileHandle" placeholder="optional" /></label><label>Friends<textarea id="profileFriends" placeholder="Bao, Dorian, …"></textarea></label><div class="modal-actions"><button id="saveProfile" type="button">Save locally</button><button id="exportProfile" type="button" class="ghost-btn">Export</button><label class="file-btn">Import<input id="importProfile" type="file" accept="application/json" hidden /></label></div><p id="profileSummary" class="fineprint"></p></dialog>
 
-  <dialog id="graphDialog" class="modal wide"><form method="dialog"><button class="modal-x">×</button></form><p class="eyebrow">COLLECTOR GRAPH</p><h2>Evidence graph</h2><p class="modal-copy">Public market/semantic relationships are generated by GitHub Actions. Your private ownership overlay is merged only in this browser.</p><div id="graphStats" class="graph-stats"></div><div id="graphExamples" class="graph-examples"></div></dialog>
+  <dialog id="graphDialog" class="modal wide"><form method="dialog"><button class="modal-x">×</button></form><p class="eyebrow">COLLECTOR GRAPH</p><h2>Evidence graph</h2><p class="modal-copy">Listings, realised sales, buyers/sellers and semantic mint evidence are generated by GitHub Actions. Private ownership is merged only in this browser.</p><div id="graphStats" class="graph-stats"></div><div id="premiumEvidence" class="premium-evidence"></div><div id="graphExamples" class="graph-examples"></div></dialog>
 
   <div id="toast" class="toast" role="status"></div>
   <script src="./app.js" defer></script>
