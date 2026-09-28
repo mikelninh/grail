@@ -8,23 +8,10 @@
       "character": null,
       "asset_kind": "comic",
       "provider_grail": true,
-      "catalog_floor_usd": 3247.8,
-      "catalog_mcap": 1948680.0,
+      "catalog_floor_usd": 2421.3,
+      "catalog_mcap": 1452780.0,
       "image_url": "https://d11unjture0ske.cloudfront.net/comic_cover.e0ff78b6-fe16-421a-b72e-1a0bb945909d.79fed982-5351-4006-a1c9-a61e19be3a53.low.jpeg",
       "rarity": "SECRET_RARE"
-    },
-    {
-      "id": "95b86201-ed47-471f-ada2-4e053041379b",
-      "url": "https://vevealpha.com/c/partners-statue",
-      "category": "Collectibles",
-      "brand": "Unknown",
-      "character": null,
-      "asset_kind": "collectible",
-      "provider_grail": true,
-      "catalog_floor_usd": 987.33,
-      "catalog_mcap": 4278106.0,
-      "image_url": "https://d11unjture0ske.cloudfront.net/collectible_type_image.95b86201-ed47-471f-ada2-4e053041379b.ce54992c-5396-42d9-b4dc-2b6a4ddf498c.full.jpeg",
-      "rarity": "ULTRA_RARE"
     },
     {
       "id": "877dfb81-f781-44c8-a1ce-8d585164cd26",
@@ -34,8 +21,8 @@
       "character": null,
       "asset_kind": "collectible",
       "provider_grail": true,
-      "catalog_floor_usd": 1017.64,
-      "catalog_mcap": 284940.0,
+      "catalog_floor_usd": 1065.37,
+      "catalog_mcap": 298304.0,
       "image_url": "https://d11unjture0ske.cloudfront.net/collectible_type_image.877dfb81-f781-44c8-a1ce-8d585164cd26.727c4c08-83c2-4985-93e2-52006082997d.low.jpeg",
       "rarity": "SECRET_RARE"
     },
@@ -50,6 +37,19 @@
       "catalog_floor_usd": 2250.0,
       "catalog_mcap": 495612.0,
       "image_url": "https://d11unjture0ske.cloudfront.net/comic_cover.99877237-e47d-4a66-9813-51a9c7ebacd8.b10a4a0a-509c-483c-a498-b8d24da60ffd.low.jpeg",
+      "rarity": "SECRET_RARE"
+    },
+    {
+      "id": "cd2b1ac4-415c-4f3a-aa51-eb8a1e09bb29",
+      "url": "https://vevealpha.com/c/the-incredible-hulk-secret-rare-cd2b1a",
+      "category": "Comics",
+      "brand": "Unknown",
+      "character": null,
+      "asset_kind": "comic",
+      "provider_grail": false,
+      "catalog_floor_usd": 217.92,
+      "catalog_mcap": 54479.0,
+      "image_url": "https://d11unjture0ske.cloudfront.net/comic_cover.cd2b1ac4-415c-4f3a-aa51-eb8a1e09bb29.56efa90c-32f1-482f-a1bf-41d101654e77.low.jpeg",
       "rarity": "SECRET_RARE"
     },
     {
@@ -73,8 +73,8 @@
       "character": null,
       "asset_kind": "comic",
       "provider_grail": false,
-      "catalog_floor_usd": 4.55,
-      "catalog_mcap": 218237.0,
+      "catalog_floor_usd": 4.6,
+      "catalog_mcap": 220806.0,
       "image_url": "https://d11unjture0ske.cloudfront.net/comic_cover.f0d160a6-8232-48ce-bfbd-40e96d16cfe0.57328cfa-d14b-40ea-8951-4d844cf9ff06.full.jpeg",
       "rarity": "COMMON"
     },
@@ -92,16 +92,16 @@
       "rarity": "SECRET_RARE"
     },
     {
-      "id": "cd2b1ac4-415c-4f3a-aa51-eb8a1e09bb29",
-      "url": "https://vevealpha.com/c/the-incredible-hulk-secret-rare-cd2b1a",
-      "category": "Comics",
+      "id": "a605b45c-c809-40d4-a98b-b5daa200a696",
+      "url": "https://vevealpha.com/c/black-panther-ultimate-animated",
+      "category": "Collectibles",
       "brand": "Unknown",
       "character": null,
-      "asset_kind": "comic",
+      "asset_kind": "collectible",
       "provider_grail": false,
-      "catalog_floor_usd": 303.13,
-      "catalog_mcap": 75782.0,
-      "image_url": "https://d11unjture0ske.cloudfront.net/comic_cover.cd2b1ac4-415c-4f3a-aa51-eb8a1e09bb29.56efa90c-32f1-482f-a1bf-41d101654e77.low.jpeg",
+      "catalog_floor_usd": 96.85,
+      "catalog_mcap": 271186.0,
+      "image_url": "https://d11unjture0ske.cloudfront.net/collectible_type_image.a605b45c-c809-40d4-a98b-b5daa200a696.615eff4f-7b29-48db-9917-ee9cdd5d6d6a.full.jpeg",
       "rarity": "SECRET_RARE"
     },
     {
@@ -131,19 +131,6 @@
       "rarity": "SECRET_RARE"
     },
     {
-      "id": "a605b45c-c809-40d4-a98b-b5daa200a696",
-      "url": "https://vevealpha.com/c/black-panther-ultimate-animated",
-      "category": "Collectibles",
-      "brand": "Unknown",
-      "character": null,
-      "asset_kind": "collectible",
-      "provider_grail": false,
-      "catalog_floor_usd": 86.61,
-      "catalog_mcap": 242502.0,
-      "image_url": "https://d11unjture0ske.cloudfront.net/collectible_type_image.a605b45c-c809-40d4-a98b-b5daa200a696.615eff4f-7b29-48db-9917-ee9cdd5d6d6a.full.jpeg",
-      "rarity": "SECRET_RARE"
-    },
-    {
       "id": "90cd8e7b-5195-4f5b-a5be-bc41d9e338fa",
       "url": "https://vevealpha.com/c/amazing-fantasy-common-90cd8e",
       "category": "Comics",
@@ -157,16 +144,16 @@
       "rarity": "COMMON"
     },
     {
-      "id": "9d466685-c3c3-4363-998f-ea6963c2ea04",
-      "url": "https://vevealpha.com/c/fantastic-four-common-9d4666",
+      "id": "12dc8ed3-6ffb-476a-a780-4eab2c789da4",
+      "url": "https://vevealpha.com/c/the-incredible-hulk-common-12dc8e",
       "category": "Comics",
       "brand": "Unknown",
       "character": null,
       "asset_kind": "comic",
       "provider_grail": false,
-      "catalog_floor_usd": 4.01,
-      "catalog_mcap": 84255.0,
-      "image_url": "https://d11unjture0ske.cloudfront.net/comic_cover.9d466685-c3c3-4363-998f-ea6963c2ea04.2e95682f-5ea5-4317-bfe1-6a56c1b04e4a.low.jpeg",
+      "catalog_floor_usd": 21.52,
+      "catalog_mcap": 129135.0,
+      "image_url": "https://d11unjture0ske.cloudfront.net/comic_cover.12dc8ed3-6ffb-476a-a780-4eab2c789da4.f38327c1-453d-487b-a3d4-bea7ad666479.full.jpeg",
       "rarity": "COMMON"
     },
     {
@@ -177,8 +164,8 @@
       "character": null,
       "asset_kind": "collectible",
       "provider_grail": false,
-      "catalog_floor_usd": 116.92,
-      "catalog_mcap": 698719.0,
+      "catalog_floor_usd": 124.7,
+      "catalog_mcap": 745189.0,
       "image_url": "https://d11unjture0ske.cloudfront.net/collectible_type_image.3a592c07-aca1-43c8-9788-632462579e7b.4d85ddad-fbae-41ce-b523-63dca7d3ee81.full.jpeg",
       "rarity": "ULTRA_RARE"
     },
@@ -222,17 +209,17 @@
       "rarity": "SECRET_RARE"
     },
     {
-      "id": "ce4ae109-fb92-412f-b2c2-348d248af2b9",
-      "url": "https://vevealpha.com/c/tales-of-suspense-common-ce4ae1",
-      "category": "Comics",
+      "id": "95b86201-ed47-471f-ada2-4e053041379b",
+      "url": "https://vevealpha.com/c/partners-statue",
+      "category": "Collectibles",
       "brand": "Unknown",
       "character": null,
-      "asset_kind": "comic",
-      "provider_grail": false,
-      "catalog_floor_usd": 23.82,
-      "catalog_mcap": 142903.0,
-      "image_url": "https://d11unjture0ske.cloudfront.net/comic_cover.ce4ae109-fb92-412f-b2c2-348d248af2b9.505c322e-f816-4c57-bc7d-9d1c37a31f6b.low.jpeg",
-      "rarity": "COMMON"
+      "asset_kind": "collectible",
+      "provider_grail": true,
+      "catalog_floor_usd": 1750.0,
+      "catalog_mcap": 4496874.0,
+      "image_url": "https://d11unjture0ske.cloudfront.net/collectible_type_image.95b86201-ed47-471f-ada2-4e053041379b.ce54992c-5396-42d9-b4dc-2b6a4ddf498c.full.jpeg",
+      "rarity": "ULTRA_RARE"
     },
     {
       "id": "1969839e-04bc-4433-801f-3a2007e410f4",
@@ -242,22 +229,9 @@
       "character": null,
       "asset_kind": "collectible",
       "provider_grail": false,
-      "catalog_floor_usd": 15.13,
-      "catalog_mcap": 60191.0,
+      "catalog_floor_usd": 16.71,
+      "catalog_mcap": 66444.0,
       "image_url": "https://d11unjture0ske.cloudfront.net/collectible_type_image.1969839e-04bc-4433-801f-3a2007e410f4.6ae5ff99-d9e2-4891-b564-152cc506584e.low.jpeg",
-      "rarity": "RARE"
-    },
-    {
-      "id": "4b3b200b-8469-43a2-aa68-114a4d9e0306",
-      "url": "https://vevealpha.com/c/spider-man-jump-into-action",
-      "category": "Collectibles",
-      "brand": "Unknown",
-      "character": null,
-      "asset_kind": "collectible",
-      "provider_grail": false,
-      "catalog_floor_usd": 23.82,
-      "catalog_mcap": 214331.0,
-      "image_url": "https://d11unjture0ske.cloudfront.net/collectible_type_image.4b3b200b-8469-43a2-aa68-114a4d9e0306.d0f13c40-8313-4ea8-a41e-2aac30f97f10.full.jpeg",
       "rarity": "RARE"
     },
     {
@@ -307,8 +281,8 @@
       "character": null,
       "asset_kind": "comic",
       "provider_grail": false,
-      "catalog_floor_usd": 21.0,
-      "catalog_mcap": 125974.0,
+      "catalog_floor_usd": 23.48,
+      "catalog_mcap": 140875.0,
       "image_url": "https://d11unjture0ske.cloudfront.net/comic_cover.934c4ebc-7655-4c91-8598-55b9bf451e8b.c6d22cb0-302d-4554-9f9b-e60de918e5aa.full.jpeg",
       "rarity": "COMMON"
     },
@@ -333,36 +307,23 @@
       "character": null,
       "asset_kind": "collectible",
       "provider_grail": false,
-      "catalog_floor_usd": 40.92,
-      "catalog_mcap": 81026.0,
+      "catalog_floor_usd": 53.27,
+      "catalog_mcap": 105472.0,
       "image_url": "https://d11unjture0ske.cloudfront.net/collectible_type_image.a0c50208-f32c-4e7e-9664-c28555a9f523.f99e865e-3724-416c-a005-517524865542.full.jpeg",
       "rarity": "COMMON"
     },
     {
-      "id": "f5caca1e-779f-4235-8622-c763fa92ccb6",
-      "url": "https://vevealpha.com/c/donatello-classic-special-edition",
+      "id": "3433ffd5-0721-4346-b556-8ff18d545c27",
+      "url": "https://vevealpha.com/c/mickey-sorcerer-s-hat",
       "category": "Collectibles",
       "brand": "Unknown",
       "character": null,
       "asset_kind": "collectible",
       "provider_grail": false,
-      "catalog_floor_usd": 498.0,
-      "catalog_mcap": 43326.0,
-      "image_url": "https://d11unjture0ske.cloudfront.net/collectible_type_image.f5caca1e-779f-4235-8622-c763fa92ccb6.3042a8ae-801c-4931-aa3e-788173d28699.full.jpeg",
-      "rarity": "COMMON"
-    },
-    {
-      "id": "8725f9a7-1ef1-47b8-ba27-5dbf9640845e",
-      "url": "https://vevealpha.com/c/strange-tales-common-8725f9",
-      "category": "Comics",
-      "brand": "Unknown",
-      "character": null,
-      "asset_kind": "comic",
-      "provider_grail": false,
-      "catalog_floor_usd": 1.19,
-      "catalog_mcap": 25007.0,
-      "image_url": "https://d11unjture0ske.cloudfront.net/comic_cover.8725f9a7-1ef1-47b8-ba27-5dbf9640845e.d13d4bc4-4358-4742-a166-ce2042305834.full.jpeg",
-      "rarity": "COMMON"
+      "catalog_floor_usd": 60.53,
+      "catalog_mcap": 383352.0,
+      "image_url": "https://d11unjture0ske.cloudfront.net/collectible_type_image.3433ffd5-0721-4346-b556-8ff18d545c27.ca635d72-9553-476a-b6f2-903a653d23d6.full.jpeg",
+      "rarity": "RARE"
     },
     {
       "id": "524d5343-73e0-49c3-b79f-1d1d3fa3ea68",
@@ -378,16 +339,16 @@
       "rarity": "SECRET_RARE"
     },
     {
-      "id": "66bf871d-a8d4-474e-a0f2-b1ceb28c7b94",
-      "url": "https://vevealpha.com/c/millennium-falcon",
-      "category": "Collectibles",
+      "id": "8725f9a7-1ef1-47b8-ba27-5dbf9640845e",
+      "url": "https://vevealpha.com/c/strange-tales-common-8725f9",
+      "category": "Comics",
       "brand": "Unknown",
       "character": null,
-      "asset_kind": "collectible",
+      "asset_kind": "comic",
       "provider_grail": false,
-      "catalog_floor_usd": 64.74,
-      "catalog_mcap": 127990.0,
-      "image_url": "https://d11unjture0ske.cloudfront.net/collectible_type_image.66bf871d-a8d4-474e-a0f2-b1ceb28c7b94.593ef2e3-ad5a-4999-8853-2684add4d6e3.full.jpeg",
+      "catalog_floor_usd": 1.33,
+      "catalog_mcap": 27965.0,
+      "image_url": "https://d11unjture0ske.cloudfront.net/comic_cover.8725f9a7-1ef1-47b8-ba27-5dbf9640845e.d13d4bc4-4358-4742-a166-ce2042305834.full.jpeg",
       "rarity": "COMMON"
     },
     {
@@ -398,10 +359,23 @@
       "character": null,
       "asset_kind": "collectible",
       "provider_grail": false,
-      "catalog_floor_usd": 39.85,
-      "catalog_mcap": 498125.0,
+      "catalog_floor_usd": 40.0,
+      "catalog_mcap": 500000.0,
       "image_url": "https://d11unjture0ske.cloudfront.net/collectible_type_image.c898af60-be8a-490a-ac2b-537869c1892a.79da3e3e-3078-4001-b4b3-91b98bca3a9e.full.jpeg",
       "rarity": "ULTRA_RARE"
+    },
+    {
+      "id": "a659bbc2-45cd-4f72-9ca2-7e92a245d05f",
+      "url": "https://vevealpha.com/c/97-joe-madureira-batman",
+      "category": "Collectibles",
+      "brand": "Unknown",
+      "character": null,
+      "asset_kind": "collectible",
+      "provider_grail": false,
+      "catalog_floor_usd": 33.9,
+      "catalog_mcap": 186440.0,
+      "image_url": "https://d11unjture0ske.cloudfront.net/collectible_type_image.a659bbc2-45cd-4f72-9ca2-7e92a245d05f.b3c45aa4-154a-44e8-b0c8-cb3a55e415fa.full.jpeg",
+      "rarity": "UNCOMMON"
     },
     {
       "id": "72c6fd5a-81f4-4344-89cd-07b350ba19a9",
@@ -415,6 +389,19 @@
       "catalog_mcap": 198563.0,
       "image_url": "https://d11unjture0ske.cloudfront.net/comic_cover.72c6fd5a-81f4-4344-89cd-07b350ba19a9.ff006473-6f6a-4fad-83d9-acc0999a7594.full.jpeg",
       "rarity": "SECRET_RARE"
+    },
+    {
+      "id": "f5caca1e-779f-4235-8622-c763fa92ccb6",
+      "url": "https://vevealpha.com/c/donatello-classic-special-edition",
+      "category": "Collectibles",
+      "brand": "Unknown",
+      "character": null,
+      "asset_kind": "collectible",
+      "provider_grail": false,
+      "catalog_floor_usd": 484.26,
+      "catalog_mcap": 42131.0,
+      "image_url": "https://d11unjture0ske.cloudfront.net/collectible_type_image.f5caca1e-779f-4235-8622-c763fa92ccb6.79234462-48bb-4f9a-88e1-6be333890c06.full.jpeg",
+      "rarity": "COMMON"
     },
     {
       "id": "2253a922-25f9-4007-b9f2-0b0aa037f9f0",
@@ -456,19 +443,6 @@
       "rarity": "ULTRA_RARE"
     },
     {
-      "id": "7693425f-edad-4cd9-900c-075b1e26012c",
-      "url": "https://vevealpha.com/c/journey-into-mystery-common-769342",
-      "category": "Comics",
-      "brand": "Unknown",
-      "character": null,
-      "asset_kind": "comic",
-      "provider_grail": false,
-      "catalog_floor_usd": 21.65,
-      "catalog_mcap": 129890.0,
-      "image_url": "https://d11unjture0ske.cloudfront.net/comic_cover.7693425f-edad-4cd9-900c-075b1e26012c.cc882b3f-80a2-474d-b339-d96ffbe39f12.full.jpeg",
-      "rarity": "COMMON"
-    },
-    {
       "id": "6cbcfe3e-6af1-4966-80df-fa1a741e8ee8",
       "url": "https://vevealpha.com/c/giant-size-x-men-secret-rare-6cbcfe",
       "category": "Comics",
@@ -493,6 +467,19 @@
       "catalog_mcap": 355824.0,
       "image_url": "https://d11unjture0ske.cloudfront.net/comic_cover.2425cd0f-45b8-4c50-90ef-7324b208352c.98234f68-78e3-4357-917a-857bd29de70b.full.jpeg",
       "rarity": "SECRET_RARE"
+    },
+    {
+      "id": "fc943f7c-7e87-4f6e-b38e-8bc02c6cf7a6",
+      "url": "https://vevealpha.com/c/spider-man-the-amazing-spider-man",
+      "category": "Collectibles",
+      "brand": "Unknown",
+      "character": null,
+      "asset_kind": "collectible",
+      "provider_grail": false,
+      "catalog_floor_usd": 20.94,
+      "catalog_mcap": 670069.0,
+      "image_url": "https://d11unjture0ske.cloudfront.net/collectible_type_image.fc943f7c-7e87-4f6e-b38e-8bc02c6cf7a6.e9f93a77-651e-47df-b05c-412bdf6caf8f.full.jpeg",
+      "rarity": "COMMON"
     },
     {
       "id": "2725238a-e770-4584-bb5c-0f07955a6c35",
@@ -528,9 +515,9 @@
       "character": null,
       "asset_kind": "collectible",
       "provider_grail": false,
-      "catalog_floor_usd": 1190.86,
-      "catalog_mcap": 103605.0,
-      "image_url": "https://d11unjture0ske.cloudfront.net/collectible_type_image.410fd575-30a3-45ab-a87a-7a928971d321.80a25a1f-27df-4f07-98ae-c97790f5d5f2.full.jpeg",
+      "catalog_floor_usd": 1331.72,
+      "catalog_mcap": 115859.0,
+      "image_url": "https://d11unjture0ske.cloudfront.net/collectible_type_image.410fd575-30a3-45ab-a87a-7a928971d321.80a25a1f-27df-4f07-98ae-c97790f5d5f2.low.jpeg",
       "rarity": "COMMON"
     },
     {
@@ -599,6 +586,19 @@
       "rarity": "COMMON"
     },
     {
+      "id": "953392de-44b4-49a5-bf6d-65f28032a555",
+      "url": "https://vevealpha.com/c/fantastic-four-common-953392",
+      "category": "Comics",
+      "brand": "Unknown",
+      "character": null,
+      "asset_kind": "comic",
+      "provider_grail": false,
+      "catalog_floor_usd": 7.07,
+      "catalog_mcap": 42433.0,
+      "image_url": "https://d11unjture0ske.cloudfront.net/comic_cover.953392de-44b4-49a5-bf6d-65f28032a555.f195ce6f-1eed-4c1c-a12c-f1a27d4c5657.full.jpeg",
+      "rarity": "COMMON"
+    },
+    {
       "id": "5a542314-fecb-4ff0-839c-a8f02585f65a",
       "url": "https://vevealpha.com/c/fantastic-four-rare-5a5423",
       "category": "Comics",
@@ -645,9 +645,9 @@
       "character": null,
       "asset_kind": "collectible",
       "provider_grail": false,
-      "catalog_floor_usd": 541.3,
-      "catalog_mcap": 47093.0,
-      "image_url": "https://d11unjture0ske.cloudfront.net/collectible_type_image.687ad0c0-c8b5-48a7-9ac9-792b8ef95981.1335d6c4-3878-4b48-8a16-ca4926856769.full.jpeg",
+      "catalog_floor_usd": 544.79,
+      "catalog_mcap": 47397.0,
+      "image_url": "https://d11unjture0ske.cloudfront.net/collectible_type_image.687ad0c0-c8b5-48a7-9ac9-792b8ef95981.1335d6c4-3878-4b48-8a16-ca4926856769.low.jpeg",
       "rarity": "COMMON"
     },
     {
@@ -768,19 +768,6 @@
       "rarity": "COMMON"
     },
     {
-      "id": "12dc8ed3-6ffb-476a-a780-4eab2c789da4",
-      "url": "https://vevealpha.com/c/the-incredible-hulk-common-12dc8e",
-      "category": "Comics",
-      "brand": "Unknown",
-      "character": null,
-      "asset_kind": "comic",
-      "provider_grail": false,
-      "catalog_floor_usd": 36.0,
-      "catalog_mcap": 151225.0,
-      "image_url": "https://d11unjture0ske.cloudfront.net/comic_cover.12dc8ed3-6ffb-476a-a780-4eab2c789da4.f38327c1-453d-487b-a3d4-bea7ad666479.full.jpeg",
-      "rarity": "COMMON"
-    },
-    {
       "id": "34382ba7-267e-4d6a-8b95-d75195874885",
       "url": "https://vevealpha.com/c/the-avengers-secret-rare-34382b",
       "category": "Comics",
@@ -818,6 +805,19 @@
       "catalog_mcap": 38674.0,
       "image_url": "https://d11unjture0ske.cloudfront.net/comic_cover.334e31f8-8cba-4d53-ab3f-e93ca62a9c12.dfa77854-b388-44b4-afdc-70a513f19854.low.jpeg",
       "rarity": "ULTRA_RARE"
+    },
+    {
+      "id": "9d466685-c3c3-4363-998f-ea6963c2ea04",
+      "url": "https://vevealpha.com/c/fantastic-four-common-9d4666",
+      "category": "Comics",
+      "brand": "Unknown",
+      "character": null,
+      "asset_kind": "comic",
+      "provider_grail": false,
+      "catalog_floor_usd": 7.5,
+      "catalog_mcap": 84059.0,
+      "image_url": "https://d11unjture0ske.cloudfront.net/comic_cover.9d466685-c3c3-4363-998f-ea6963c2ea04.2e95682f-5ea5-4317-bfe1-6a56c1b04e4a.low.jpeg",
+      "rarity": "COMMON"
     },
     {
       "id": "ffabb2e2-810d-4f83-91e7-3d6b80c0f194",
@@ -1119,6 +1119,19 @@
       "rarity": "SECRET_RARE"
     },
     {
+      "id": "ce4ae109-fb92-412f-b2c2-348d248af2b9",
+      "url": "https://vevealpha.com/c/tales-of-suspense-common-ce4ae1",
+      "category": "Comics",
+      "brand": "Unknown",
+      "character": null,
+      "asset_kind": "comic",
+      "provider_grail": false,
+      "catalog_floor_usd": 29.99,
+      "catalog_mcap": 108018.0,
+      "image_url": "https://d11unjture0ske.cloudfront.net/comic_cover.ce4ae109-fb92-412f-b2c2-348d248af2b9.505c322e-f816-4c57-bc7d-9d1c37a31f6b.low.jpeg",
+      "rarity": "COMMON"
+    },
+    {
       "id": "f75faf5d-2650-4712-b05d-51b36b707411",
       "url": "https://vevealpha.com/c/marvel-dc-deadpool-batman-secret-rare",
       "category": "Comics",
@@ -1389,19 +1402,6 @@
       "catalog_floor_usd": 255.0,
       "catalog_mcap": 262790.0,
       "image_url": "https://d11unjture0ske.cloudfront.net/collectible_type_image.b33424b2-ea2b-45c0-9f5b-05748c064554.5b3e4c94-920b-4a49-b434-dd7681b1b524.full.jpeg",
-      "rarity": "RARE"
-    },
-    {
-      "id": "3433ffd5-0721-4346-b556-8ff18d545c27",
-      "url": "https://vevealpha.com/c/mickey-sorcerer-s-hat",
-      "category": "Collectibles",
-      "brand": "Unknown",
-      "character": null,
-      "asset_kind": "collectible",
-      "provider_grail": false,
-      "catalog_floor_usd": 115.0,
-      "catalog_mcap": 448004.0,
-      "image_url": "https://d11unjture0ske.cloudfront.net/collectible_type_image.3433ffd5-0721-4346-b556-8ff18d545c27.ca635d72-9553-476a-b6f2-903a653d23d6.full.jpeg",
       "rarity": "RARE"
     },
     {
