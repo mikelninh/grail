@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-04T22:27:58.868273+00:00",
+  "generated_at": "2026-10-05T01:09:09.474958+00:00",
   "source": "VeVe Alpha public search + public registry preview",
   "counts": {
     "assets": 742,
@@ -16,9 +16,9 @@
       "image_url": "https://d11unjture0ske.cloudfront.net/comic_cover.e0ff78b6-fe16-421a-b72e-1a0bb945909d.79fed982-5351-4006-a1c9-a61e19be3a53.full.jpeg",
       "rarity": "SECRET_RARE",
       "kind": "comic",
-      "floor_usd": 1940.82,
+      "floor_usd": 1973.52,
       "floor_omi": 7500000,
-      "mcap": 1164492.0,
+      "mcap": 1184112.0,
       "is_top200": true,
       "provider_grail": true,
       "brand": "Marvel",
@@ -34,7 +34,7 @@
       "is_fe": null,
       "provider_alpha": true,
       "alpha_why": [
-        "Furthest under its own sales of all 25 graded comics \u2014 floor $1,940.82 against a median of $4,900.00 over 3 sales on StackR in 90 days."
+        "Furthest under its own sales of all 25 graded comics \u2014 floor $1,973.52 against a median of $4,900.00 over 3 sales on StackR in 90 days."
       ],
       "sale_median_30d": 4900.0,
       "floor_vs_sales_pct": -60.0,
@@ -48,9 +48,9 @@
       "image_url": "https://d11unjture0ske.cloudfront.net/collectible_type_image.877dfb81-f781-44c8-a1ce-8d585164cd26.727c4c08-83c2-4985-93e2-52006082997d.low.jpeg",
       "rarity": "SECRET_RARE",
       "kind": "collectible",
-      "floor_usd": 1132.15,
+      "floor_usd": 1151.22,
       "floor_omi": 5000000,
-      "mcap": 317001.0,
+      "mcap": 322342.0,
       "is_top200": true,
       "provider_grail": true,
       "brand": "Star Wars Yoda Series Collection",
@@ -66,10 +66,10 @@
       "is_fe": false,
       "provider_alpha": true,
       "alpha_why": [
-        "2 cheapest of 45 graded collectibles on market cap \u2014 worth $317,001 against a $2,260,085 median for A+ collectibles."
+        "2 cheapest of 45 graded collectibles on market cap \u2014 worth $322,342 against a $2,298,164 median for A+ collectibles."
       ],
       "sale_median_30d": 820.23,
-      "floor_vs_sales_pct": 38.0,
+      "floor_vs_sales_pct": 40.0,
       "triage_score": 96.0
     },
     {
@@ -110,9 +110,9 @@
       "image_url": "https://d11unjture0ske.cloudfront.net/comic_cover.66b46e57-90c5-4556-a65e-6dc44899cea6.e7c6edaa-1610-4a17-b388-7b4e36a8357b.full.jpeg",
       "rarity": "COMMON",
       "kind": "comic",
-      "floor_usd": 12.78,
+      "floor_usd": 12.99,
       "floor_omi": 45000,
-      "mcap": 613299.0,
+      "mcap": 623632.0,
       "is_top200": true,
       "provider_grail": false,
       "brand": "Marvel",
@@ -120,19 +120,19 @@
       "era": "Golden Age",
       "supply": 48000,
       "holders": 19560,
-      "sales30": 100,
-      "vol30": 1773.0,
+      "sales30": 99,
+      "vol30": 1750.0,
       "active_pct": 22.1,
       "rating": 89.0,
       "is_fa": true,
       "is_fe": null,
       "provider_alpha": true,
       "alpha_why": [
-        "4 furthest under its own sales of 25 graded comics \u2014 floor $12.78 against a median of $14.80 over 100 sales on StackR in 90 days."
+        "4 furthest under its own sales of 25 graded comics \u2014 floor $12.99 against a median of $14.80 over 99 sales on StackR in 90 days."
       ],
       "sale_median_30d": 14.8,
-      "floor_vs_sales_pct": -14.0,
-      "triage_score": 84.5
+      "floor_vs_sales_pct": -12.0,
+      "triage_score": 84.0
     },
     {
       "collectible_id": "0184c362-23b6-4c61-b234-327167a8fba2",
@@ -172,9 +172,9 @@
       "image_url": "https://d11unjture0ske.cloudfront.net/comic_cover.cd2b1ac4-415c-4f3a-aa51-eb8a1e09bb29.56efa90c-32f1-482f-a1bf-41d101654e77.low.jpeg",
       "rarity": "SECRET_RARE",
       "kind": "comic",
-      "floor_usd": 250.69,
+      "floor_usd": 254.91,
       "floor_omi": 1599999,
-      "mcap": 62672.0,
+      "mcap": 63728.0,
       "is_top200": true,
       "provider_grail": false,
       "brand": "Marvel",
@@ -190,11 +190,12 @@
       "is_fe": null,
       "provider_alpha": true,
       "alpha_why": [
-        "The cheapest of 34 graded comics on market cap \u2014 worth $62,672 against a $345,868 median for A+ comics."
+        "The cheapest of 34 graded comics on market cap \u2014 worth $63,728 against a $343,405 median for A+ comics.",
+        "4 furthest under its own sales of 25 graded comics \u2014 floor $254.91 against a median of $288.35 over 4 sales on StackR in 90 days."
       ],
       "sale_median_30d": 288.35,
-      "floor_vs_sales_pct": -13.0,
-      "triage_score": 81.25
+      "floor_vs_sales_pct": -12.0,
+      "triage_score": 81.0
     },
     {
       "collectible_id": "2794ef40-2f15-422b-b71f-9f17becccf5c",
@@ -222,7 +223,7 @@
       "is_fe": null,
       "provider_alpha": true,
       "alpha_why": [
-        "2 cheapest of 34 graded comics on market cap \u2014 worth $131,978 against a $345,868 median for A+ comics.",
+        "2 cheapest of 34 graded comics on market cap \u2014 worth $131,978 against a $343,405 median for A+ comics.",
         "3 furthest under its own sales of 25 graded comics \u2014 floor $22.00 against a median of $26.99 over 18 sales on VeVe in 90 days."
       ],
       "sale_median_30d": 26.99,
@@ -327,9 +328,9 @@
       "image_url": "https://d11unjture0ske.cloudfront.net/collectible_type_image.a605b45c-c809-40d4-a98b-b5daa200a696.615eff4f-7b29-48db-9917-ee9cdd5d6d6a.full.jpeg",
       "rarity": "SECRET_RARE",
       "kind": "collectible",
-      "floor_usd": 129.39,
+      "floor_usd": 131.57,
       "floor_omi": 400000,
-      "mcap": 362286.0,
+      "mcap": 368390.0,
       "is_top200": true,
       "provider_grail": false,
       "brand": "Black Panther",
@@ -345,7 +346,7 @@
       "is_fe": false,
       "provider_alpha": true,
       "alpha_why": [
-        "Furthest under its own sales of all 44 graded collectibles \u2014 floor $129.39 against a median of $130.58 over 2 sales on VeVe in 90 days."
+        "Furthest under its own sales of all 44 graded collectibles \u2014 floor $131.57 against a median of $130.58 over 2 sales on VeVe in 90 days."
       ],
       "sale_median_30d": 130.58,
       "floor_vs_sales_pct": -35.0,
@@ -407,7 +408,7 @@
       "is_fe": null,
       "provider_alpha": true,
       "alpha_why": [
-        "5 cheapest of 34 graded comics on market cap \u2014 worth $150,000 against a $345,868 median for A+ comics.",
+        "5 cheapest of 34 graded comics on market cap \u2014 worth $150,000 against a $343,405 median for A+ comics.",
         "2 furthest under its own sales of 25 graded comics \u2014 floor $25.00 against a median of $32.00 over 12 sales on VeVe in 90 days."
       ],
       "sale_median_30d": 32.0,
@@ -422,9 +423,9 @@
       "image_url": "https://d11unjture0ske.cloudfront.net/comic_cover.12dc8ed3-6ffb-476a-a780-4eab2c789da4.f38327c1-453d-487b-a3d4-bea7ad666479.full.jpeg",
       "rarity": "COMMON",
       "kind": "comic",
-      "floor_usd": 22.54,
+      "floor_usd": 22.92,
       "floor_omi": 119000,
-      "mcap": 135267.0,
+      "mcap": 137546.0,
       "is_top200": true,
       "provider_grail": false,
       "brand": "Marvel",
@@ -440,10 +441,10 @@
       "is_fe": null,
       "provider_alpha": true,
       "alpha_why": [
-        "3 cheapest of 34 graded comics on market cap \u2014 worth $135,267 against a $345,868 median for A+ comics."
+        "3 cheapest of 34 graded comics on market cap \u2014 worth $137,546 against a $343,405 median for A+ comics."
       ],
       "sale_median_30d": 11.78,
-      "floor_vs_sales_pct": 91.0,
+      "floor_vs_sales_pct": 95.0,
       "triage_score": 69.0
     },
     {
@@ -567,6 +568,38 @@
       "triage_score": 66.0
     },
     {
+      "collectible_id": "4b3b200b-8469-43a2-aa68-114a4d9e0306",
+      "name": "Spider-Man \u2013 Jump into Action",
+      "slug": "spider-man-jump-into-action",
+      "source_url": "https://vevealpha.com/c/spider-man-jump-into-action",
+      "image_url": "https://d11unjture0ske.cloudfront.net/collectible_type_image.4b3b200b-8469-43a2-aa68-114a4d9e0306.d0f13c40-8313-4ea8-a41e-2aac30f97f10.full.jpeg",
+      "rarity": "RARE",
+      "kind": "collectible",
+      "floor_usd": 27.96,
+      "floor_omi": 119000,
+      "mcap": 251596.0,
+      "is_top200": true,
+      "provider_grail": false,
+      "brand": "Spider-Man",
+      "grade": "A",
+      "era": null,
+      "supply": 8999,
+      "holders": 7570,
+      "sales30": 19,
+      "vol30": 840.0,
+      "active_pct": 17.6,
+      "rating": 79.0,
+      "is_fa": true,
+      "is_fe": false,
+      "provider_alpha": true,
+      "alpha_why": [
+        "5 furthest under its own sales of 44 graded collectibles \u2014 floor $27.96 against a median of $28.96 over 19 sales on StackR in 90 days."
+      ],
+      "sale_median_30d": 28.96,
+      "floor_vs_sales_pct": -3.0,
+      "triage_score": 64.0
+    },
+    {
       "collectible_id": "d29aedf0-6420-4549-b702-27b7d49a8d20",
       "name": "I am a Jedi, like my father before me",
       "slug": "i-am-a-jedi-like-my-father-before-me",
@@ -597,38 +630,6 @@
       "sale_median_30d": 406.19,
       "floor_vs_sales_pct": 1.0,
       "triage_score": 62.0
-    },
-    {
-      "collectible_id": "4b3b200b-8469-43a2-aa68-114a4d9e0306",
-      "name": "Spider-Man \u2013 Jump into Action",
-      "slug": "spider-man-jump-into-action",
-      "source_url": "https://vevealpha.com/c/spider-man-jump-into-action",
-      "image_url": "https://d11unjture0ske.cloudfront.net/collectible_type_image.4b3b200b-8469-43a2-aa68-114a4d9e0306.d0f13c40-8313-4ea8-a41e-2aac30f97f10.full.jpeg",
-      "rarity": "RARE",
-      "kind": "collectible",
-      "floor_usd": 27.49,
-      "floor_omi": 119000,
-      "mcap": 247427.0,
-      "is_top200": true,
-      "provider_grail": false,
-      "brand": "Spider-Man",
-      "grade": "A",
-      "era": null,
-      "supply": 8999,
-      "holders": 7570,
-      "sales30": 19,
-      "vol30": 840.0,
-      "active_pct": 17.6,
-      "rating": 79.0,
-      "is_fa": true,
-      "is_fe": false,
-      "provider_alpha": true,
-      "alpha_why": [
-        "5 furthest under its own sales of 44 graded collectibles \u2014 floor $27.49 against a median of $28.96 over 19 sales on StackR in 90 days."
-      ],
-      "sale_median_30d": 28.96,
-      "floor_vs_sales_pct": -5.0,
-      "triage_score": 61.0
     },
     {
       "collectible_id": "6e0cf5d2-44a6-44fe-a40e-a8ac8ff487e5",
@@ -698,9 +699,9 @@
       "image_url": "https://d11unjture0ske.cloudfront.net/collectible_type_image.1969839e-04bc-4433-801f-3a2007e410f4.6ae5ff99-d9e2-4891-b564-152cc506584e.low.jpeg",
       "rarity": "RARE",
       "kind": "collectible",
-      "floor_usd": 18.41,
+      "floor_usd": 18.72,
       "floor_omi": 69900,
-      "mcap": 73198.0,
+      "mcap": 74432.0,
       "is_top200": true,
       "provider_grail": false,
       "brand": "Star Wars\u2122:  Return of the Jedi\u2122 Collection",
@@ -716,11 +717,11 @@
       "is_fe": false,
       "provider_alpha": true,
       "alpha_why": [
-        "4 cheapest of 45 graded collectibles on market cap \u2014 worth $73,198 against a $352,582 median for A collectibles.",
-        "4 furthest under its own sales of 44 graded collectibles \u2014 floor $18.41 against a median of $19.88 over 8 sales on StackR in 90 days."
+        "4 cheapest of 45 graded collectibles on market cap \u2014 worth $74,432 against a $358,523 median for A collectibles.",
+        "4 furthest under its own sales of 44 graded collectibles \u2014 floor $18.72 against a median of $19.88 over 8 sales on StackR in 90 days."
       ],
       "sale_median_30d": 19.88,
-      "floor_vs_sales_pct": -7.0,
+      "floor_vs_sales_pct": -6.0,
       "triage_score": 58.0
     },
     {
@@ -761,9 +762,9 @@
       "image_url": "https://d11unjture0ske.cloudfront.net/collectible_type_image.a0c50208-f32c-4e7e-9664-c28555a9f523.f99e865e-3724-416c-a005-517524865542.full.jpeg",
       "rarity": "COMMON",
       "kind": "collectible",
-      "floor_usd": 45.29,
+      "floor_usd": 46.05,
       "floor_omi": 190000,
-      "mcap": 89665.0,
+      "mcap": 91176.0,
       "is_top200": true,
       "provider_grail": false,
       "brand": "Star Wars Yoda Series Collection",
@@ -779,10 +780,10 @@
       "is_fe": false,
       "provider_alpha": true,
       "alpha_why": [
-        "5 cheapest of 45 graded collectibles on market cap \u2014 worth $89,665 against a $352,582 median for A collectibles."
+        "5 cheapest of 45 graded collectibles on market cap \u2014 worth $91,176 against a $358,523 median for A collectibles."
       ],
       "sale_median_30d": 34.48,
-      "floor_vs_sales_pct": 31.0,
+      "floor_vs_sales_pct": 34.0,
       "triage_score": 57.0
     },
     {
@@ -793,9 +794,9 @@
       "image_url": "https://d11unjture0ske.cloudfront.net/collectible_type_image.5fd09e1f-58f8-467f-9e78-d64f6e3a69b9.9242a0b3-8f80-4950-85ad-cd1818bafd6e.full.jpeg",
       "rarity": "ULTRA_RARE",
       "kind": "collectible",
-      "floor_usd": 97.04,
+      "floor_usd": 98.68,
       "floor_omi": 445000,
-      "mcap": 191850.0,
+      "mcap": 195082.0,
       "is_top200": true,
       "provider_grail": false,
       "brand": "Star Wars Droids Collection",
@@ -811,10 +812,10 @@
       "is_fe": null,
       "provider_alpha": true,
       "alpha_why": [
-        "6 furthest under its own sales of 44 graded collectibles \u2014 floor $97.04 against a median of $97.78 over 11 sales on StackR in 90 days."
+        "6 furthest under its own sales of 44 graded collectibles \u2014 floor $98.68 against a median of $100.30 over 11 sales on StackR in 90 days."
       ],
-      "sale_median_30d": 97.78,
-      "floor_vs_sales_pct": -1.0,
+      "sale_median_30d": 100.3,
+      "floor_vs_sales_pct": -2.0,
       "triage_score": 57.0
     },
     {
@@ -908,6 +909,39 @@
       "sale_median_30d": 45.0,
       "floor_vs_sales_pct": -11.0,
       "triage_score": 52.75
+    },
+    {
+      "collectible_id": "f5caca1e-779f-4235-8622-c763fa92ccb6",
+      "name": "Donatello - Classic (Special Edition)",
+      "slug": "donatello-classic-special-edition",
+      "source_url": "https://vevealpha.com/c/donatello-classic-special-edition",
+      "image_url": "https://d11unjture0ske.cloudfront.net/collectible_type_image.f5caca1e-779f-4235-8622-c763fa92ccb6.79234462-48bb-4f9a-88e1-6be333890c06.full.jpeg",
+      "rarity": "COMMON",
+      "kind": "collectible",
+      "floor_usd": 427.6,
+      "floor_omi": null,
+      "mcap": 37201.0,
+      "is_top200": true,
+      "provider_grail": false,
+      "brand": "Teenage Mutant Ninja Turtles",
+      "grade": "A",
+      "era": null,
+      "supply": 87,
+      "holders": 54,
+      "sales30": 0,
+      "vol30": 0.0,
+      "active_pct": 100.0,
+      "rating": 78.0,
+      "is_fa": true,
+      "is_fe": false,
+      "provider_alpha": true,
+      "alpha_why": [
+        "The cheapest of 45 graded collectibles on market cap \u2014 worth $37,201 against a $358,523 median for A collectibles.",
+        "2 furthest under its own sales of 44 graded collectibles \u2014 floor $427.60 against a median of $569.56 over 0 sales on StackR in 90 days."
+      ],
+      "sale_median_30d": 569.56,
+      "floor_vs_sales_pct": -25.0,
+      "triage_score": 52.25
     },
     {
       "collectible_id": "72c6fd5a-81f4-4344-89cd-07b350ba19a9",
@@ -1060,39 +1094,6 @@
       "triage_score": 50.0
     },
     {
-      "collectible_id": "f5caca1e-779f-4235-8622-c763fa92ccb6",
-      "name": "Donatello - Classic (Special Edition)",
-      "slug": "donatello-classic-special-edition",
-      "source_url": "https://vevealpha.com/c/donatello-classic-special-edition",
-      "image_url": "https://d11unjture0ske.cloudfront.net/collectible_type_image.f5caca1e-779f-4235-8622-c763fa92ccb6.79234462-48bb-4f9a-88e1-6be333890c06.full.jpeg",
-      "rarity": "COMMON",
-      "kind": "collectible",
-      "floor_usd": 485.21,
-      "floor_omi": null,
-      "mcap": 42213.0,
-      "is_top200": true,
-      "provider_grail": false,
-      "brand": "Teenage Mutant Ninja Turtles",
-      "grade": "A",
-      "era": null,
-      "supply": 87,
-      "holders": 54,
-      "sales30": 0,
-      "vol30": 0.0,
-      "active_pct": 100.0,
-      "rating": 78.0,
-      "is_fa": true,
-      "is_fe": false,
-      "provider_alpha": true,
-      "alpha_why": [
-        "The cheapest of 45 graded collectibles on market cap \u2014 worth $42,213 against a $352,582 median for A collectibles.",
-        "2 furthest under its own sales of 44 graded collectibles \u2014 floor $485.21 against a median of $569.56 over 0 sales on StackR in 90 days."
-      ],
-      "sale_median_30d": 569.56,
-      "floor_vs_sales_pct": -15.0,
-      "triage_score": 49.75
-    },
-    {
       "collectible_id": "6cbcfe3e-6af1-4966-80df-fa1a741e8ee8",
       "name": "Giant-Size X-Men #1",
       "slug": "giant-size-x-men-secret-rare-6cbcfe",
@@ -1153,6 +1154,38 @@
       "triage_score": 49.0
     },
     {
+      "collectible_id": "687ad0c0-c8b5-48a7-9ac9-792b8ef95981",
+      "name": "Raphael - Classic (Special Edition)",
+      "slug": "raphael-classic-special-edition",
+      "source_url": "https://vevealpha.com/c/raphael-classic-special-edition",
+      "image_url": "https://d11unjture0ske.cloudfront.net/collectible_type_image.687ad0c0-c8b5-48a7-9ac9-792b8ef95981.1335d6c4-3878-4b48-8a16-ca4926856769.full.jpeg",
+      "rarity": "COMMON",
+      "kind": "collectible",
+      "floor_usd": 575.61,
+      "floor_omi": null,
+      "mcap": 50078.0,
+      "is_top200": true,
+      "provider_grail": false,
+      "brand": "Teenage Mutant Ninja Turtles",
+      "grade": "A",
+      "era": null,
+      "supply": 87,
+      "holders": 54,
+      "sales30": 1,
+      "vol30": 429.0,
+      "active_pct": 97.3,
+      "rating": 78.0,
+      "is_fa": true,
+      "is_fe": false,
+      "provider_alpha": true,
+      "alpha_why": [
+        "2 cheapest of 45 graded collectibles on market cap \u2014 worth $50,078 against a $358,523 median for A collectibles."
+      ],
+      "sale_median_30d": 478.93,
+      "floor_vs_sales_pct": 20.0,
+      "triage_score": 47.0
+    },
+    {
       "collectible_id": "146ac2a6-6813-4a88-a03a-4cc2a90b721d",
       "name": "Michelangelo - Classic (Special Edition)",
       "slug": "michelangelo-classic-special-edition",
@@ -1160,9 +1193,9 @@
       "image_url": "https://d11unjture0ske.cloudfront.net/collectible_type_image.146ac2a6-6813-4a88-a03a-4cc2a90b721d.7c77f10e-b527-4736-94d6-1cc4aabf410e.low.jpeg",
       "rarity": "COMMON",
       "kind": "collectible",
-      "floor_usd": 1293.88,
+      "floor_usd": 1315.68,
       "floor_omi": null,
-      "mcap": 112568.0,
+      "mcap": 114464.0,
       "is_top200": true,
       "provider_grail": false,
       "brand": "Teenage Mutant Ninja Turtles",
@@ -1178,10 +1211,10 @@
       "is_fe": false,
       "provider_alpha": true,
       "alpha_why": [
-        "7 cheapest of 45 graded collectibles on market cap \u2014 worth $112,568 against a $352,582 median for A collectibles."
+        "7 cheapest of 45 graded collectibles on market cap \u2014 worth $114,464 against a $358,523 median for A collectibles."
       ],
       "sale_median_30d": 1224.65,
-      "floor_vs_sales_pct": 6.0,
+      "floor_vs_sales_pct": 7.0,
       "triage_score": 47.0
     },
     {
@@ -1192,9 +1225,9 @@
       "image_url": "https://d11unjture0ske.cloudfront.net/collectible_type_image.410fd575-30a3-45ab-a87a-7a928971d321.80a25a1f-27df-4f07-98ae-c97790f5d5f2.full.jpeg",
       "rarity": "COMMON",
       "kind": "collectible",
-      "floor_usd": 1229.19,
+      "floor_usd": 1249.9,
       "floor_omi": null,
-      "mcap": 106939.0,
+      "mcap": 108741.0,
       "is_top200": true,
       "provider_grail": false,
       "brand": "Teenage Mutant Ninja Turtles",
@@ -1210,10 +1243,10 @@
       "is_fe": false,
       "provider_alpha": true,
       "alpha_why": [
-        "6 cheapest of 45 graded collectibles on market cap \u2014 worth $106,939 against a $352,582 median for A collectibles."
+        "6 cheapest of 45 graded collectibles on market cap \u2014 worth $108,741 against a $358,523 median for A collectibles."
       ],
       "sale_median_30d": 690.4,
-      "floor_vs_sales_pct": 78.0,
+      "floor_vs_sales_pct": 81.0,
       "triage_score": 47.0
     },
     {
@@ -1242,7 +1275,7 @@
       "is_fe": null,
       "provider_alpha": true,
       "alpha_why": [
-        "4 cheapest of 34 graded comics on market cap \u2014 worth $143,976 against a $345,868 median for A+ comics."
+        "4 cheapest of 34 graded comics on market cap \u2014 worth $143,976 against a $343,405 median for A+ comics."
       ],
       "sale_median_30d": 21.99,
       "floor_vs_sales_pct": 9.0,
@@ -1397,38 +1430,6 @@
       "sale_median_30d": null,
       "floor_vs_sales_pct": null,
       "triage_score": 45.0
-    },
-    {
-      "collectible_id": "687ad0c0-c8b5-48a7-9ac9-792b8ef95981",
-      "name": "Raphael - Classic (Special Edition)",
-      "slug": "raphael-classic-special-edition",
-      "source_url": "https://vevealpha.com/c/raphael-classic-special-edition",
-      "image_url": "https://d11unjture0ske.cloudfront.net/collectible_type_image.687ad0c0-c8b5-48a7-9ac9-792b8ef95981.1335d6c4-3878-4b48-8a16-ca4926856769.full.jpeg",
-      "rarity": "COMMON",
-      "kind": "collectible",
-      "floor_usd": 566.07,
-      "floor_omi": null,
-      "mcap": 49248.0,
-      "is_top200": true,
-      "provider_grail": false,
-      "brand": "Teenage Mutant Ninja Turtles",
-      "grade": "A",
-      "era": null,
-      "supply": 87,
-      "holders": 54,
-      "sales30": 1,
-      "vol30": 429.0,
-      "active_pct": 97.3,
-      "rating": 78.0,
-      "is_fa": true,
-      "is_fe": false,
-      "provider_alpha": true,
-      "alpha_why": [
-        "2 cheapest of 45 graded collectibles on market cap \u2014 worth $49,248 against a $352,582 median for A collectibles."
-      ],
-      "sale_median_30d": 478.93,
-      "floor_vs_sales_pct": 18.0,
-      "triage_score": 43.0
     },
     {
       "collectible_id": "5a542314-fecb-4ff0-839c-a8f02585f65a",
