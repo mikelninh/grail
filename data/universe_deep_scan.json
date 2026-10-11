@@ -8,8 +8,8 @@
       "character": null,
       "asset_kind": "comic",
       "provider_grail": true,
-      "catalog_floor_usd": 3287.02,
-      "catalog_mcap": 1972212.0,
+      "catalog_floor_usd": 3244.12,
+      "catalog_mcap": 1946472.0,
       "image_url": "https://d11unjture0ske.cloudfront.net/comic_cover.e0ff78b6-fe16-421a-b72e-1a0bb945909d.79fed982-5351-4006-a1c9-a61e19be3a53.full.jpeg",
       "rarity": "SECRET_RARE"
     },
@@ -21,8 +21,8 @@
       "character": null,
       "asset_kind": "collectible",
       "provider_grail": true,
-      "catalog_floor_usd": 996.07,
-      "catalog_mcap": 278899.0,
+      "catalog_floor_usd": 983.07,
+      "catalog_mcap": 275259.0,
       "image_url": "https://d11unjture0ske.cloudfront.net/collectible_type_image.877dfb81-f781-44c8-a1ce-8d585164cd26.727c4c08-83c2-4985-93e2-52006082997d.full.jpeg",
       "rarity": "SECRET_RARE"
     },
@@ -35,7 +35,7 @@
       "asset_kind": "comic",
       "provider_grail": true,
       "catalog_floor_usd": 2800.0,
-      "catalog_mcap": 1000449.0,
+      "catalog_mcap": 987392.0,
       "image_url": "https://d11unjture0ske.cloudfront.net/comic_cover.0184c362-23b6-4c61-b234-327167a8fba2.f884d674-9771-4a8a-959e-eadf1f49a48b.low.jpeg",
       "rarity": "SECRET_RARE"
     },
@@ -60,10 +60,23 @@
       "character": null,
       "asset_kind": "comic",
       "provider_grail": false,
-      "catalog_floor_usd": 388.47,
-      "catalog_mcap": 97117.0,
+      "catalog_floor_usd": 383.4,
+      "catalog_mcap": 95849.0,
       "image_url": "https://d11unjture0ske.cloudfront.net/comic_cover.cd2b1ac4-415c-4f3a-aa51-eb8a1e09bb29.56efa90c-32f1-482f-a1bf-41d101654e77.full.jpeg",
       "rarity": "SECRET_RARE"
+    },
+    {
+      "id": "a30604ac-4ac1-4f27-93b3-33620eb250f4",
+      "url": "https://vevealpha.com/c/the-amazing-spider-man-common-a30604",
+      "category": "Comics",
+      "brand": "Unknown",
+      "character": null,
+      "asset_kind": "comic",
+      "provider_grail": false,
+      "catalog_floor_usd": 4.42,
+      "catalog_mcap": 212338.0,
+      "image_url": "https://d11unjture0ske.cloudfront.net/comic_cover.a30604ac-4ac1-4f27-93b3-33620eb250f4.0ebaccaa-1e61-448b-9aec-e0acdfe35b28.full.jpeg",
+      "rarity": "COMMON"
     },
     {
       "id": "90cd8e7b-5195-4f5b-a5be-bc41d9e338fa",
@@ -74,7 +87,7 @@
       "asset_kind": "comic",
       "provider_grail": true,
       "catalog_floor_usd": 328.0,
-      "catalog_mcap": 1219186.0,
+      "catalog_mcap": 1203274.0,
       "image_url": "https://d11unjture0ske.cloudfront.net/comic_cover.90cd8e7b-5195-4f5b-a5be-bc41d9e338fa.e9ef1d4c-5ea8-44bd-837a-004950b92f9e.full.jpeg",
       "rarity": "COMMON"
     },
@@ -87,22 +100,9 @@
       "asset_kind": "comic",
       "provider_grail": true,
       "catalog_floor_usd": 1499.0,
-      "catalog_mcap": 146422.0,
+      "catalog_mcap": 144511.0,
       "image_url": "https://d11unjture0ske.cloudfront.net/comic_cover.21b9f6be-5b37-4c9c-8b89-7db849f16a32.54aeb189-bb16-4f8b-843d-80e84c8b4d66.low.jpeg",
       "rarity": "SECRET_RARE"
-    },
-    {
-      "id": "a30604ac-4ac1-4f27-93b3-33620eb250f4",
-      "url": "https://vevealpha.com/c/the-amazing-spider-man-common-a30604",
-      "category": "Comics",
-      "brand": "Unknown",
-      "character": null,
-      "asset_kind": "comic",
-      "provider_grail": false,
-      "catalog_floor_usd": 5.08,
-      "catalog_mcap": 243832.0,
-      "image_url": "https://d11unjture0ske.cloudfront.net/comic_cover.a30604ac-4ac1-4f27-93b3-33620eb250f4.0ebaccaa-1e61-448b-9aec-e0acdfe35b28.full.jpeg",
-      "rarity": "COMMON"
     },
     {
       "id": "99877237-e47d-4a66-9813-51a9c7ebacd8",
@@ -113,7 +113,7 @@
       "asset_kind": "comic",
       "provider_grail": true,
       "catalog_floor_usd": 2050.0,
-      "catalog_mcap": 699239.0,
+      "catalog_mcap": 690113.0,
       "image_url": "https://d11unjture0ske.cloudfront.net/comic_cover.99877237-e47d-4a66-9813-51a9c7ebacd8.b10a4a0a-509c-483c-a498-b8d24da60ffd.full.jpeg",
       "rarity": "SECRET_RARE"
     },
@@ -126,7 +126,7 @@
       "asset_kind": "collectible",
       "provider_grail": true,
       "catalog_floor_usd": 9500.0,
-      "catalog_mcap": 2510088.0,
+      "catalog_mcap": 2477328.0,
       "image_url": "https://d11unjture0ske.cloudfront.net/collectible_type_image.b63e3aba-de6d-45e1-b371-bcec12a2a14a.e16d0490-ad0b-4e6c-9e4c-ae1d659d0dd8.full.jpeg",
       "rarity": "SECRET_RARE"
     },
@@ -138,9 +138,9 @@
       "character": null,
       "asset_kind": "collectible",
       "provider_grail": true,
-      "catalog_floor_usd": 5500.0,
-      "catalog_mcap": 5500000.0,
-      "image_url": "https://d11unjture0ske.cloudfront.net/collectible_type_image.7c5eb748-9229-452d-9bfd-00c75c029499.691f2f20-8af2-42b5-848c-2088825cd355.full.jpeg",
+      "catalog_floor_usd": 4888.0,
+      "catalog_mcap": 4888000.0,
+      "image_url": "https://d11unjture0ske.cloudfront.net/collectible_type_image.7c5eb748-9229-452d-9bfd-00c75c029499.691f2f20-8af2-42b5-848c-2088825cd355.low.jpeg",
       "rarity": "SECRET_RARE"
     },
     {
@@ -152,7 +152,7 @@
       "asset_kind": "collectible",
       "provider_grail": true,
       "catalog_floor_usd": 1999.0,
-      "catalog_mcap": 5166200.0,
+      "catalog_mcap": 5239342.0,
       "image_url": "https://d11unjture0ske.cloudfront.net/collectible_type_image.95b86201-ed47-471f-ada2-4e053041379b.ce54992c-5396-42d9-b4dc-2b6a4ddf498c.full.jpeg",
       "rarity": "ULTRA_RARE"
     },
@@ -164,10 +164,23 @@
       "character": null,
       "asset_kind": "collectible",
       "provider_grail": false,
-      "catalog_floor_usd": 14.79,
-      "catalog_mcap": 58826.0,
+      "catalog_floor_usd": 14.6,
+      "catalog_mcap": 58058.0,
       "image_url": "https://d11unjture0ske.cloudfront.net/collectible_type_image.1969839e-04bc-4433-801f-3a2007e410f4.6ae5ff99-d9e2-4891-b564-152cc506584e.full.jpeg",
       "rarity": "RARE"
+    },
+    {
+      "id": "ee27ac13-2e51-4cda-925f-595060735022",
+      "url": "https://vevealpha.com/c/ecomi-logo-red-silver",
+      "category": "Collectibles",
+      "brand": "Unknown",
+      "character": null,
+      "asset_kind": "collectible",
+      "provider_grail": false,
+      "catalog_floor_usd": 1415.62,
+      "catalog_mcap": 802654.0,
+      "image_url": "https://d11unjture0ske.cloudfront.net/collectible_type_image.ee27ac13-2e51-4cda-925f-595060735022.73da237e-665f-4520-8310-f45d02089baa.full.jpeg",
+      "rarity": "SECRET_RARE"
     },
     {
       "id": "0a804823-ec36-4e80-b327-152bc6ef6d61",
@@ -178,21 +191,8 @@
       "asset_kind": "comic",
       "provider_grail": true,
       "catalog_floor_usd": 10450.0,
-      "catalog_mcap": 2017035.0,
+      "catalog_mcap": 1990710.0,
       "image_url": "https://d11unjture0ske.cloudfront.net/comic_cover.0a804823-ec36-4e80-b327-152bc6ef6d61.21017e49-e17e-4a90-b0fd-806d0470881a.full.jpeg",
-      "rarity": "SECRET_RARE"
-    },
-    {
-      "id": "ee27ac13-2e51-4cda-925f-595060735022",
-      "url": "https://vevealpha.com/c/ecomi-logo-red-silver",
-      "category": "Collectibles",
-      "brand": "Unknown",
-      "character": null,
-      "asset_kind": "collectible",
-      "provider_grail": false,
-      "catalog_floor_usd": 1434.34,
-      "catalog_mcap": 813269.0,
-      "image_url": "https://d11unjture0ske.cloudfront.net/collectible_type_image.ee27ac13-2e51-4cda-925f-595060735022.73da237e-665f-4520-8310-f45d02089baa.full.jpeg",
       "rarity": "SECRET_RARE"
     },
     {
@@ -204,22 +204,9 @@
       "asset_kind": "collectible",
       "provider_grail": true,
       "catalog_floor_usd": 199.0,
-      "catalog_mcap": 1180404.0,
+      "catalog_mcap": 1164998.0,
       "image_url": "https://d11unjture0ske.cloudfront.net/collectible_type_image.900388bb-8847-4334-8d1a-508de81c4a4d.6fababf1-3b02-4935-bb0f-d1f0be4d4cdb.full.jpeg",
       "rarity": "UNCOMMON"
-    },
-    {
-      "id": "d29aedf0-6420-4549-b702-27b7d49a8d20",
-      "url": "https://vevealpha.com/c/i-am-a-jedi-like-my-father-before-me",
-      "category": "Collectibles",
-      "brand": "Unknown",
-      "character": null,
-      "asset_kind": "collectible",
-      "provider_grail": false,
-      "catalog_floor_usd": 418.35,
-      "catalog_mcap": 217123.0,
-      "image_url": "https://d11unjture0ske.cloudfront.net/collectible_type_image.d29aedf0-6420-4549-b702-27b7d49a8d20.bf79ef97-b510-47da-bf4f-2c91a3e41ac1.low.jpeg",
-      "rarity": "SECRET_RARE"
     },
     {
       "id": "6e0cf5d2-44a6-44fe-a40e-a8ac8ff487e5",
@@ -235,6 +222,19 @@
       "rarity": "SECRET_RARE"
     },
     {
+      "id": "0bfb1239-b03a-4084-bafe-770796eece82",
+      "url": "https://vevealpha.com/c/wolverine-blue-and-yellow-suit",
+      "category": "Collectibles",
+      "brand": "Unknown",
+      "character": null,
+      "asset_kind": "collectible",
+      "provider_grail": false,
+      "catalog_floor_usd": 48.66,
+      "catalog_mcap": 154793.0,
+      "image_url": "https://d11unjture0ske.cloudfront.net/collectible_type_image.0bfb1239-b03a-4084-bafe-770796eece82.a7ffdca0-6c17-4ca1-80f0-03907ce1187e.full.jpeg",
+      "rarity": "RARE"
+    },
+    {
       "id": "c3df7496-e8e7-4507-b80a-5c2b5d996645",
       "url": "https://vevealpha.com/c/100-todd-mcfarlane-batman",
       "category": "Collectibles",
@@ -243,7 +243,7 @@
       "asset_kind": "collectible",
       "provider_grail": true,
       "catalog_floor_usd": 525.0,
-      "catalog_mcap": 2577323.0,
+      "catalog_mcap": 2333555.0,
       "image_url": "https://d11unjture0ske.cloudfront.net/collectible_type_image.c3df7496-e8e7-4507-b80a-5c2b5d996645.eb65d5cd-3371-4082-8898-88991930ddb1.full.jpeg",
       "rarity": "COMMON"
     },
@@ -256,7 +256,7 @@
       "asset_kind": "comic",
       "provider_grail": true,
       "catalog_floor_usd": 1200.0,
-      "catalog_mcap": 149808.0,
+      "catalog_mcap": 147853.0,
       "image_url": "https://d11unjture0ske.cloudfront.net/comic_cover.d23c16ae-3c5b-48cd-b2a7-5e9e24dd08fb.5b8ccabf-afaa-4e5e-873b-2ecbeeb38453.full.jpeg",
       "rarity": "SECRET_RARE"
     },
@@ -268,9 +268,9 @@
       "character": null,
       "asset_kind": "collectible",
       "provider_grail": false,
-      "catalog_floor_usd": 43.03,
-      "catalog_mcap": 85200.0,
-      "image_url": "https://d11unjture0ske.cloudfront.net/collectible_type_image.a0c50208-f32c-4e7e-9664-c28555a9f523.f99e865e-3724-416c-a005-517524865542.full.jpeg",
+      "catalog_floor_usd": 42.47,
+      "catalog_mcap": 84088.0,
+      "image_url": "https://d11unjture0ske.cloudfront.net/collectible_type_image.a0c50208-f32c-4e7e-9664-c28555a9f523.ba63b5eb-01da-4945-ab74-3757d0866007.full.jpeg",
       "rarity": "COMMON"
     },
     {
@@ -281,8 +281,8 @@
       "character": null,
       "asset_kind": "collectible",
       "provider_grail": false,
-      "catalog_floor_usd": 104.29,
-      "catalog_mcap": 206178.0,
+      "catalog_floor_usd": 102.93,
+      "catalog_mcap": 203487.0,
       "image_url": "https://d11unjture0ske.cloudfront.net/collectible_type_image.5fd09e1f-58f8-467f-9e78-d64f6e3a69b9.9242a0b3-8f80-4950-85ad-cd1818bafd6e.full.jpeg",
       "rarity": "ULTRA_RARE"
     },
@@ -295,22 +295,9 @@
       "asset_kind": "comic",
       "provider_grail": false,
       "catalog_floor_usd": 1449.99,
-      "catalog_mcap": 309384.0,
+      "catalog_mcap": 305346.0,
       "image_url": "https://d11unjture0ske.cloudfront.net/comic_cover.2217b238-ba4d-4feb-b821-c91dd204d7d4.721512c2-7a81-436b-9a8b-f884bdce18b3.low.jpeg",
       "rarity": "SECRET_RARE"
-    },
-    {
-      "id": "8435dd2f-f2bc-4d81-b080-56cc44a0ae91",
-      "url": "https://vevealpha.com/c/marvel-comics-ultra-rare",
-      "category": "Comics",
-      "brand": "Unknown",
-      "character": null,
-      "asset_kind": "comic",
-      "provider_grail": false,
-      "catalog_floor_usd": 175.0,
-      "catalog_mcap": 286867.0,
-      "image_url": "https://d11unjture0ske.cloudfront.net/comic_cover.8435dd2f-f2bc-4d81-b080-56cc44a0ae91.f16bdb91-89c0-4ac9-b595-bfae204dd55f.full.jpeg",
-      "rarity": "ULTRA_RARE"
     },
     {
       "id": "146ac2a6-6813-4a88-a03a-4cc2a90b721d",
@@ -320,8 +307,8 @@
       "character": null,
       "asset_kind": "collectible",
       "provider_grail": false,
-      "catalog_floor_usd": 896.46,
-      "catalog_mcap": 77992.0,
+      "catalog_floor_usd": 884.76,
+      "catalog_mcap": 76974.0,
       "image_url": "https://d11unjture0ske.cloudfront.net/collectible_type_image.146ac2a6-6813-4a88-a03a-4cc2a90b721d.3e55f0f0-86d4-456b-9cdf-79b1c5ca138f.full.jpeg",
       "rarity": "COMMON"
     },
@@ -333,8 +320,8 @@
       "character": null,
       "asset_kind": "collectible",
       "provider_grail": false,
-      "catalog_floor_usd": 35.86,
-      "catalog_mcap": 127477.0,
+      "catalog_floor_usd": 35.39,
+      "catalog_mcap": 125813.0,
       "image_url": "https://d11unjture0ske.cloudfront.net/collectible_type_image.b0ecb0a5-2c77-47fc-b295-2e2a96278781.1df2893b-47e5-4757-96fe-5baec8ddb1cf.full.jpeg",
       "rarity": "RARE"
     },
@@ -347,7 +334,7 @@
       "asset_kind": "comic",
       "provider_grail": false,
       "catalog_floor_usd": 1495.0,
-      "catalog_mcap": 83006.0,
+      "catalog_mcap": 62671.0,
       "image_url": "https://d11unjture0ske.cloudfront.net/comic_cover.28a2b172-8118-4027-9a3e-ea50a184fea8.8364ef61-be81-45b9-9ee2-f76cf814fb7c.full.jpeg",
       "rarity": "SECRET_RARE"
     },
@@ -360,7 +347,7 @@
       "asset_kind": "comic",
       "provider_grail": false,
       "catalog_floor_usd": 3500.0,
-      "catalog_mcap": 429554.0,
+      "catalog_mcap": 423948.0,
       "image_url": "https://d11unjture0ske.cloudfront.net/comic_cover.524d5343-73e0-49c3-b79f-1d1d3fa3ea68.a7e78ee3-24a1-4f82-b57c-15c05e8e391c.low.jpeg",
       "rarity": "SECRET_RARE"
     },
@@ -373,7 +360,7 @@
       "asset_kind": "collectible",
       "provider_grail": true,
       "catalog_floor_usd": 9999.0,
-      "catalog_mcap": 1934561.0,
+      "catalog_mcap": 1909312.0,
       "image_url": "https://d11unjture0ske.cloudfront.net/collectible_type_image.7475a966-ed09-4fa8-9b3f-ca6833ea98af.3a6188f2-4085-423b-a27e-ecb17f2deebb.full.jpeg",
       "rarity": "SECRET_RARE"
     },
@@ -385,8 +372,8 @@
       "character": null,
       "asset_kind": "comic",
       "provider_grail": false,
-      "catalog_floor_usd": 19.92,
-      "catalog_mcap": 119527.0,
+      "catalog_floor_usd": 19.66,
+      "catalog_mcap": 117967.0,
       "image_url": "https://d11unjture0ske.cloudfront.net/comic_cover.12dc8ed3-6ffb-476a-a780-4eab2c789da4.f38327c1-453d-487b-a3d4-bea7ad666479.full.jpeg",
       "rarity": "COMMON"
     },
@@ -399,22 +386,22 @@
       "asset_kind": "comic",
       "provider_grail": false,
       "catalog_floor_usd": 50.0,
-      "catalog_mcap": 71716.0,
+      "catalog_mcap": 70780.0,
       "image_url": "https://d11unjture0ske.cloudfront.net/comic_cover.2253a922-25f9-4007-b9f2-0b0aa037f9f0.9da1a109-ff04-47ed-b020-2bac88299b3f.full.jpeg",
       "rarity": "ULTRA_RARE"
     },
     {
-      "id": "6cc1cde0-6745-4c86-bc98-88ee8114a6d1",
-      "url": "https://vevealpha.com/c/marvel-tails-starring-peter-porker-the-spectacular-spider-ham-secret-rare",
+      "id": "8435dd2f-f2bc-4d81-b080-56cc44a0ae91",
+      "url": "https://vevealpha.com/c/marvel-comics-ultra-rare",
       "category": "Comics",
       "brand": "Unknown",
       "character": null,
       "asset_kind": "comic",
       "provider_grail": false,
-      "catalog_floor_usd": 70.0,
-      "catalog_mcap": 2509.0,
-      "image_url": "https://d11unjture0ske.cloudfront.net/comic_cover.6cc1cde0-6745-4c86-bc98-88ee8114a6d1.c1c6fd0c-e39e-41e6-8cb2-1c4127a67c37.low.jpeg",
-      "rarity": "SECRET_RARE"
+      "catalog_floor_usd": 175.0,
+      "catalog_mcap": 212342.0,
+      "image_url": "https://d11unjture0ske.cloudfront.net/comic_cover.8435dd2f-f2bc-4d81-b080-56cc44a0ae91.f16bdb91-89c0-4ac9-b595-bfae204dd55f.full.jpeg",
+      "rarity": "ULTRA_RARE"
     },
     {
       "id": "8725f9a7-1ef1-47b8-ba27-5dbf9640845e",
@@ -424,8 +411,8 @@
       "character": null,
       "asset_kind": "comic",
       "provider_grail": false,
-      "catalog_floor_usd": 1.64,
-      "catalog_mcap": 34512.0,
+      "catalog_floor_usd": 1.62,
+      "catalog_mcap": 34062.0,
       "image_url": "https://d11unjture0ske.cloudfront.net/comic_cover.8725f9a7-1ef1-47b8-ba27-5dbf9640845e.d13d4bc4-4358-4742-a166-ce2042305834.full.jpeg",
       "rarity": "COMMON"
     },
@@ -438,7 +425,7 @@
       "asset_kind": "comic",
       "provider_grail": false,
       "catalog_floor_usd": 340.0,
-      "catalog_mcap": 124608.0,
+      "catalog_mcap": 122982.0,
       "image_url": "https://d11unjture0ske.cloudfront.net/comic_cover.03e2249c-e9d1-4ff4-aa1f-e405642961d3.cbc632dc-02e1-483b-b689-187bdaa4cb88.low.jpeg",
       "rarity": "SECRET_RARE"
     },
@@ -450,8 +437,8 @@
       "character": null,
       "asset_kind": "collectible",
       "provider_grail": false,
-      "catalog_floor_usd": 69.63,
-      "catalog_mcap": 137649.0,
+      "catalog_floor_usd": 68.72,
+      "catalog_mcap": 135852.0,
       "image_url": "https://d11unjture0ske.cloudfront.net/collectible_type_image.66bf871d-a8d4-474e-a0f2-b1ceb28c7b94.593ef2e3-ad5a-4999-8853-2684add4d6e3.full.jpeg",
       "rarity": "COMMON"
     },
@@ -464,7 +451,7 @@
       "asset_kind": "comic",
       "provider_grail": false,
       "catalog_floor_usd": 28.99,
-      "catalog_mcap": 58269.0,
+      "catalog_mcap": 57509.0,
       "image_url": "https://d11unjture0ske.cloudfront.net/comic_cover.2a78a7c3-3a7a-45d6-88c4-6a9fd5233002.9144a249-0ce2-46c7-a599-07eb51eb5f71.full.jpeg",
       "rarity": "RARE"
     },
@@ -476,8 +463,8 @@
       "character": null,
       "asset_kind": "comic",
       "provider_grail": false,
-      "catalog_floor_usd": 25.32,
-      "catalog_mcap": 151943.0,
+      "catalog_floor_usd": 24.99,
+      "catalog_mcap": 149960.0,
       "image_url": "https://d11unjture0ske.cloudfront.net/comic_cover.ce4ae109-fb92-412f-b2c2-348d248af2b9.505c322e-f816-4c57-bc7d-9d1c37a31f6b.full.jpeg",
       "rarity": "COMMON"
     },
@@ -490,7 +477,7 @@
       "asset_kind": "comic",
       "provider_grail": false,
       "catalog_floor_usd": 119.0,
-      "catalog_mcap": 134468.0,
+      "catalog_mcap": 132713.0,
       "image_url": "https://d11unjture0ske.cloudfront.net/comic_cover.2725238a-e770-4584-bb5c-0f07955a6c35.1d557723-8365-4020-b7e7-1523087b7a7b.full.jpeg",
       "rarity": "RARE"
     },
@@ -529,7 +516,7 @@
       "asset_kind": "comic",
       "provider_grail": false,
       "catalog_floor_usd": 105.0,
-      "catalog_mcap": 34215.0,
+      "catalog_mcap": 33768.0,
       "image_url": "https://d11unjture0ske.cloudfront.net/comic_cover.0bcd0d5d-0bbc-4f38-8827-8b79312baa81.1771d572-154e-43c5-a5bd-041bf7cdeec2.full.jpeg",
       "rarity": "ULTRA_RARE"
     },
@@ -541,8 +528,8 @@
       "character": null,
       "asset_kind": "collectible",
       "provider_grail": false,
-      "catalog_floor_usd": 770.0,
-      "catalog_mcap": 66990.0,
+      "catalog_floor_usd": 766.79,
+      "catalog_mcap": 66711.0,
       "image_url": "https://d11unjture0ske.cloudfront.net/collectible_type_image.687ad0c0-c8b5-48a7-9ac9-792b8ef95981.1335d6c4-3878-4b48-8a16-ca4926856769.low.jpeg",
       "rarity": "COMMON"
     },
@@ -554,8 +541,8 @@
       "character": null,
       "asset_kind": "collectible",
       "provider_grail": false,
-      "catalog_floor_usd": 896.46,
-      "catalog_mcap": 77992.0,
+      "catalog_floor_usd": 884.76,
+      "catalog_mcap": 76974.0,
       "image_url": "https://d11unjture0ske.cloudfront.net/collectible_type_image.410fd575-30a3-45ab-a87a-7a928971d321.80a25a1f-27df-4f07-98ae-c97790f5d5f2.full.jpeg",
       "rarity": "COMMON"
     },
@@ -567,8 +554,8 @@
       "character": null,
       "asset_kind": "collectible",
       "provider_grail": false,
-      "catalog_floor_usd": 597.64,
-      "catalog_mcap": 51995.0,
+      "catalog_floor_usd": 589.84,
+      "catalog_mcap": 51316.0,
       "image_url": "https://d11unjture0ske.cloudfront.net/collectible_type_image.f5caca1e-779f-4235-8622-c763fa92ccb6.79234462-48bb-4f9a-88e1-6be333890c06.full.jpeg",
       "rarity": "COMMON"
     },
@@ -581,8 +568,8 @@
       "asset_kind": "comic",
       "provider_grail": false,
       "catalog_floor_usd": 22.22,
-      "catalog_mcap": 717168.0,
-      "image_url": "https://d11unjture0ske.cloudfront.net/comic_cover.66b46e57-90c5-4556-a65e-6dc44899cea6.e7c6edaa-1610-4a17-b388-7b4e36a8357b.low.jpeg",
+      "catalog_mcap": 707808.0,
+      "image_url": "https://d11unjture0ske.cloudfront.net/comic_cover.66b46e57-90c5-4556-a65e-6dc44899cea6.e7c6edaa-1610-4a17-b388-7b4e36a8357b.full.jpeg",
       "rarity": "COMMON"
     },
     {
@@ -607,7 +594,7 @@
       "asset_kind": "comic",
       "provider_grail": false,
       "catalog_floor_usd": 50.0,
-      "catalog_mcap": 188257.0,
+      "catalog_mcap": 185800.0,
       "image_url": "https://d11unjture0ske.cloudfront.net/comic_cover.2b37495b-b2bd-42fa-8350-452d3c684904.dcacd9d3-fee4-46d3-a583-9084a9e7c406.full.jpeg",
       "rarity": "UNCOMMON"
     },
@@ -620,7 +607,7 @@
       "asset_kind": "comic",
       "provider_grail": false,
       "catalog_floor_usd": 37.97,
-      "catalog_mcap": 70596.0,
+      "catalog_mcap": 69674.0,
       "image_url": "https://d11unjture0ske.cloudfront.net/comic_cover.ab430454-99cf-4b4a-bcc6-5c4ed737512d.72839091-c990-405a-b9b0-b5882f464ba2.full.jpeg",
       "rarity": "UNCOMMON"
     },
@@ -633,7 +620,7 @@
       "asset_kind": "comic",
       "provider_grail": false,
       "catalog_floor_usd": 1100.0,
-      "catalog_mcap": 298820.0,
+      "catalog_mcap": 294920.0,
       "image_url": "https://d11unjture0ske.cloudfront.net/comic_cover.09b73cca-d010-464b-90bc-a582c9388fdc.3077c175-757d-4b4c-acd0-ceb5216107d0.full.jpeg",
       "rarity": "ULTRA_RARE"
     },
@@ -646,7 +633,7 @@
       "asset_kind": "comic",
       "provider_grail": false,
       "catalog_floor_usd": 26.99,
-      "catalog_mcap": 161336.0,
+      "catalog_mcap": 159230.0,
       "image_url": "https://d11unjture0ske.cloudfront.net/comic_cover.2794ef40-2f15-422b-b71f-9f17becccf5c.dc205b9b-bb23-4e0e-a403-d839f8d96b92.full.jpeg",
       "rarity": "COMMON"
     },
@@ -672,7 +659,7 @@
       "asset_kind": "comic",
       "provider_grail": false,
       "catalog_floor_usd": 8.99,
-      "catalog_mcap": 243832.0,
+      "catalog_mcap": 240650.0,
       "image_url": "https://d11unjture0ske.cloudfront.net/comic_cover.f0d160a6-8232-48ce-bfbd-40e96d16cfe0.57328cfa-d14b-40ea-8951-4d844cf9ff06.full.jpeg",
       "rarity": "COMMON"
     },
@@ -685,7 +672,7 @@
       "asset_kind": "comic",
       "provider_grail": false,
       "catalog_floor_usd": 50.0,
-      "catalog_mcap": 40341.0,
+      "catalog_mcap": 39814.0,
       "image_url": "https://d11unjture0ske.cloudfront.net/comic_cover.5a542314-fecb-4ff0-839c-a8f02585f65a.f3916c1c-3e00-43c0-b7aa-23a695e7a86d.low.jpeg",
       "rarity": "RARE"
     },
@@ -698,8 +685,8 @@
       "asset_kind": "comic",
       "provider_grail": false,
       "catalog_floor_usd": 56.99,
-      "catalog_mcap": 229494.0,
-      "image_url": "https://d11unjture0ske.cloudfront.net/comic_cover.2641f79e-8ce8-4b3f-9806-de801d475c14.413ef33d-2295-4abf-aa1f-3f4439447765.low.jpeg",
+      "catalog_mcap": 226499.0,
+      "image_url": "https://d11unjture0ske.cloudfront.net/comic_cover.2641f79e-8ce8-4b3f-9806-de801d475c14.413ef33d-2295-4abf-aa1f-3f4439447765.full.jpeg",
       "rarity": "COMMON"
     },
     {
@@ -711,7 +698,7 @@
       "asset_kind": "comic",
       "provider_grail": false,
       "catalog_floor_usd": 38.0,
-      "catalog_mcap": 33235.0,
+      "catalog_mcap": 32802.0,
       "image_url": "https://d11unjture0ske.cloudfront.net/comic_cover.d350feb0-a464-4ac5-a763-2e13ce688219.487b302d-1ea2-4f92-b270-f58fa3726df6.full.jpeg",
       "rarity": "RARE"
     },
@@ -724,7 +711,7 @@
       "asset_kind": "comic",
       "provider_grail": false,
       "catalog_floor_usd": 735.0,
-      "catalog_mcap": 110190.0,
+      "catalog_mcap": 108752.0,
       "image_url": "https://d11unjture0ske.cloudfront.net/comic_cover.3cf2a812-ad2b-4a8d-9553-68e20f7991cd.2233ce94-4e70-43e8-a7e8-76239f3808c8.low.jpeg",
       "rarity": "SECRET_RARE"
     },
@@ -737,7 +724,7 @@
       "asset_kind": "comic",
       "provider_grail": false,
       "catalog_floor_usd": 146.0,
-      "catalog_mcap": 3764.0,
+      "catalog_mcap": 3715.0,
       "image_url": "https://d11unjture0ske.cloudfront.net/comic_cover.76ee75db-d9c6-4c36-a281-f0ace15b72e0.15a7d0d6-bbe1-4206-987a-4d4ab2d934f4.low.jpeg",
       "rarity": "SECRET_RARE"
     },
@@ -750,7 +737,7 @@
       "asset_kind": "comic",
       "provider_grail": false,
       "catalog_floor_usd": 210.0,
-      "catalog_mcap": 7518.0,
+      "catalog_mcap": 7420.0,
       "image_url": "https://d11unjture0ske.cloudfront.net/comic_cover.ca1ad5b9-a066-4c9b-8be3-d32c89aecc14.d53eff3a-17ac-417f-952f-823d85a15072.full.jpeg",
       "rarity": "SECRET_RARE"
     },
@@ -763,7 +750,7 @@
       "asset_kind": "comic",
       "provider_grail": false,
       "catalog_floor_usd": 175.0,
-      "catalog_mcap": 5334.0,
+      "catalog_mcap": 5264.0,
       "image_url": "https://d11unjture0ske.cloudfront.net/comic_cover.b88147af-9826-4aa2-825c-fb93db861728.734b4fcc-74f2-45aa-adff-a63140866899.full.jpeg",
       "rarity": "SECRET_RARE"
     },
@@ -776,7 +763,7 @@
       "asset_kind": "comic",
       "provider_grail": false,
       "catalog_floor_usd": 350.0,
-      "catalog_mcap": 238518.0,
+      "catalog_mcap": 235405.0,
       "image_url": "https://d11unjture0ske.cloudfront.net/comic_cover.174ad80b-2891-4689-a18b-0dd74606cd73.259fe145-93a1-4ab5-bbbb-81e2281a3907.full.jpeg",
       "rarity": "RARE"
     },
@@ -789,7 +776,7 @@
       "asset_kind": "comic",
       "provider_grail": false,
       "catalog_floor_usd": 189.0,
-      "catalog_mcap": 156553.0,
+      "catalog_mcap": 154510.0,
       "image_url": "https://d11unjture0ske.cloudfront.net/comic_cover.0ea12f3f-e703-458a-993e-1c217a698808.75fcf668-4409-440c-a0a9-eaac95b4c1f7.full.jpeg",
       "rarity": "SECRET_RARE"
     },
@@ -802,7 +789,7 @@
       "asset_kind": "comic",
       "provider_grail": false,
       "catalog_floor_usd": 399.0,
-      "catalog_mcap": 57373.0,
+      "catalog_mcap": 56625.0,
       "image_url": "https://d11unjture0ske.cloudfront.net/comic_cover.91466fa1-ebad-435b-9b23-e428fafb51df.912f71c6-b946-4290-a313-bc6760af8d34.full.webp",
       "rarity": "SECRET_RARE"
     },
@@ -828,7 +815,7 @@
       "asset_kind": "comic",
       "provider_grail": false,
       "catalog_floor_usd": 1899.0,
-      "catalog_mcap": 269655.0,
+      "catalog_mcap": 266136.0,
       "image_url": "https://d11unjture0ske.cloudfront.net/comic_cover.6cbcfe3e-6af1-4966-80df-fa1a741e8ee8.cd085f06-568f-45e3-b858-fa739a17d987.full.jpeg",
       "rarity": "SECRET_RARE"
     },
@@ -841,7 +828,7 @@
       "asset_kind": "collectible",
       "provider_grail": false,
       "catalog_floor_usd": 199.99,
-      "catalog_mcap": 409980.0,
+      "catalog_mcap": 404629.0,
       "image_url": "https://d11unjture0ske.cloudfront.net/collectible_type_image.a605b45c-c809-40d4-a98b-b5daa200a696.615eff4f-7b29-48db-9917-ee9cdd5d6d6a.low.jpeg",
       "rarity": "SECRET_RARE"
     },
@@ -854,7 +841,7 @@
       "asset_kind": "comic",
       "provider_grail": false,
       "catalog_floor_usd": 6.0,
-      "catalog_mcap": 2391.0,
+      "catalog_mcap": 2359.0,
       "image_url": "https://d11unjture0ske.cloudfront.net/comic_cover.8cfdb539-48ab-4186-beb9-16a4c78a97a5.98e83913-94a7-4def-848e-61c2cc580758.full.webp",
       "rarity": "COMMON"
     },
@@ -867,7 +854,7 @@
       "asset_kind": "comic",
       "provider_grail": false,
       "catalog_floor_usd": 1190.0,
-      "catalog_mcap": 20917.0,
+      "catalog_mcap": 20644.0,
       "image_url": "https://d11unjture0ske.cloudfront.net/comic_cover.78e7f81f-9032-4596-b8cd-14a5df3fbcd2.38c2ad22-7c7c-4bf1-91cc-1cfded7b5da0.full.webp",
       "rarity": "SECRET_RARE"
     },
@@ -880,7 +867,7 @@
       "asset_kind": "comic",
       "provider_grail": false,
       "catalog_floor_usd": 17.99,
-      "catalog_mcap": 188257.0,
+      "catalog_mcap": 185800.0,
       "image_url": "https://d11unjture0ske.cloudfront.net/comic_cover.5784fd45-7323-4afd-b4cb-330c09231438.38b6dcdf-e562-4005-9f3a-4ce36be4e270.full.jpeg",
       "rarity": "COMMON"
     },
@@ -893,7 +880,7 @@
       "asset_kind": "comic",
       "provider_grail": false,
       "catalog_floor_usd": 1000.0,
-      "catalog_mcap": 239056.0,
+      "catalog_mcap": 235936.0,
       "image_url": "https://d11unjture0ske.cloudfront.net/comic_cover.34382ba7-267e-4d6a-8b95-d75195874885.e1a587b1-3d0a-41a6-b665-b0f655cfc54f.full.jpeg",
       "rarity": "SECRET_RARE"
     },
@@ -906,7 +893,7 @@
       "asset_kind": "comic",
       "provider_grail": false,
       "catalog_floor_usd": 33.0,
-      "catalog_mcap": 1494.0,
+      "catalog_mcap": 1475.0,
       "image_url": "https://d11unjture0ske.cloudfront.net/comic_cover.de7b1b37-bc97-4121-9400-23d2560e3a70.36c0b4de-c0d8-48b5-8676-2f7f75fd3273.full.jpeg",
       "rarity": "ULTRA_RARE"
     },
@@ -919,7 +906,7 @@
       "asset_kind": "comic",
       "provider_grail": false,
       "catalog_floor_usd": 125.0,
-      "catalog_mcap": 10429.0,
+      "catalog_mcap": 10293.0,
       "image_url": "https://d11unjture0ske.cloudfront.net/comic_cover.32014dcb-9e78-4f6e-b75c-57188f8ae692.f68ee000-b5a5-4551-99e2-878f2de23134.full.webp",
       "rarity": "ULTRA_RARE"
     },
@@ -931,8 +918,8 @@
       "character": null,
       "asset_kind": "collectible",
       "provider_grail": false,
-      "catalog_floor_usd": 210.0,
-      "catalog_mcap": 78440.0,
+      "catalog_floor_usd": 170.0,
+      "catalog_mcap": 73583.0,
       "image_url": "https://d11unjture0ske.cloudfront.net/collectible_type_image.a23cccf0-e12e-4856-8877-1629e9313ccf.569787f3-d0ad-4f9f-965b-17128e966918.full.jpeg",
       "rarity": "SECRET_RARE"
     },
@@ -958,7 +945,7 @@
       "asset_kind": "collectible",
       "provider_grail": false,
       "catalog_floor_usd": 270.0,
-      "catalog_mcap": 239588.0,
+      "catalog_mcap": 236461.0,
       "image_url": "https://d11unjture0ske.cloudfront.net/collectible_type_image.41505b27-6b61-4951-835f-d8976df8fcbf.34275e41-87ad-4a36-9721-e36e841b3f2e.low.jpeg",
       "rarity": "SECRET_RARE"
     },
@@ -971,8 +958,21 @@
       "asset_kind": "collectible",
       "provider_grail": false,
       "catalog_floor_usd": 160.0,
-      "catalog_mcap": 66338.0,
+      "catalog_mcap": 65472.0,
       "image_url": "https://d11unjture0ske.cloudfront.net/collectible_type_image.794c3826-643a-438b-9e37-787c91e83221.9b476e9e-9bee-47bb-ab35-bbf54c5d4b68.low.jpeg",
+      "rarity": "SECRET_RARE"
+    },
+    {
+      "id": "a3060336-615f-468c-acdc-d40e80234691",
+      "url": "https://vevealpha.com/c/murci-lago-lp670-4-sv-nero-pegaso-metallic",
+      "category": "Collectibles",
+      "brand": "Unknown",
+      "character": null,
+      "asset_kind": "collectible",
+      "provider_grail": false,
+      "catalog_floor_usd": 110.0,
+      "catalog_mcap": 55642.0,
+      "image_url": "https://d11unjture0ske.cloudfront.net/collectible_type_image.a3060336-615f-468c-acdc-d40e80234691.2c7b9b4e-c5d5-4906-b2ca-f9c388595602.full.jpeg",
       "rarity": "SECRET_RARE"
     },
     {
@@ -997,7 +997,7 @@
       "asset_kind": "collectible",
       "provider_grail": false,
       "catalog_floor_usd": 250.0,
-      "catalog_mcap": 101360.0,
+      "catalog_mcap": 100037.0,
       "image_url": "https://d11unjture0ske.cloudfront.net/collectible_type_image.5529acf4-43b8-428a-8009-2410ceb8cce7.761a628a-f433-43a5-b1f6-1595936d64c6.full.jpeg",
       "rarity": "SECRET_RARE"
     },
@@ -1010,7 +1010,7 @@
       "asset_kind": "collectible",
       "provider_grail": false,
       "catalog_floor_usd": 82.0,
-      "catalog_mcap": 65412.0,
+      "catalog_mcap": 64558.0,
       "image_url": "https://d11unjture0ske.cloudfront.net/collectible_type_image.2ff8504e-a8f3-4ea6-aa7e-5652c6645796.a33501cc-5479-4be9-a913-cd8ac3adda98.full.jpeg",
       "rarity": "SECRET_RARE"
     },
@@ -1023,7 +1023,7 @@
       "asset_kind": "collectible",
       "provider_grail": false,
       "catalog_floor_usd": 128.0,
-      "catalog_mcap": 164667.0,
+      "catalog_mcap": 162517.0,
       "image_url": "https://d11unjture0ske.cloudfront.net/collectible_type_image.7a736163-6ff5-446d-9a74-c73fa1959e2c.ed704a5c-9e5c-479d-b67e-b46d473829e9.full.jpeg",
       "rarity": "SECRET_RARE"
     },
@@ -1049,7 +1049,7 @@
       "asset_kind": "comic",
       "provider_grail": false,
       "catalog_floor_usd": 30.0,
-      "catalog_mcap": 108539.0,
+      "catalog_mcap": 107122.0,
       "image_url": "https://d11unjture0ske.cloudfront.net/comic_cover.a91046a6-6287-4cd7-9bf9-e4b6972dcc6e.e376392d-96b1-469f-b0ff-738fba9451d4.full.jpeg",
       "rarity": "ULTRA_RARE"
     },
@@ -1062,7 +1062,7 @@
       "asset_kind": "comic",
       "provider_grail": false,
       "catalog_floor_usd": 79.0,
-      "catalog_mcap": 3451.0,
+      "catalog_mcap": 3406.0,
       "image_url": "https://d11unjture0ske.cloudfront.net/comic_cover.d7653204-a3c1-4b9c-8d0b-1f6d7a45e467.dc7b6387-353c-4b01-b283-fbc0fc24a218.full.jpeg",
       "rarity": "SECRET_RARE"
     },
@@ -1075,21 +1075,8 @@
       "asset_kind": "collectible",
       "provider_grail": false,
       "catalog_floor_usd": 210.0,
-      "catalog_mcap": 938413.0,
+      "catalog_mcap": 926165.0,
       "image_url": "https://d11unjture0ske.cloudfront.net/collectible_type_image.3a592c07-aca1-43c8-9788-632462579e7b.4d85ddad-fbae-41ce-b523-63dca7d3ee81.full.jpeg",
-      "rarity": "ULTRA_RARE"
-    },
-    {
-      "id": "df101af2-42fe-4af4-bc51-f8826a6022aa",
-      "url": "https://vevealpha.com/c/i-have-you-in-my-sights",
-      "category": "Collectibles",
-      "brand": "Unknown",
-      "character": null,
-      "asset_kind": "collectible",
-      "provider_grail": false,
-      "catalog_floor_usd": 45.0,
-      "catalog_mcap": 257027.0,
-      "image_url": "https://d11unjture0ske.cloudfront.net/collectible_type_image.df101af2-42fe-4af4-bc51-f8826a6022aa.dace44d0-86f2-48eb-b23b-3f66f63a9945.full.jpeg",
       "rarity": "ULTRA_RARE"
     },
     {
@@ -1101,8 +1088,8 @@
       "asset_kind": "collectible",
       "provider_grail": false,
       "catalog_floor_usd": 185.0,
-      "catalog_mcap": 776332.0,
-      "image_url": "https://d11unjture0ske.cloudfront.net/collectible_type_image.5ab59120-1b5b-473c-9c80-3144d9a6e1d5.84a015c7-1a5c-47c3-aa62-d133259dd404.low.jpeg",
+      "catalog_mcap": 766200.0,
+      "image_url": "https://d11unjture0ske.cloudfront.net/collectible_type_image.5ab59120-1b5b-473c-9c80-3144d9a6e1d5.84a015c7-1a5c-47c3-aa62-d133259dd404.full.jpeg",
       "rarity": "ULTRA_RARE"
     },
     {
@@ -1113,9 +1100,9 @@
       "character": null,
       "asset_kind": "collectible",
       "provider_grail": false,
-      "catalog_floor_usd": 48.95,
-      "catalog_mcap": 452757.0,
-      "image_url": "https://d11unjture0ske.cloudfront.net/collectible_type_image.c898af60-be8a-490a-ac2b-537869c1892a.79da3e3e-3078-4001-b4b3-91b98bca3a9e.full.jpeg",
+      "catalog_floor_usd": 43.0,
+      "catalog_mcap": 446848.0,
+      "image_url": "https://d11unjture0ske.cloudfront.net/collectible_type_image.c898af60-be8a-490a-ac2b-537869c1892a.79da3e3e-3078-4001-b4b3-91b98bca3a9e.low.jpeg",
       "rarity": "ULTRA_RARE"
     },
     {
@@ -1127,7 +1114,7 @@
       "asset_kind": "collectible",
       "provider_grail": false,
       "catalog_floor_usd": 1400.0,
-      "catalog_mcap": 1516512.0,
+      "catalog_mcap": 1496719.0,
       "image_url": "https://d11unjture0ske.cloudfront.net/collectible_type_image.5cd5b20e-02da-4be2-8060-b7d03b2383d5.319c6455-5cb9-4b59-aa9b-7a6c23ababa5.low.jpeg",
       "rarity": "ULTRA_RARE"
     },
@@ -1140,7 +1127,7 @@
       "asset_kind": "comic",
       "provider_grail": false,
       "catalog_floor_usd": null,
-      "catalog_mcap": 50782.0,
+      "catalog_mcap": 50120.0,
       "image_url": "https://d11unjture0ske.cloudfront.net/comic_cover.4f76b24d-2a16-45b0-9f17-1f62e385ce6a.829acfef-4c5b-40cd-9ae3-3c1b0b69b481.full.jpeg",
       "rarity": "SECRET_RARE"
     },
@@ -1153,7 +1140,7 @@
       "asset_kind": "comic",
       "provider_grail": false,
       "catalog_floor_usd": null,
-      "catalog_mcap": 55581.0,
+      "catalog_mcap": 54855.0,
       "image_url": "https://d11unjture0ske.cloudfront.net/comic_cover.2024797c-9c85-467d-86f5-5fb3c3afd276.fa67ef2a-b906-4a66-bcc5-9320f31b9b1e.full.jpeg",
       "rarity": "SECRET_RARE"
     },
@@ -1166,8 +1153,21 @@
       "asset_kind": "comic",
       "provider_grail": false,
       "catalog_floor_usd": 152.0,
-      "catalog_mcap": 89646.0,
+      "catalog_mcap": 88476.0,
       "image_url": "https://d11unjture0ske.cloudfront.net/comic_cover.eee2d3bf-5d21-46f0-899e-c9a8fef0f73c.e6f146f7-6a6c-4c0d-ad1f-6540a31e8bdb.full.jpeg",
+      "rarity": "SECRET_RARE"
+    },
+    {
+      "id": "d29aedf0-6420-4549-b702-27b7d49a8d20",
+      "url": "https://vevealpha.com/c/i-am-a-jedi-like-my-father-before-me",
+      "category": "Collectibles",
+      "brand": "Unknown",
+      "character": null,
+      "asset_kind": "collectible",
+      "provider_grail": false,
+      "catalog_floor_usd": 666.0,
+      "catalog_mcap": 214289.0,
+      "image_url": "https://d11unjture0ske.cloudfront.net/collectible_type_image.d29aedf0-6420-4549-b702-27b7d49a8d20.bf79ef97-b510-47da-bf4f-2c91a3e41ac1.low.jpeg",
       "rarity": "SECRET_RARE"
     },
     {
@@ -1179,7 +1179,7 @@
       "asset_kind": "comic",
       "provider_grail": false,
       "catalog_floor_usd": 1600.0,
-      "catalog_mcap": 457195.0,
+      "catalog_mcap": 451228.0,
       "image_url": "https://d11unjture0ske.cloudfront.net/comic_cover.2425cd0f-45b8-4c50-90ef-7324b208352c.98234f68-78e3-4357-917a-857bd29de70b.full.jpeg",
       "rarity": "SECRET_RARE"
     },
@@ -1205,7 +1205,7 @@
       "asset_kind": "collectible",
       "provider_grail": false,
       "catalog_floor_usd": 169.0,
-      "catalog_mcap": 157695.0,
+      "catalog_mcap": 155637.0,
       "image_url": "https://d11unjture0ske.cloudfront.net/collectible_type_image.03fe42ae-a098-4215-b3e1-a014aabddadf.27580b49-acd4-46d9-a647-d0c0c5c60bb0.full.jpeg",
       "rarity": "ULTRA_RARE"
     },
@@ -1218,7 +1218,7 @@
       "asset_kind": "collectible",
       "provider_grail": false,
       "catalog_floor_usd": 83.99,
-      "catalog_mcap": 18303.0,
+      "catalog_mcap": 18064.0,
       "image_url": "https://d11unjture0ske.cloudfront.net/collectible_type_image.7a477b7c-2c2c-49d0-9ed2-755d34df01a8.fc1a7bbe-f66b-46bd-9d19-4204df89fe12.low.jpeg",
       "rarity": "SECRET_RARE"
     },
@@ -1244,7 +1244,7 @@
       "asset_kind": "comic",
       "provider_grail": false,
       "catalog_floor_usd": 31.7,
-      "catalog_mcap": 4165.0,
+      "catalog_mcap": 4111.0,
       "image_url": "https://d11unjture0ske.cloudfront.net/comic_cover.e1c3f030-23a7-4ea0-9a87-8aa5c1069cd2.8d9c9358-35cc-47ac-8ab1-4b08ce0af588.full.webp",
       "rarity": "RARE"
     },
@@ -1257,7 +1257,7 @@
       "asset_kind": "collectible",
       "provider_grail": false,
       "catalog_floor_usd": 196.0,
-      "catalog_mcap": 51596.0,
+      "catalog_mcap": 50923.0,
       "image_url": "https://d11unjture0ske.cloudfront.net/collectible_type_image.84717424-94be-4da6-a2d8-54d291c64e66.d9116a5c-d730-43d5-be0e-4d40e8382485.low.jpeg",
       "rarity": "ULTRA_RARE"
     },
@@ -1270,7 +1270,7 @@
       "asset_kind": "collectible",
       "provider_grail": false,
       "catalog_floor_usd": 645.0,
-      "catalog_mcap": 597042.0,
+      "catalog_mcap": 589250.0,
       "image_url": "https://d11unjture0ske.cloudfront.net/collectible_type_image.5e8f7e71-3285-4977-9f11-77fa35c2dda3.be0ad492-e56b-4f73-8f8b-cd5aaaa6bd54.full.jpeg",
       "rarity": "ULTRA_RARE"
     },
@@ -1296,7 +1296,7 @@
       "asset_kind": "collectible",
       "provider_grail": false,
       "catalog_floor_usd": 183.9,
-      "catalog_mcap": 40206.0,
+      "catalog_mcap": 39681.0,
       "image_url": "https://d11unjture0ske.cloudfront.net/collectible_type_image.882b40f4-c586-4c68-af9b-b7bfdaca9f0d.8999496c-4816-4b3c-a2e0-d070cf53facc.low.jpeg",
       "rarity": "SECRET_RARE"
     },
@@ -1309,7 +1309,7 @@
       "asset_kind": "collectible",
       "provider_grail": false,
       "catalog_floor_usd": 550.0,
-      "catalog_mcap": 747049.0,
+      "catalog_mcap": 737299.0,
       "image_url": "https://d11unjture0ske.cloudfront.net/collectible_type_image.d03f035e-fe59-40f6-9977-3cef76ee112b.118c2075-1721-4f9e-9993-46fc3a4f8b7b.full.jpeg",
       "rarity": "ULTRA_RARE"
     },
@@ -1348,7 +1348,7 @@
       "asset_kind": "collectible",
       "provider_grail": false,
       "catalog_floor_usd": 139.99,
-      "catalog_mcap": 116092.0,
+      "catalog_mcap": 114576.0,
       "image_url": "https://d11unjture0ske.cloudfront.net/collectible_type_image.4e358881-d6e6-41a0-ad3c-8b3021128af0.716cc600-2511-41c4-bc7f-4962704cd0c7.full.jpeg",
       "rarity": "ULTRA_RARE"
     },
@@ -1360,9 +1360,9 @@
       "character": null,
       "asset_kind": "comic",
       "provider_grail": false,
-      "catalog_floor_usd": 14.69,
-      "catalog_mcap": 2938.0,
-      "image_url": "https://d11unjture0ske.cloudfront.net/comic_cover.807beb29-8ccc-47c8-8615-ff81d5782673.d1349392-2614-4fe9-a11b-df9cbffd22f1.full.jpeg",
+      "catalog_floor_usd": 14.49,
+      "catalog_mcap": 2898.0,
+      "image_url": "https://d11unjture0ske.cloudfront.net/comic_cover.807beb29-8ccc-47c8-8615-ff81d5782673.d1349392-2614-4fe9-a11b-df9cbffd22f1.low.jpeg",
       "rarity": "RARE"
     },
     {
@@ -1379,6 +1379,19 @@
       "rarity": "SECRET_RARE"
     },
     {
+      "id": "df101af2-42fe-4af4-bc51-f8826a6022aa",
+      "url": "https://vevealpha.com/c/i-have-you-in-my-sights",
+      "category": "Collectibles",
+      "brand": "Unknown",
+      "character": null,
+      "asset_kind": "collectible",
+      "provider_grail": false,
+      "catalog_floor_usd": 45.0,
+      "catalog_mcap": 232679.0,
+      "image_url": "https://d11unjture0ske.cloudfront.net/collectible_type_image.df101af2-42fe-4af4-bc51-f8826a6022aa.dace44d0-86f2-48eb-b23b-3f66f63a9945.full.jpeg",
+      "rarity": "ULTRA_RARE"
+    },
+    {
       "id": "9905fe6b-866f-4d35-96bb-df37ab67d1fd",
       "url": "https://vevealpha.com/c/frozen-ii-pencil",
       "category": "Collectibles",
@@ -1387,7 +1400,7 @@
       "asset_kind": "collectible",
       "provider_grail": false,
       "catalog_floor_usd": 13.95,
-      "catalog_mcap": 30192.0,
+      "catalog_mcap": 29798.0,
       "image_url": "https://d11unjture0ske.cloudfront.net/collectible_type_image.9905fe6b-866f-4d35-96bb-df37ab67d1fd.c1937b24-a01f-4020-a2b9-f14075c44804.low.jpeg",
       "rarity": "SECRET_RARE"
     },
@@ -1400,7 +1413,7 @@
       "asset_kind": "collectible",
       "provider_grail": false,
       "catalog_floor_usd": 17.5,
-      "catalog_mcap": 3661.0,
+      "catalog_mcap": 3613.0,
       "image_url": "https://d11unjture0ske.cloudfront.net/collectible_type_image.36adfd74-e06b-4b10-a4a3-01fc13113d8d.a2915bec-a9b4-4690-98e4-d8ccec5516bd.full.jpeg",
       "rarity": "SECRET_RARE"
     },
@@ -1413,7 +1426,7 @@
       "asset_kind": "collectible",
       "provider_grail": false,
       "catalog_floor_usd": 6.49,
-      "catalog_mcap": 7172.0,
+      "catalog_mcap": 7078.0,
       "image_url": "https://d11unjture0ske.cloudfront.net/collectible_type_image.545f8c91-7a0e-4bd4-83d5-c806fe2d832b.d6b137eb-f3f6-4a49-9bcf-200064b167f2.full.jpeg",
       "rarity": "SECRET_RARE"
     },
@@ -1426,7 +1439,7 @@
       "asset_kind": "collectible",
       "provider_grail": false,
       "catalog_floor_usd": 49.99,
-      "catalog_mcap": 236553.0,
+      "catalog_mcap": 233466.0,
       "image_url": "https://d11unjture0ske.cloudfront.net/collectible_type_image.606b52d3-4562-4e3f-b217-e1b60efd6f7d.e6fa6e79-f481-4ef1-aa25-691f6858d591.full.jpeg",
       "rarity": "ULTRA_RARE"
     },
@@ -1439,7 +1452,7 @@
       "asset_kind": "collectible",
       "provider_grail": false,
       "catalog_floor_usd": 198.0,
-      "catalog_mcap": 25698.0,
+      "catalog_mcap": 25363.0,
       "image_url": "https://d11unjture0ske.cloudfront.net/collectible_type_image.1cdb7278-0d85-493d-90ab-85bd3faac35f.0d741f5f-804c-483a-a3e7-4f73864a24b1.full.jpeg",
       "rarity": "SECRET_RARE"
     },
@@ -1452,7 +1465,7 @@
       "asset_kind": "collectible",
       "provider_grail": false,
       "catalog_floor_usd": 145.0,
-      "catalog_mcap": 218363.0,
+      "catalog_mcap": 215513.0,
       "image_url": "https://d11unjture0ske.cloudfront.net/collectible_type_image.1faf6762-b397-4ea7-881d-6f9b24776f2c.2ebeab98-5cbc-43ec-a0cb-ab2f35419b14.low.jpeg",
       "rarity": "ULTRA_RARE"
     },
@@ -1465,7 +1478,7 @@
       "asset_kind": "collectible",
       "provider_grail": false,
       "catalog_floor_usd": 280.0,
-      "catalog_mcap": 303302.0,
+      "catalog_mcap": 299343.0,
       "image_url": "https://d11unjture0ske.cloudfront.net/collectible_type_image.b33424b2-ea2b-45c0-9f5b-05748c064554.5b3e4c94-920b-4a49-b434-dd7681b1b524.full.jpeg",
       "rarity": "RARE"
     },
@@ -1478,7 +1491,7 @@
       "asset_kind": "collectible",
       "provider_grail": false,
       "catalog_floor_usd": 55.0,
-      "catalog_mcap": 371093.0,
+      "catalog_mcap": 366250.0,
       "image_url": "https://d11unjture0ske.cloudfront.net/collectible_type_image.4b3b200b-8469-43a2-aa68-114a4d9e0306.d0f13c40-8313-4ea8-a41e-2aac30f97f10.full.jpeg",
       "rarity": "RARE"
     },
@@ -1491,7 +1504,7 @@
       "asset_kind": "collectible",
       "provider_grail": false,
       "catalog_floor_usd": 73.0,
-      "catalog_mcap": 300848.0,
+      "catalog_mcap": 296922.0,
       "image_url": "https://d11unjture0ske.cloudfront.net/collectible_type_image.75bffbf5-3527-4c34-a73d-06252becd47f.ea8448e2-2ca2-41f8-89ff-d3b1c25da5a3.full.jpeg",
       "rarity": "RARE"
     },
@@ -1504,8 +1517,8 @@
       "asset_kind": "collectible",
       "provider_grail": false,
       "catalog_floor_usd": 109.0,
-      "catalog_mcap": 471214.0,
-      "image_url": "https://d11unjture0ske.cloudfront.net/collectible_type_image.3433ffd5-0721-4346-b556-8ff18d545c27.ca635d72-9553-476a-b6f2-903a653d23d6.full.jpeg",
+      "catalog_mcap": 465064.0,
+      "image_url": "https://d11unjture0ske.cloudfront.net/collectible_type_image.3433ffd5-0721-4346-b556-8ff18d545c27.ca635d72-9553-476a-b6f2-903a653d23d6.low.jpeg",
       "rarity": "RARE"
     },
     {
@@ -1543,22 +1556,9 @@
       "asset_kind": "comic",
       "provider_grail": false,
       "catalog_floor_usd": 577.0,
-      "catalog_mcap": 67235.0,
+      "catalog_mcap": 66357.0,
       "image_url": "https://d11unjture0ske.cloudfront.net/comic_cover.fa269a2a-39ee-4ec8-bb02-7ee3be6d379e.5dd5cad1-ae7f-42c8-a718-e750a8547b73.full.jpeg",
       "rarity": "SECRET_RARE"
-    },
-    {
-      "id": "e5f04938-9cca-490b-b480-7979e86f70ee",
-      "url": "https://vevealpha.com/c/the-amazing-spider-man-uncommon-e5f049",
-      "category": "Comics",
-      "brand": "Unknown",
-      "character": null,
-      "asset_kind": "comic",
-      "provider_grail": false,
-      "catalog_floor_usd": 39.99,
-      "catalog_mcap": 5415.0,
-      "image_url": "https://d11unjture0ske.cloudfront.net/comic_cover.e5f04938-9cca-490b-b480-7979e86f70ee.657c8ea7-92df-4232-8f4c-d03eb55fe43c.full.webp",
-      "rarity": "UNCOMMON"
     }
   ]
 }
