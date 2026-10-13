@@ -1180,9 +1180,9 @@
       "first_seen": "2026-09-09T00:30:52.953256+00:00",
       "floor_usd": 6224.62,
       "key": "https://vevealpha.com/c/spider-man-miles-morales-animated|93",
-      "last_seen": "2026-10-13T19:28:54.623303+00:00",
-      "latest_ask_usd": 6628.18,
-      "latest_floor_usd": 7499.18,
+      "last_seen": "2026-10-13T23:23:49.222964+00:00",
+      "latest_ask_usd": 4925.33,
+      "latest_floor_usd": 7252.96,
       "listed_date": "2026-09-07",
       "mint": 93,
       "mint_score": 86.0,
@@ -1265,8 +1265,8 @@
       "first_seen": "2026-09-09T00:30:52.953256+00:00",
       "floor_usd": 252.41,
       "key": "https://vevealpha.com/c/yoda-secret-rare|1273",
-      "last_seen": "2026-10-13T19:28:54.623303+00:00",
-      "latest_ask_usd": 141.03,
+      "last_seen": "2026-10-13T23:23:49.222964+00:00",
+      "latest_ask_usd": 138.53,
       "latest_floor_usd": 324.86,
       "listed_date": "2026-08-31",
       "mint": 1273,
@@ -2921,9 +2921,9 @@
       "first_seen": "2026-09-09T13:55:38.786851+00:00",
       "floor_usd": 244.26,
       "key": "https://vevealpha.com/c/house-of-x-secret-rare|1756",
-      "last_seen": "2026-10-13T19:28:54.623303+00:00",
-      "latest_ask_usd": 155.13,
-      "latest_floor_usd": 316.59,
+      "last_seen": "2026-10-13T23:23:49.222964+00:00",
+      "latest_ask_usd": 152.38,
+      "latest_floor_usd": 318.6,
       "listed_date": "2026-09-09",
       "mint": 1756,
       "mint_score": 0.0,
@@ -3834,9 +3834,9 @@
       "first_seen": "2026-09-09T13:55:38.786851+00:00",
       "floor_usd": 1318.98,
       "key": "https://vevealpha.com/c/marvel-dc-deadpool-batman-secret-rare|881",
-      "last_seen": "2026-10-13T19:28:54.623303+00:00",
-      "latest_ask_usd": 423.07,
-      "latest_floor_usd": 1722.78,
+      "last_seen": "2026-10-13T23:23:49.222964+00:00",
+      "latest_ask_usd": 415.57,
+      "latest_floor_usd": 1741.26,
       "listed_date": "2026-09-08",
       "mint": 881,
       "mint_score": 0.0,
@@ -5427,9 +5427,9 @@
       "first_seen": "2026-09-09T13:55:38.786851+00:00",
       "floor_usd": 549.57,
       "key": "https://vevealpha.com/c/the-amazing-spider-man-secret-rare-b1097b|2173",
-      "last_seen": "2026-10-13T19:28:54.623303+00:00",
-      "latest_ask_usd": 423.07,
-      "latest_floor_usd": 717.83,
+      "last_seen": "2026-10-13T23:23:49.222964+00:00",
+      "latest_ask_usd": 415.57,
+      "latest_floor_usd": 721.08,
       "listed_date": "2026-09-07",
       "mint": 2173,
       "mint_score": 0.0,
@@ -5852,9 +5852,9 @@
       "first_seen": "2026-09-09T13:55:38.786851+00:00",
       "floor_usd": 863.93,
       "key": "https://vevealpha.com/c/ultimate-fallout-secret-rare|11910",
-      "last_seen": "2026-10-13T19:28:54.623303+00:00",
-      "latest_ask_usd": 423.07,
-      "latest_floor_usd": 783.56,
+      "last_seen": "2026-10-13T23:23:49.222964+00:00",
+      "latest_ask_usd": 415.57,
+      "latest_floor_usd": 788.54,
       "listed_date": "2026-08-30",
       "mint": 11910,
       "mint_score": 0.0,
@@ -5937,9 +5937,9 @@
       "first_seen": "2026-09-09T13:55:38.786851+00:00",
       "floor_usd": 863.93,
       "key": "https://vevealpha.com/c/ultimate-fallout-secret-rare|29069",
-      "last_seen": "2026-10-13T19:28:54.623303+00:00",
-      "latest_ask_usd": 420.25,
-      "latest_floor_usd": 783.56,
+      "last_seen": "2026-10-13T23:23:49.222964+00:00",
+      "latest_ask_usd": 412.8,
+      "latest_floor_usd": 788.54,
       "listed_date": "2026-09-01",
       "mint": 29069,
       "mint_score": 0.0,
@@ -6494,6 +6494,15 @@
           "live_status": "not-observed",
           "observed_at": "2026-09-16T23:12:08.452355+00:00",
           "premium_to_floor_pct": null
+        },
+        "720h": {
+          "ask_omi": null,
+          "ask_usd": null,
+          "floor_usd": null,
+          "hours_target": 720,
+          "live_status": "not-observed",
+          "observed_at": "2026-10-13T23:23:49.222964+00:00",
+          "premium_to_floor_pct": null
         }
       },
       "collectible": "1:1 DeLorean Time Machine - Interactive",
@@ -6570,6 +6579,15 @@
           "live_status": "live",
           "observed_at": "2026-09-16T23:12:08.452355+00:00",
           "premium_to_floor_pct": -13.61
+        },
+        "720h": {
+          "ask_omi": null,
+          "ask_usd": null,
+          "floor_usd": null,
+          "hours_target": 720,
+          "live_status": "not-observed",
+          "observed_at": "2026-10-13T23:23:49.222964+00:00",
+          "premium_to_floor_pct": null
         }
       },
       "collectible": "Black Panther \u2013 Ultimate Animated",
@@ -6646,6 +6664,15 @@
           "live_status": "live",
           "observed_at": "2026-09-16T23:12:08.452355+00:00",
           "premium_to_floor_pct": -45.18
+        },
+        "720h": {
+          "ask_omi": null,
+          "ask_usd": null,
+          "floor_usd": null,
+          "hours_target": 720,
+          "live_status": "not-observed",
+          "observed_at": "2026-10-13T23:23:49.222964+00:00",
+          "premium_to_floor_pct": null
         }
       },
       "collectible": "Dark Lord of the Sith",
@@ -6722,6 +6749,15 @@
           "live_status": "live",
           "observed_at": "2026-09-16T23:12:08.452355+00:00",
           "premium_to_floor_pct": -35.12
+        },
+        "720h": {
+          "ask_omi": null,
+          "ask_usd": null,
+          "floor_usd": null,
+          "hours_target": 720,
+          "live_status": "not-observed",
+          "observed_at": "2026-10-13T23:23:49.222964+00:00",
+          "premium_to_floor_pct": null
         }
       },
       "collectible": "Dark Lord of the Sith",
@@ -6798,6 +6834,15 @@
           "live_status": "live",
           "observed_at": "2026-09-16T23:12:08.452355+00:00",
           "premium_to_floor_pct": -20.42
+        },
+        "720h": {
+          "ask_omi": null,
+          "ask_usd": null,
+          "floor_usd": null,
+          "hours_target": 720,
+          "live_status": "not-observed",
+          "observed_at": "2026-10-13T23:23:49.222964+00:00",
+          "premium_to_floor_pct": null
         }
       },
       "collectible": "Donatello - Classic (Special Edition)",
@@ -6873,6 +6918,15 @@
           "hours_target": 24,
           "live_status": "not-observed",
           "observed_at": "2026-09-16T23:12:08.452355+00:00",
+          "premium_to_floor_pct": null
+        },
+        "720h": {
+          "ask_omi": null,
+          "ask_usd": null,
+          "floor_usd": null,
+          "hours_target": 720,
+          "live_status": "not-observed",
+          "observed_at": "2026-10-13T23:23:49.222964+00:00",
           "premium_to_floor_pct": null
         }
       },
@@ -6950,6 +7004,15 @@
           "live_status": "not-observed",
           "observed_at": "2026-09-16T23:12:08.452355+00:00",
           "premium_to_floor_pct": null
+        },
+        "720h": {
+          "ask_omi": null,
+          "ask_usd": null,
+          "floor_usd": null,
+          "hours_target": 720,
+          "live_status": "not-observed",
+          "observed_at": "2026-10-13T23:23:49.222964+00:00",
+          "premium_to_floor_pct": null
         }
       },
       "collectible": "Fantastic Four #1",
@@ -7025,6 +7088,15 @@
           "hours_target": 24,
           "live_status": "not-observed",
           "observed_at": "2026-09-16T23:12:08.452355+00:00",
+          "premium_to_floor_pct": null
+        },
+        "720h": {
+          "ask_omi": null,
+          "ask_usd": null,
+          "floor_usd": null,
+          "hours_target": 720,
+          "live_status": "not-observed",
+          "observed_at": "2026-10-13T23:23:49.222964+00:00",
           "premium_to_floor_pct": null
         }
       },
@@ -7102,6 +7174,15 @@
           "live_status": "not-observed",
           "observed_at": "2026-09-16T23:12:08.452355+00:00",
           "premium_to_floor_pct": null
+        },
+        "720h": {
+          "ask_omi": null,
+          "ask_usd": null,
+          "floor_usd": null,
+          "hours_target": 720,
+          "live_status": "not-observed",
+          "observed_at": "2026-10-13T23:23:49.222964+00:00",
+          "premium_to_floor_pct": null
         }
       },
       "collectible": "Fantastic Four #1",
@@ -7178,6 +7259,15 @@
           "live_status": "live",
           "observed_at": "2026-09-16T23:12:08.452355+00:00",
           "premium_to_floor_pct": -22.07
+        },
+        "720h": {
+          "ask_omi": null,
+          "ask_usd": null,
+          "floor_usd": null,
+          "hours_target": 720,
+          "live_status": "not-observed",
+          "observed_at": "2026-10-13T23:23:49.222964+00:00",
+          "premium_to_floor_pct": null
         }
       },
       "collectible": "Fantastic Four #1",
@@ -7254,6 +7344,15 @@
           "live_status": "live",
           "observed_at": "2026-09-16T23:12:08.452355+00:00",
           "premium_to_floor_pct": -30.72
+        },
+        "720h": {
+          "ask_omi": null,
+          "ask_usd": null,
+          "floor_usd": null,
+          "hours_target": 720,
+          "live_status": "not-observed",
+          "observed_at": "2026-10-13T23:23:49.222964+00:00",
+          "premium_to_floor_pct": null
         }
       },
       "collectible": "Fantastic Four #5",
@@ -7330,6 +7429,15 @@
           "live_status": "live",
           "observed_at": "2026-09-16T23:12:08.452355+00:00",
           "premium_to_floor_pct": -39.54
+        },
+        "720h": {
+          "ask_omi": null,
+          "ask_usd": null,
+          "floor_usd": null,
+          "hours_target": 720,
+          "live_status": "not-observed",
+          "observed_at": "2026-10-13T23:23:49.222964+00:00",
+          "premium_to_floor_pct": null
         }
       },
       "collectible": "Fantastic Four #5",
@@ -7406,6 +7514,15 @@
           "live_status": "live",
           "observed_at": "2026-09-16T23:12:08.452355+00:00",
           "premium_to_floor_pct": -37.02
+        },
+        "720h": {
+          "ask_omi": null,
+          "ask_usd": null,
+          "floor_usd": null,
+          "hours_target": 720,
+          "live_status": "not-observed",
+          "observed_at": "2026-10-13T23:23:49.222964+00:00",
+          "premium_to_floor_pct": null
         }
       },
       "collectible": "Fantastic Four #5",
@@ -7460,6 +7577,15 @@
           "live_status": "live",
           "observed_at": "2026-09-16T23:12:08.452355+00:00",
           "premium_to_floor_pct": -55.29
+        },
+        "720h": {
+          "ask_omi": null,
+          "ask_usd": null,
+          "floor_usd": null,
+          "hours_target": 720,
+          "live_status": "not-observed",
+          "observed_at": "2026-10-13T23:23:49.222964+00:00",
+          "premium_to_floor_pct": null
         }
       },
       "collectible": "Frozen II Pencil",
@@ -7536,6 +7662,15 @@
           "live_status": "live",
           "observed_at": "2026-09-16T23:12:08.452355+00:00",
           "premium_to_floor_pct": -69.83
+        },
+        "720h": {
+          "ask_omi": null,
+          "ask_usd": null,
+          "floor_usd": null,
+          "hours_target": 720,
+          "live_status": "not-observed",
+          "observed_at": "2026-10-13T23:23:49.222964+00:00",
+          "premium_to_floor_pct": null
         }
       },
       "collectible": "Journey Into Mystery #85",
@@ -7612,6 +7747,15 @@
           "live_status": "live",
           "observed_at": "2026-09-16T23:12:08.452355+00:00",
           "premium_to_floor_pct": -67.82
+        },
+        "720h": {
+          "ask_omi": null,
+          "ask_usd": null,
+          "floor_usd": null,
+          "hours_target": 720,
+          "live_status": "not-observed",
+          "observed_at": "2026-10-13T23:23:49.222964+00:00",
+          "premium_to_floor_pct": null
         }
       },
       "collectible": "Journey Into Mystery #85",
@@ -7688,6 +7832,15 @@
           "live_status": "live",
           "observed_at": "2026-09-16T23:12:08.452355+00:00",
           "premium_to_floor_pct": -71.84
+        },
+        "720h": {
+          "ask_omi": null,
+          "ask_usd": null,
+          "floor_usd": null,
+          "hours_target": 720,
+          "live_status": "not-observed",
+          "observed_at": "2026-10-13T23:23:49.222964+00:00",
+          "premium_to_floor_pct": null
         }
       },
       "collectible": "Journey Into Mystery #85",
@@ -7764,6 +7917,15 @@
           "live_status": "live",
           "observed_at": "2026-09-16T23:12:08.452355+00:00",
           "premium_to_floor_pct": -84.71
+        },
+        "720h": {
+          "ask_omi": null,
+          "ask_usd": null,
+          "floor_usd": null,
+          "hours_target": 720,
+          "live_status": "not-observed",
+          "observed_at": "2026-10-13T23:23:49.222964+00:00",
+          "premium_to_floor_pct": null
         }
       },
       "collectible": "Journey Into Mystery #85",
@@ -7818,6 +7980,15 @@
           "live_status": "live",
           "observed_at": "2026-09-16T23:12:08.452355+00:00",
           "premium_to_floor_pct": -51.39
+        },
+        "720h": {
+          "ask_omi": null,
+          "ask_usd": null,
+          "floor_usd": null,
+          "hours_target": 720,
+          "live_status": "not-observed",
+          "observed_at": "2026-10-13T23:23:49.222964+00:00",
+          "premium_to_floor_pct": null
         }
       },
       "collectible": "Leonardo - Classic (Special Edition)",
@@ -7894,6 +8065,15 @@
           "live_status": "live",
           "observed_at": "2026-09-16T23:12:08.452355+00:00",
           "premium_to_floor_pct": -75.86
+        },
+        "720h": {
+          "ask_omi": null,
+          "ask_usd": null,
+          "floor_usd": null,
+          "hours_target": 720,
+          "live_status": "not-observed",
+          "observed_at": "2026-10-13T23:23:49.222964+00:00",
+          "premium_to_floor_pct": null
         }
       },
       "collectible": "Marvel Comics #1",
@@ -7970,6 +8150,15 @@
           "live_status": "live",
           "observed_at": "2026-09-16T23:12:08.452355+00:00",
           "premium_to_floor_pct": -75.86
+        },
+        "720h": {
+          "ask_omi": null,
+          "ask_usd": null,
+          "floor_usd": null,
+          "hours_target": 720,
+          "live_status": "not-observed",
+          "observed_at": "2026-10-13T23:23:49.222964+00:00",
+          "premium_to_floor_pct": null
         }
       },
       "collectible": "Marvel Comics #1",
@@ -8046,6 +8235,15 @@
           "live_status": "live",
           "observed_at": "2026-09-16T23:12:08.452355+00:00",
           "premium_to_floor_pct": -75.86
+        },
+        "720h": {
+          "ask_omi": null,
+          "ask_usd": null,
+          "floor_usd": null,
+          "hours_target": 720,
+          "live_status": "not-observed",
+          "observed_at": "2026-10-13T23:23:49.222964+00:00",
+          "premium_to_floor_pct": null
         }
       },
       "collectible": "Marvel Comics #1",
@@ -8122,6 +8320,15 @@
           "live_status": "live",
           "observed_at": "2026-09-16T23:12:08.452355+00:00",
           "premium_to_floor_pct": -73.39
+        },
+        "720h": {
+          "ask_omi": null,
+          "ask_usd": null,
+          "floor_usd": null,
+          "hours_target": 720,
+          "live_status": "not-observed",
+          "observed_at": "2026-10-13T23:23:49.222964+00:00",
+          "premium_to_floor_pct": null
         }
       },
       "collectible": "Marvel Rivals #1",
@@ -8197,6 +8404,15 @@
           "hours_target": 24,
           "live_status": "not-observed",
           "observed_at": "2026-09-16T23:12:08.452355+00:00",
+          "premium_to_floor_pct": null
+        },
+        "720h": {
+          "ask_omi": null,
+          "ask_usd": null,
+          "floor_usd": null,
+          "hours_target": 720,
+          "live_status": "not-observed",
+          "observed_at": "2026-10-13T23:23:49.222964+00:00",
           "premium_to_floor_pct": null
         }
       },
@@ -8274,6 +8490,15 @@
           "live_status": "live",
           "observed_at": "2026-09-16T23:12:08.452355+00:00",
           "premium_to_floor_pct": -35.84
+        },
+        "720h": {
+          "ask_omi": null,
+          "ask_usd": null,
+          "floor_usd": null,
+          "hours_target": 720,
+          "live_status": "not-observed",
+          "observed_at": "2026-10-13T23:23:49.222964+00:00",
+          "premium_to_floor_pct": null
         }
       },
       "collectible": "Spider-Man - Marvel Metallic Red",
@@ -8350,6 +8575,15 @@
           "live_status": "live",
           "observed_at": "2026-09-16T23:12:08.452355+00:00",
           "premium_to_floor_pct": -35.63
+        },
+        "720h": {
+          "ask_omi": null,
+          "ask_usd": null,
+          "floor_usd": null,
+          "hours_target": 720,
+          "live_status": "not-observed",
+          "observed_at": "2026-10-13T23:23:49.222964+00:00",
+          "premium_to_floor_pct": null
         }
       },
       "collectible": "Spider-Man - Marvel Metallic Red",
@@ -8425,6 +8659,15 @@
           "hours_target": 24,
           "live_status": "not-observed",
           "observed_at": "2026-09-16T23:12:08.452355+00:00",
+          "premium_to_floor_pct": null
+        },
+        "720h": {
+          "ask_omi": null,
+          "ask_usd": null,
+          "floor_usd": null,
+          "hours_target": 720,
+          "live_status": "not-observed",
+          "observed_at": "2026-10-13T23:23:49.222964+00:00",
           "premium_to_floor_pct": null
         }
       },
@@ -8502,6 +8745,15 @@
           "live_status": "live",
           "observed_at": "2026-09-16T23:12:08.452355+00:00",
           "premium_to_floor_pct": -49.46
+        },
+        "720h": {
+          "ask_omi": null,
+          "ask_usd": null,
+          "floor_usd": null,
+          "hours_target": 720,
+          "live_status": "not-observed",
+          "observed_at": "2026-10-13T23:23:49.222964+00:00",
+          "premium_to_floor_pct": null
         }
       },
       "collectible": "The Amazing Spider-Man #1",
@@ -8577,6 +8829,15 @@
           "hours_target": 24,
           "live_status": "not-observed",
           "observed_at": "2026-09-16T23:12:08.452355+00:00",
+          "premium_to_floor_pct": null
+        },
+        "720h": {
+          "ask_omi": null,
+          "ask_usd": null,
+          "floor_usd": null,
+          "hours_target": 720,
+          "live_status": "not-observed",
+          "observed_at": "2026-10-13T23:23:49.222964+00:00",
           "premium_to_floor_pct": null
         }
       },
@@ -8654,6 +8915,15 @@
           "live_status": "live",
           "observed_at": "2026-09-16T23:12:08.452355+00:00",
           "premium_to_floor_pct": -35.63
+        },
+        "720h": {
+          "ask_omi": null,
+          "ask_usd": null,
+          "floor_usd": null,
+          "hours_target": 720,
+          "live_status": "not-observed",
+          "observed_at": "2026-10-13T23:23:49.222964+00:00",
+          "premium_to_floor_pct": null
         }
       },
       "collectible": "The Amazing Spider-Man #4",
@@ -8730,6 +9000,15 @@
           "live_status": "live",
           "observed_at": "2026-09-16T23:12:08.452355+00:00",
           "premium_to_floor_pct": -38.75
+        },
+        "720h": {
+          "ask_omi": null,
+          "ask_usd": null,
+          "floor_usd": null,
+          "hours_target": 720,
+          "live_status": "not-observed",
+          "observed_at": "2026-10-13T23:23:49.222964+00:00",
+          "premium_to_floor_pct": null
         }
       },
       "collectible": "The X-men #1",
@@ -8806,6 +9085,15 @@
           "live_status": "live",
           "observed_at": "2026-09-16T23:12:08.452355+00:00",
           "premium_to_floor_pct": -49.71
+        },
+        "720h": {
+          "ask_omi": null,
+          "ask_usd": null,
+          "floor_usd": null,
+          "hours_target": 720,
+          "live_status": "not-observed",
+          "observed_at": "2026-10-13T23:23:49.222964+00:00",
+          "premium_to_floor_pct": null
         }
       },
       "collectible": "The X-Men #2",
@@ -8882,6 +9170,15 @@
           "live_status": "live",
           "observed_at": "2026-09-16T23:12:08.452355+00:00",
           "premium_to_floor_pct": 10.07
+        },
+        "720h": {
+          "ask_omi": null,
+          "ask_usd": null,
+          "floor_usd": null,
+          "hours_target": 720,
+          "live_status": "not-observed",
+          "observed_at": "2026-10-13T23:23:49.222964+00:00",
+          "premium_to_floor_pct": null
         }
       },
       "collectible": "Yoda - One With The Force",
@@ -9193,9 +9490,9 @@
       "first_seen": "2026-09-14T17:01:32.546589+00:00",
       "floor_usd": 517.68,
       "key": "https://vevealpha.com/c/journey-into-mystery-secret-rare-21b9f6|14673",
-      "last_seen": "2026-10-13T19:28:54.623303+00:00",
-      "latest_ask_usd": 197.44,
-      "latest_floor_usd": 279.23,
+      "last_seen": "2026-10-13T23:23:49.222964+00:00",
+      "latest_ask_usd": 193.94,
+      "latest_floor_usd": 281.01,
       "listed_date": "2026-09-14",
       "mint": 14673,
       "mint_score": 0.0,
@@ -11787,9 +12084,9 @@
       "first_seen": "2026-09-19T20:55:54.458047+00:00",
       "floor_usd": 542.67,
       "key": "https://vevealpha.com/c/marvel-super-hero-secret-wars-secret-rare-d23c16|5717",
-      "last_seen": "2026-10-13T19:28:54.623303+00:00",
-      "latest_ask_usd": 507.69,
-      "latest_floor_usd": 765.68,
+      "last_seen": "2026-10-13T23:23:49.222964+00:00",
+      "latest_ask_usd": 498.69,
+      "latest_floor_usd": 769.15,
       "listed_date": "2026-09-16",
       "mint": 5717,
       "mint_score": 0.0,
@@ -15781,9 +16078,9 @@
       "first_seen": "2026-09-28T20:41:45.096722+00:00",
       "floor_usd": 251.74,
       "key": "https://vevealpha.com/c/house-of-x-secret-rare|34649",
-      "last_seen": "2026-10-13T19:28:54.623303+00:00",
-      "latest_ask_usd": 219.37,
-      "latest_floor_usd": 316.59,
+      "last_seen": "2026-10-13T23:23:49.222964+00:00",
+      "latest_ask_usd": 215.48,
+      "latest_floor_usd": 318.6,
       "listed_date": "2026-09-26",
       "mint": 34649,
       "mint_score": 0.0,
@@ -16357,8 +16654,8 @@
       "first_seen": "2026-10-02T23:11:09.823219+00:00",
       "floor_usd": 22.58,
       "key": "https://vevealpha.com/c/darth-vader-samurai-crimson-descent|680",
-      "last_seen": "2026-10-13T19:28:54.623303+00:00",
-      "latest_ask_usd": 13.2,
+      "last_seen": "2026-10-13T23:23:49.222964+00:00",
+      "latest_ask_usd": 12.97,
       "latest_floor_usd": 23.07,
       "listed_date": "2026-10-02",
       "mint": 680,
@@ -16639,8 +16936,8 @@
       "first_seen": "2026-10-02T23:11:09.823219+00:00",
       "floor_usd": 290.28,
       "key": "https://vevealpha.com/c/marvel-spotlight-secret-rare-03e224|13851",
-      "last_seen": "2026-10-13T19:28:54.623303+00:00",
-      "latest_ask_usd": 126.92,
+      "last_seen": "2026-10-13T23:23:49.222964+00:00",
+      "latest_ask_usd": 124.67,
       "latest_floor_usd": 199.28,
       "listed_date": "2026-09-26",
       "mint": 13851,
@@ -16715,9 +17012,9 @@
       "first_seen": "2026-10-02T23:11:09.823219+00:00",
       "floor_usd": 774.08,
       "key": "https://vevealpha.com/c/marvel-super-hero-secret-wars-secret-rare-d23c16|1966",
-      "last_seen": "2026-10-13T19:28:54.623303+00:00",
-      "latest_ask_usd": 423.07,
-      "latest_floor_usd": 765.68,
+      "last_seen": "2026-10-13T23:23:49.222964+00:00",
+      "latest_ask_usd": 415.57,
+      "latest_floor_usd": 769.15,
       "listed_date": "2026-09-28",
       "mint": 1966,
       "mint_score": 0.0,
@@ -19155,9 +19452,9 @@
       "first_seen": "2026-10-04T18:44:31.656586+00:00",
       "floor_usd": 5122.4,
       "key": "https://vevealpha.com/c/marvel-comics-secret-rare|19206",
-      "last_seen": "2026-10-13T19:28:54.623303+00:00",
-      "latest_ask_usd": 2538.45,
-      "latest_floor_usd": 3172.73,
+      "last_seen": "2026-10-13T23:23:49.222964+00:00",
+      "latest_ask_usd": 2493.45,
+      "latest_floor_usd": 3062.95,
       "listed_date": "2026-10-03",
       "mint": 19206,
       "mint_score": 0.0,
@@ -20935,8 +21232,8 @@
       "first_seen": "2026-10-05T16:21:06.782409+00:00",
       "floor_usd": 1268.51,
       "key": "https://vevealpha.com/c/the-amazing-spider-man-secret-rare-998772|34402",
-      "last_seen": "2026-10-13T19:28:54.623303+00:00",
-      "latest_ask_usd": 704.84,
+      "last_seen": "2026-10-13T23:23:49.222964+00:00",
+      "latest_ask_usd": 692.35,
       "latest_floor_usd": 1124.88,
       "listed_date": "2026-10-04",
       "mint": 34402,
@@ -21315,9 +21612,9 @@
       "first_seen": "2026-10-05T22:52:23.901708+00:00",
       "floor_usd": 487.89,
       "key": "https://vevealpha.com/c/donatello-classic-special-edition|57",
-      "last_seen": "2026-10-13T19:28:54.623303+00:00",
-      "latest_ask_usd": 366.67,
-      "latest_floor_usd": 574.26,
+      "last_seen": "2026-10-13T23:23:49.222964+00:00",
+      "latest_ask_usd": 360.16,
+      "latest_floor_usd": 580.42,
       "listed_date": "2026-10-04",
       "mint": 57,
       "mint_score": 86.0,
@@ -21369,9 +21666,9 @@
       "first_seen": "2026-10-05T22:52:23.901708+00:00",
       "floor_usd": 14.89,
       "key": "https://vevealpha.com/c/foam-machine-gold-edition-secret-rare|60",
-      "last_seen": "2026-10-13T19:28:54.623303+00:00",
-      "latest_ask_usd": 8.46,
-      "latest_floor_usd": 13.96,
+      "last_seen": "2026-10-13T23:23:49.222964+00:00",
+      "latest_ask_usd": 8.31,
+      "latest_floor_usd": 13.75,
       "listed_date": "2026-10-05",
       "mint": 60,
       "mint_score": 86.0,
@@ -21597,9 +21894,9 @@
       "first_seen": "2026-10-05T22:52:23.901708+00:00",
       "floor_usd": 800.95,
       "key": "https://vevealpha.com/c/raphael-classic-special-edition|61",
-      "last_seen": "2026-10-13T19:28:54.623303+00:00",
-      "latest_ask_usd": 437.18,
-      "latest_floor_usd": 740.82,
+      "last_seen": "2026-10-13T23:23:49.222964+00:00",
+      "latest_ask_usd": 429.43,
+      "latest_floor_usd": 749.92,
       "listed_date": "2026-10-05",
       "mint": 61,
       "mint_score": 86.0,
@@ -21901,9 +22198,9 @@
       "first_seen": "2026-10-05T22:52:23.901708+00:00",
       "floor_usd": 292.73,
       "key": "https://vevealpha.com/c/the-amazing-spider-man-secret-rare-fa269a|6971",
-      "last_seen": "2026-10-12T23:10:01.948889+00:00",
-      "latest_ask_usd": 194.49,
-      "latest_floor_usd": 263.66,
+      "last_seen": "2026-10-13T23:23:49.222964+00:00",
+      "latest_ask_usd": 192.33,
+      "latest_floor_usd": 261.19,
       "listed_date": "2026-09-28",
       "mint": 6971,
       "mint_score": 0.0,
@@ -21977,9 +22274,9 @@
       "first_seen": "2026-10-05T22:52:23.901708+00:00",
       "floor_usd": 292.73,
       "key": "https://vevealpha.com/c/the-amazing-spider-man-secret-rare-fa269a|9894",
-      "last_seen": "2026-10-13T03:46:57.727169+00:00",
-      "latest_ask_usd": 196.56,
-      "latest_floor_usd": 263.66,
+      "last_seen": "2026-10-13T23:23:49.222964+00:00",
+      "latest_ask_usd": 191.16,
+      "latest_floor_usd": 261.19,
       "listed_date": "2026-10-05",
       "mint": 9894,
       "mint_score": 0.0,
@@ -22053,9 +22350,9 @@
       "first_seen": "2026-10-05T22:52:23.901708+00:00",
       "floor_usd": 967.14,
       "key": "https://vevealpha.com/c/venetia-2021|31",
-      "last_seen": "2026-10-07T09:08:47.360603+00:00",
-      "latest_ask_usd": 701.48,
-      "latest_floor_usd": 850.44,
+      "last_seen": "2026-10-13T23:23:49.222964+00:00",
+      "latest_ask_usd": 720.33,
+      "latest_floor_usd": 865.29,
       "listed_date": "2026-09-14",
       "mint": 31,
       "mint_score": 94.0,
@@ -22541,9 +22838,9 @@
       "first_seen": "2026-10-06T10:42:27.346349+00:00",
       "floor_usd": 362.21,
       "key": "https://vevealpha.com/c/the-incredible-hulk-secret-rare-cd2b1a|1833",
-      "last_seen": "2026-10-13T19:28:54.623303+00:00",
-      "latest_ask_usd": 218.59,
-      "latest_floor_usd": 279.95,
+      "last_seen": "2026-10-13T23:23:49.222964+00:00",
+      "latest_ask_usd": 214.71,
+      "latest_floor_usd": 281.22,
       "listed_date": "2026-10-03",
       "mint": 1833,
       "mint_score": 0.0,
@@ -22617,9 +22914,9 @@
       "first_seen": "2026-10-06T17:22:36.079797+00:00",
       "floor_usd": 566.96,
       "key": "https://vevealpha.com/c/donatello-classic-special-edition|70",
-      "last_seen": "2026-10-13T19:28:54.623303+00:00",
-      "latest_ask_usd": 423.07,
-      "latest_floor_usd": 574.26,
+      "last_seen": "2026-10-13T23:23:49.222964+00:00",
+      "latest_ask_usd": 415.57,
+      "latest_floor_usd": 580.42,
       "listed_date": "2026-10-03",
       "mint": 70,
       "mint_score": 86.0,
@@ -22812,6 +23109,15 @@
         }
       },
       "checkpoints": {
+        "168h": {
+          "ask_omi": null,
+          "ask_usd": null,
+          "floor_usd": null,
+          "hours_target": 168,
+          "live_status": "not-observed",
+          "observed_at": "2026-10-13T23:23:49.222964+00:00",
+          "premium_to_floor_pct": null
+        },
         "1h": {
           "ask_omi": 600000,
           "ask_usd": 160.63,
@@ -22879,6 +23185,15 @@
         }
       },
       "checkpoints": {
+        "168h": {
+          "ask_omi": null,
+          "ask_usd": null,
+          "floor_usd": null,
+          "hours_target": 168,
+          "live_status": "not-observed",
+          "observed_at": "2026-10-13T23:23:49.222964+00:00",
+          "premium_to_floor_pct": null
+        },
         "1h": {
           "ask_omi": 638000,
           "ask_usd": 170.8,
@@ -22946,6 +23261,15 @@
         }
       },
       "checkpoints": {
+        "168h": {
+          "ask_omi": null,
+          "ask_usd": null,
+          "floor_usd": null,
+          "hours_target": 168,
+          "live_status": "not-observed",
+          "observed_at": "2026-10-13T23:23:49.222964+00:00",
+          "premium_to_floor_pct": null
+        },
         "1h": {
           "ask_omi": 1250000,
           "ask_usd": 334.64,
@@ -23013,6 +23337,15 @@
         }
       },
       "checkpoints": {
+        "168h": {
+          "ask_omi": null,
+          "ask_usd": null,
+          "floor_usd": null,
+          "hours_target": 168,
+          "live_status": "not-observed",
+          "observed_at": "2026-10-13T23:23:49.222964+00:00",
+          "premium_to_floor_pct": null
+        },
         "1h": {
           "ask_omi": 400000,
           "ask_usd": 107.08,
@@ -23080,6 +23413,15 @@
         }
       },
       "checkpoints": {
+        "168h": {
+          "ask_omi": null,
+          "ask_usd": null,
+          "floor_usd": null,
+          "hours_target": 168,
+          "live_status": "not-observed",
+          "observed_at": "2026-10-13T23:23:49.222964+00:00",
+          "premium_to_floor_pct": null
+        },
         "1h": {
           "ask_omi": 400000,
           "ask_usd": 107.08,
@@ -23147,6 +23489,15 @@
         }
       },
       "checkpoints": {
+        "168h": {
+          "ask_omi": null,
+          "ask_usd": null,
+          "floor_usd": null,
+          "hours_target": 168,
+          "live_status": "not-observed",
+          "observed_at": "2026-10-13T23:23:49.222964+00:00",
+          "premium_to_floor_pct": null
+        },
         "1h": {
           "ask_omi": 395000,
           "ask_usd": 105.75,
@@ -23214,6 +23565,15 @@
         }
       },
       "checkpoints": {
+        "168h": {
+          "ask_omi": 17500000,
+          "ask_usd": 4848.38,
+          "floor_usd": 4788.47,
+          "hours_target": 168,
+          "live_status": "live",
+          "observed_at": "2026-10-13T23:23:49.222964+00:00",
+          "premium_to_floor_pct": 1.25
+        },
         "1h": {
           "ask_omi": 17500000,
           "ask_usd": 4684.93,
@@ -23281,6 +23641,15 @@
         }
       },
       "checkpoints": {
+        "168h": {
+          "ask_omi": null,
+          "ask_usd": null,
+          "floor_usd": null,
+          "hours_target": 168,
+          "live_status": "not-observed",
+          "observed_at": "2026-10-13T23:23:49.222964+00:00",
+          "premium_to_floor_pct": null
+        },
         "1h": {
           "ask_omi": 84746,
           "ask_usd": 22.69,
@@ -23348,6 +23717,15 @@
         }
       },
       "checkpoints": {
+        "168h": {
+          "ask_omi": null,
+          "ask_usd": null,
+          "floor_usd": null,
+          "hours_target": 168,
+          "live_status": "not-observed",
+          "observed_at": "2026-10-13T23:23:49.222964+00:00",
+          "premium_to_floor_pct": null
+        },
         "1h": {
           "ask_omi": null,
           "ask_usd": null,
@@ -23415,6 +23793,15 @@
         }
       },
       "checkpoints": {
+        "168h": {
+          "ask_omi": null,
+          "ask_usd": null,
+          "floor_usd": null,
+          "hours_target": 168,
+          "live_status": "not-observed",
+          "observed_at": "2026-10-13T23:23:49.222964+00:00",
+          "premium_to_floor_pct": null
+        },
         "1h": {
           "ask_omi": 16950,
           "ask_usd": 4.54,
@@ -23506,9 +23893,9 @@
       "first_seen": "2026-10-07T01:45:43.354022+00:00",
       "floor_usd": 78.8,
       "key": "https://vevealpha.com/c/murci-lago-lp670-4-sv-nero-pegaso-metallic|103",
-      "last_seen": "2026-10-13T19:28:54.623303+00:00",
-      "latest_ask_usd": 70.51,
-      "latest_floor_usd": 85.85,
+      "last_seen": "2026-10-13T23:23:49.222964+00:00",
+      "latest_ask_usd": 69.26,
+      "latest_floor_usd": 86.24,
       "listed_date": "2026-09-23",
       "mint": 103,
       "mint_score": 74.0,
@@ -23797,8 +24184,8 @@
       "first_seen": "2026-10-07T16:50:28.525613+00:00",
       "floor_usd": 1014.69,
       "key": "https://vevealpha.com/c/yoda-one-with-the-force|94",
-      "last_seen": "2026-10-13T19:28:54.623303+00:00",
-      "latest_ask_usd": 1043.59,
+      "last_seen": "2026-10-13T23:23:49.222964+00:00",
+      "latest_ask_usd": 1025.09,
       "latest_floor_usd": 961.43,
       "listed_date": "2026-10-07",
       "mint": 94,
@@ -26165,9 +26552,9 @@
       "first_seen": "2026-10-08T22:20:28.218583+00:00",
       "floor_usd": 4851.57,
       "key": "https://vevealpha.com/c/veve-logo-gold-silver|67",
-      "last_seen": "2026-10-13T12:05:00.778947+00:00",
-      "latest_ask_usd": 5878.99,
-      "latest_floor_usd": 5168.34,
+      "last_seen": "2026-10-13T23:23:49.222964+00:00",
+      "latest_ask_usd": 5679.52,
+      "latest_floor_usd": 5094.0,
       "listed_date": "2026-10-08",
       "mint": 67,
       "mint_score": 86.0,
@@ -26232,9 +26619,9 @@
       "first_seen": "2026-10-09T09:30:53.048429+00:00",
       "floor_usd": 144.82,
       "key": "https://vevealpha.com/c/hurac-n-sto-verde-citrea-arancio-dac|557",
-      "last_seen": "2026-10-13T19:28:54.623303+00:00",
-      "latest_ask_usd": 98.72,
-      "latest_floor_usd": 151.01,
+      "last_seen": "2026-10-13T23:23:49.222964+00:00",
+      "latest_ask_usd": 96.97,
+      "latest_floor_usd": 152.87,
       "listed_date": "2026-10-04",
       "mint": 557,
       "mint_score": 0.0,
@@ -26813,8 +27200,8 @@
       "first_seen": "2026-10-10T19:27:59.123452+00:00",
       "floor_usd": 22.5,
       "key": "https://vevealpha.com/c/dark-lord-of-the-sith|3040",
-      "last_seen": "2026-10-13T19:28:54.623303+00:00",
-      "latest_ask_usd": 10.41,
+      "last_seen": "2026-10-13T23:23:49.222964+00:00",
+      "latest_ask_usd": 10.22,
       "latest_floor_usd": 22.3,
       "listed_date": "2026-10-09",
       "mint": 3040,
@@ -26992,9 +27379,9 @@
       "first_seen": "2026-10-10T22:52:17.961082+00:00",
       "floor_usd": 29.25,
       "key": "https://vevealpha.com/c/journey-into-mystery-common-769342|8459",
-      "last_seen": "2026-10-13T19:28:54.623303+00:00",
-      "latest_ask_usd": 20.87,
-      "latest_floor_usd": 28.49,
+      "last_seen": "2026-10-13T23:23:49.222964+00:00",
+      "latest_ask_usd": 20.5,
+      "latest_floor_usd": 28.84,
       "listed_date": "2026-10-10",
       "mint": 8459,
       "mint_score": 0.0,
@@ -27216,9 +27603,9 @@
       "first_seen": "2026-10-11T15:54:41.101929+00:00",
       "floor_usd": 35.58,
       "key": "https://vevealpha.com/c/iron-man-rare-b0ecb0|324",
-      "last_seen": "2026-10-13T19:28:54.623303+00:00",
-      "latest_ask_usd": 26.79,
-      "latest_floor_usd": 34.09,
+      "last_seen": "2026-10-13T23:23:49.222964+00:00",
+      "latest_ask_usd": 26.32,
+      "latest_floor_usd": 34.61,
       "listed_date": "2026-10-10",
       "mint": 324,
       "mint_score": 0.0,
@@ -27283,9 +27670,9 @@
       "first_seen": "2026-10-11T15:54:41.101929+00:00",
       "floor_usd": 29.65,
       "key": "https://vevealpha.com/c/journey-into-mystery-common-769342|8317",
-      "last_seen": "2026-10-13T19:28:54.623303+00:00",
-      "latest_ask_usd": 19.46,
-      "latest_floor_usd": 28.49,
+      "last_seen": "2026-10-13T23:23:49.222964+00:00",
+      "latest_ask_usd": 19.12,
+      "latest_floor_usd": 28.84,
       "listed_date": "2026-10-10",
       "mint": 8317,
       "mint_score": 0.0,
@@ -27395,8 +27782,8 @@
       "first_seen": "2026-10-11T20:30:45.168853+00:00",
       "floor_usd": 23.66,
       "key": "https://vevealpha.com/c/dark-lord-of-the-sith|11724",
-      "last_seen": "2026-10-13T19:28:54.623303+00:00",
-      "latest_ask_usd": 13.54,
+      "last_seen": "2026-10-13T23:23:49.222964+00:00",
+      "latest_ask_usd": 13.3,
       "latest_floor_usd": 22.3,
       "listed_date": "2026-10-11",
       "mint": 11724,
@@ -27462,8 +27849,8 @@
       "first_seen": "2026-10-11T20:30:45.168853+00:00",
       "floor_usd": 1154.83,
       "key": "https://vevealpha.com/c/the-amazing-spider-man-secret-rare-998772|53045",
-      "last_seen": "2026-10-13T19:28:54.623303+00:00",
-      "latest_ask_usd": 676.92,
+      "last_seen": "2026-10-13T23:23:49.222964+00:00",
+      "latest_ask_usd": 664.92,
       "latest_floor_usd": 1124.88,
       "listed_date": "2026-10-10",
       "mint": 53045,
@@ -27864,9 +28251,9 @@
       "first_seen": "2026-10-12T15:57:29.129777+00:00",
       "floor_usd": 556.62,
       "key": "https://vevealpha.com/c/ben-reilly-beyond-spider-man|215",
-      "last_seen": "2026-10-13T19:28:54.623303+00:00",
-      "latest_ask_usd": 361.02,
-      "latest_floor_usd": 502.62,
+      "last_seen": "2026-10-13T23:23:49.222964+00:00",
+      "latest_ask_usd": 354.62,
+      "latest_floor_usd": 504.75,
       "listed_date": "2026-10-11",
       "mint": 215,
       "mint_score": 0.0,
@@ -27931,9 +28318,9 @@
       "first_seen": "2026-10-12T15:57:29.129777+00:00",
       "floor_usd": 411.31,
       "key": "https://vevealpha.com/c/i-am-a-jedi-like-my-father-before-me|189",
-      "last_seen": "2026-10-13T19:28:54.623303+00:00",
-      "latest_ask_usd": 310.25,
-      "latest_floor_usd": 401.98,
+      "last_seen": "2026-10-13T23:23:49.222964+00:00",
+      "latest_ask_usd": 304.75,
+      "latest_floor_usd": 403.8,
       "listed_date": "2026-10-11",
       "mint": 189,
       "mint_score": 74.0,
@@ -27976,8 +28363,8 @@
       "first_seen": "2026-10-12T15:57:29.129777+00:00",
       "floor_usd": 16.2,
       "key": "https://vevealpha.com/c/mickey|124",
-      "last_seen": "2026-10-13T19:28:54.623303+00:00",
-      "latest_ask_usd": 12.47,
+      "last_seen": "2026-10-13T23:23:49.222964+00:00",
+      "latest_ask_usd": 12.25,
       "latest_floor_usd": 15.56,
       "listed_date": "2026-10-11",
       "mint": 124,
@@ -28043,9 +28430,9 @@
       "first_seen": "2026-10-12T15:57:29.129777+00:00",
       "floor_usd": 170.83,
       "key": "https://vevealpha.com/c/spider-man-miles-morales-hoodie-season|1174",
-      "last_seen": "2026-10-13T19:28:54.623303+00:00",
-      "latest_ask_usd": 141.02,
-      "latest_floor_usd": 166.54,
+      "last_seen": "2026-10-13T23:23:49.222964+00:00",
+      "latest_ask_usd": 138.52,
+      "latest_floor_usd": 167.29,
       "listed_date": "2026-10-10",
       "mint": 1174,
       "mint_score": 0.0,
@@ -28110,9 +28497,9 @@
       "first_seen": "2026-10-12T15:57:29.129777+00:00",
       "floor_usd": 170.83,
       "key": "https://vevealpha.com/c/spider-man-miles-morales-hoodie-season|1315",
-      "last_seen": "2026-10-13T19:28:54.623303+00:00",
-      "latest_ask_usd": 141.03,
-      "latest_floor_usd": 166.54,
+      "last_seen": "2026-10-13T23:23:49.222964+00:00",
+      "latest_ask_usd": 138.53,
+      "latest_floor_usd": 167.29,
       "listed_date": "2026-10-10",
       "mint": 1315,
       "mint_score": 0.0,
@@ -28161,6 +28548,15 @@
           "live_status": "live",
           "observed_at": "2026-10-13T03:46:57.727169+00:00",
           "premium_to_floor_pct": -16.35
+        },
+        "24h": {
+          "ask_omi": null,
+          "ask_usd": null,
+          "floor_usd": null,
+          "hours_target": 24,
+          "live_status": "not-observed",
+          "observed_at": "2026-10-13T23:23:49.222964+00:00",
+          "premium_to_floor_pct": null
         }
       },
       "collectible": "Captain America #1",
@@ -28219,6 +28615,15 @@
           "live_status": "live",
           "observed_at": "2026-10-13T03:46:57.727169+00:00",
           "premium_to_floor_pct": -16.35
+        },
+        "24h": {
+          "ask_omi": null,
+          "ask_usd": null,
+          "floor_usd": null,
+          "hours_target": 24,
+          "live_status": "not-observed",
+          "observed_at": "2026-10-13T23:23:49.222964+00:00",
+          "premium_to_floor_pct": null
         }
       },
       "collectible": "Captain America #1",
@@ -28277,6 +28682,15 @@
           "live_status": "live",
           "observed_at": "2026-10-13T03:46:57.727169+00:00",
           "premium_to_floor_pct": -43.58
+        },
+        "24h": {
+          "ask_omi": 175000,
+          "ask_usd": 48.48,
+          "floor_usd": 50.48,
+          "hours_target": 24,
+          "live_status": "live",
+          "observed_at": "2026-10-13T23:23:49.222964+00:00",
+          "premium_to_floor_pct": -3.95
         }
       },
       "collectible": "Marvel Comics #1",
@@ -28335,6 +28749,15 @@
           "live_status": "live",
           "observed_at": "2026-10-13T03:46:57.727169+00:00",
           "premium_to_floor_pct": -43.58
+        },
+        "24h": {
+          "ask_omi": 175000,
+          "ask_usd": 48.48,
+          "floor_usd": 50.48,
+          "hours_target": 24,
+          "live_status": "live",
+          "observed_at": "2026-10-13T23:23:49.222964+00:00",
+          "premium_to_floor_pct": -3.95
         }
       },
       "collectible": "Marvel Comics #1",
@@ -28393,6 +28816,15 @@
           "live_status": "live",
           "observed_at": "2026-10-13T03:46:57.727169+00:00",
           "premium_to_floor_pct": -25.61
+        },
+        "24h": {
+          "ask_omi": 850000,
+          "ask_usd": 235.49,
+          "floor_usd": 318.6,
+          "hours_target": 24,
+          "live_status": "live",
+          "observed_at": "2026-10-13T23:23:49.222964+00:00",
+          "premium_to_floor_pct": -26.09
         }
       },
       "collectible": "Powers of X #1",
@@ -28400,9 +28832,9 @@
       "first_seen": "2026-10-12T23:10:01.948889+00:00",
       "floor_usd": 325.51,
       "key": "https://vevealpha.com/c/powers-of-x-secret-rare|15363",
-      "last_seen": "2026-10-13T19:28:54.623303+00:00",
-      "latest_ask_usd": 239.74,
-      "latest_floor_usd": 316.59,
+      "last_seen": "2026-10-13T23:23:49.222964+00:00",
+      "latest_ask_usd": 235.49,
+      "latest_floor_usd": 318.6,
       "listed_date": "2026-10-11",
       "mint": 15363,
       "mint_score": 0.0,
@@ -28451,6 +28883,15 @@
           "live_status": "live",
           "observed_at": "2026-10-13T03:46:57.727169+00:00",
           "premium_to_floor_pct": -25.95
+        },
+        "24h": {
+          "ask_omi": 2450000,
+          "ask_usd": 678.77,
+          "floor_usd": 906.43,
+          "hours_target": 24,
+          "live_status": "live",
+          "observed_at": "2026-10-13T23:23:49.222964+00:00",
+          "premium_to_floor_pct": -25.12
         }
       },
       "collectible": "The Avengers #1",
@@ -28509,6 +28950,15 @@
           "live_status": "live",
           "observed_at": "2026-10-13T03:46:57.727169+00:00",
           "premium_to_floor_pct": -22.15
+        },
+        "24h": {
+          "ask_omi": 20000000,
+          "ask_usd": 5541.0,
+          "floor_usd": 5094.0,
+          "hours_target": 24,
+          "live_status": "live",
+          "observed_at": "2026-10-13T23:23:49.222964+00:00",
+          "premium_to_floor_pct": 8.78
         }
       },
       "collectible": "VeVe Logo Gold Silver",
@@ -28544,6 +28994,15 @@
           "hours_target": 1,
           "live_status": "not-observed",
           "observed_at": "2026-10-13T03:46:57.727169+00:00",
+          "premium_to_floor_pct": null
+        },
+        "24h": {
+          "ask_omi": null,
+          "ask_usd": null,
+          "floor_usd": null,
+          "hours_target": 24,
+          "live_status": "not-observed",
+          "observed_at": "2026-10-13T23:23:49.222964+00:00",
           "premium_to_floor_pct": null
         }
       },
@@ -28610,9 +29069,9 @@
       "first_seen": "2026-10-13T12:05:00.778947+00:00",
       "floor_usd": 502.62,
       "key": "https://vevealpha.com/c/ben-reilly-beyond-spider-man|289",
-      "last_seen": "2026-10-13T19:28:54.623303+00:00",
-      "latest_ask_usd": 363.64,
-      "latest_floor_usd": 502.62,
+      "last_seen": "2026-10-13T23:23:49.222964+00:00",
+      "latest_ask_usd": 357.2,
+      "latest_floor_usd": 504.75,
       "listed_date": "2026-10-12",
       "mint": 289,
       "mint_score": 0.0,
@@ -28630,15 +29089,25 @@
       "ask_usd": 84.61,
       "baseline_outcomes": {},
       "baselines": {},
-      "checkpoints": {},
+      "checkpoints": {
+        "1h": {
+          "ask_omi": 300000,
+          "ask_usd": 83.11,
+          "floor_usd": 141.91,
+          "hours_target": 1,
+          "live_status": "live",
+          "observed_at": "2026-10-13T23:23:49.222964+00:00",
+          "premium_to_floor_pct": -41.43
+        }
+      },
       "collectible": "Black Panther \u2013 Ultimate Animated",
       "confidence": 83.0,
       "first_seen": "2026-10-13T19:28:54.623303+00:00",
       "floor_usd": 140.69,
       "key": "https://vevealpha.com/c/black-panther-ultimate-animated|442",
-      "last_seen": "2026-10-13T19:28:54.623303+00:00",
-      "latest_ask_usd": 84.61,
-      "latest_floor_usd": 140.69,
+      "last_seen": "2026-10-13T23:23:49.222964+00:00",
+      "latest_ask_usd": 83.11,
+      "latest_floor_usd": 141.91,
       "listed_date": "2026-10-12",
       "mint": 442,
       "mint_score": 0.0,
@@ -28678,15 +29147,25 @@
           "signal_class": "EDGE"
         }
       },
-      "checkpoints": {},
+      "checkpoints": {
+        "1h": {
+          "ask_omi": 500000,
+          "ask_usd": 138.53,
+          "floor_usd": 318.6,
+          "hours_target": 1,
+          "live_status": "live",
+          "observed_at": "2026-10-13T23:23:49.222964+00:00",
+          "premium_to_floor_pct": -56.52
+        }
+      },
       "collectible": "House of X #1",
       "confidence": 83.0,
       "first_seen": "2026-10-13T19:28:54.623303+00:00",
       "floor_usd": 316.59,
       "key": "https://vevealpha.com/c/house-of-x-secret-rare|41901",
-      "last_seen": "2026-10-13T19:28:54.623303+00:00",
-      "latest_ask_usd": 141.03,
-      "latest_floor_usd": 316.59,
+      "last_seen": "2026-10-13T23:23:49.222964+00:00",
+      "latest_ask_usd": 138.53,
+      "latest_floor_usd": 318.6,
       "listed_date": "2026-10-12",
       "mint": 41901,
       "mint_score": 0.0,
@@ -28726,7 +29205,17 @@
           "signal_class": "EDGE"
         }
       },
-      "checkpoints": {},
+      "checkpoints": {
+        "1h": {
+          "ask_omi": null,
+          "ask_usd": null,
+          "floor_usd": null,
+          "hours_target": 1,
+          "live_status": "not-observed",
+          "observed_at": "2026-10-13T23:23:49.222964+00:00",
+          "premium_to_floor_pct": null
+        }
+      },
       "collectible": "Marvel Comics #1",
       "confidence": 83.0,
       "first_seen": "2026-10-13T19:28:54.623303+00:00",
@@ -28774,15 +29263,25 @@
           "signal_class": "MARKET"
         }
       },
-      "checkpoints": {},
+      "checkpoints": {
+        "1h": {
+          "ask_omi": 70000,
+          "ask_usd": 19.39,
+          "floor_usd": 26.32,
+          "hours_target": 1,
+          "live_status": "live",
+          "observed_at": "2026-10-13T23:23:49.222964+00:00",
+          "premium_to_floor_pct": -26.32
+        }
+      },
       "collectible": "The Amazing Spider-Man #1",
       "confidence": 83.0,
       "first_seen": "2026-10-13T19:28:54.623303+00:00",
       "floor_usd": 26.56,
       "key": "https://vevealpha.com/c/the-amazing-spider-man-ultra-rare-2253a9|48181",
-      "last_seen": "2026-10-13T19:28:54.623303+00:00",
-      "latest_ask_usd": 19.74,
-      "latest_floor_usd": 26.56,
+      "last_seen": "2026-10-13T23:23:49.222964+00:00",
+      "latest_ask_usd": 19.39,
+      "latest_floor_usd": 26.32,
       "listed_date": "2026-10-12",
       "mint": 48181,
       "mint_score": 0.0,
@@ -28794,29 +29293,797 @@
       "stackr_url": "https://www.stackr.world/collections/veve/comic-cover/2253a922-25f9-4007-b9f2-0b0aa037f9f0",
       "status": "open",
       "veve_url": "https://www.veve.me/collectibles/en/market/comics/2253a922-25f9-4007-b9f2-0b0aa037f9f0"
+    },
+    {
+      "ask_omi": 27000,
+      "ask_usd": 7.48,
+      "baseline_outcomes": {},
+      "baselines": {
+        "cheapest": {
+          "ask_omi": 27000,
+          "ask_usd": 7.48,
+          "mint": 799,
+          "premium_to_floor_pct": -16.14,
+          "signal_class": "EDGE"
+        },
+        "control": {
+          "ask_omi": 27000,
+          "ask_usd": 7.48,
+          "mint": 1077,
+          "premium_to_floor_pct": -16.14,
+          "signal_class": "EDGE"
+        },
+        "deepest_discount": {
+          "ask_omi": 27000,
+          "ask_usd": 7.48,
+          "mint": 1077,
+          "premium_to_floor_pct": -16.14,
+          "signal_class": "EDGE"
+        }
+      },
+      "checkpoints": {},
+      "collectible": "Foam Machine",
+      "confidence": 83.0,
+      "first_seen": "2026-10-13T23:23:49.222964+00:00",
+      "floor_usd": 8.92,
+      "key": "https://vevealpha.com/c/foam-machine-secret-rare|1071",
+      "last_seen": "2026-10-13T23:23:49.222964+00:00",
+      "latest_ask_usd": 7.48,
+      "latest_floor_usd": 8.92,
+      "listed_date": "2026-10-13",
+      "mint": 1071,
+      "mint_score": 0.0,
+      "opportunity_score": 46.03,
+      "premium_to_floor_pct": -16.14,
+      "resolved_sale": null,
+      "signal_class": "EDGE",
+      "source_url": "https://vevealpha.com/c/foam-machine-secret-rare",
+      "stackr_url": "https://www.stackr.world/collections/veve/collectible/545f8c91-7a0e-4bd4-83d5-c806fe2d832b",
+      "status": "open",
+      "veve_url": "https://www.veve.me/collectibles/en/market/collectibles/545f8c91-7a0e-4bd4-83d5-c806fe2d832b"
+    },
+    {
+      "ask_omi": 27000,
+      "ask_usd": 7.48,
+      "baseline_outcomes": {},
+      "baselines": {
+        "cheapest": {
+          "ask_omi": 27000,
+          "ask_usd": 7.48,
+          "mint": 799,
+          "premium_to_floor_pct": -16.14,
+          "signal_class": "EDGE"
+        },
+        "control": {
+          "ask_omi": 27000,
+          "ask_usd": 7.48,
+          "mint": 1071,
+          "premium_to_floor_pct": -16.14,
+          "signal_class": "EDGE"
+        },
+        "deepest_discount": {
+          "ask_omi": 27000,
+          "ask_usd": 7.48,
+          "mint": 1120,
+          "premium_to_floor_pct": -16.14,
+          "signal_class": "EDGE"
+        }
+      },
+      "checkpoints": {},
+      "collectible": "Foam Machine",
+      "confidence": 83.0,
+      "first_seen": "2026-10-13T23:23:49.222964+00:00",
+      "floor_usd": 8.92,
+      "key": "https://vevealpha.com/c/foam-machine-secret-rare|1077",
+      "last_seen": "2026-10-13T23:23:49.222964+00:00",
+      "latest_ask_usd": 7.48,
+      "latest_floor_usd": 8.92,
+      "listed_date": "2026-10-13",
+      "mint": 1077,
+      "mint_score": 0.0,
+      "opportunity_score": 46.03,
+      "premium_to_floor_pct": -16.14,
+      "resolved_sale": null,
+      "signal_class": "EDGE",
+      "source_url": "https://vevealpha.com/c/foam-machine-secret-rare",
+      "stackr_url": "https://www.stackr.world/collections/veve/collectible/545f8c91-7a0e-4bd4-83d5-c806fe2d832b",
+      "status": "open",
+      "veve_url": "https://www.veve.me/collectibles/en/market/collectibles/545f8c91-7a0e-4bd4-83d5-c806fe2d832b"
+    },
+    {
+      "ask_omi": 27000,
+      "ask_usd": 7.48,
+      "baseline_outcomes": {},
+      "baselines": {
+        "cheapest": {
+          "ask_omi": 27000,
+          "ask_usd": 7.48,
+          "mint": 799,
+          "premium_to_floor_pct": -16.14,
+          "signal_class": "EDGE"
+        },
+        "control": {
+          "ask_omi": 27000,
+          "ask_usd": 7.48,
+          "mint": 1071,
+          "premium_to_floor_pct": -16.14,
+          "signal_class": "EDGE"
+        },
+        "deepest_discount": {
+          "ask_omi": 27000,
+          "ask_usd": 7.48,
+          "mint": 1077,
+          "premium_to_floor_pct": -16.14,
+          "signal_class": "EDGE"
+        }
+      },
+      "checkpoints": {},
+      "collectible": "Foam Machine",
+      "confidence": 83.0,
+      "first_seen": "2026-10-13T23:23:49.222964+00:00",
+      "floor_usd": 8.92,
+      "key": "https://vevealpha.com/c/foam-machine-secret-rare|1120",
+      "last_seen": "2026-10-13T23:23:49.222964+00:00",
+      "latest_ask_usd": 7.48,
+      "latest_floor_usd": 8.92,
+      "listed_date": "2026-10-13",
+      "mint": 1120,
+      "mint_score": 0.0,
+      "opportunity_score": 46.03,
+      "premium_to_floor_pct": -16.14,
+      "resolved_sale": null,
+      "signal_class": "EDGE",
+      "source_url": "https://vevealpha.com/c/foam-machine-secret-rare",
+      "stackr_url": "https://www.stackr.world/collections/veve/collectible/545f8c91-7a0e-4bd4-83d5-c806fe2d832b",
+      "status": "open",
+      "veve_url": "https://www.veve.me/collectibles/en/market/collectibles/545f8c91-7a0e-4bd4-83d5-c806fe2d832b"
+    },
+    {
+      "ask_omi": 27000,
+      "ask_usd": 7.48,
+      "baseline_outcomes": {},
+      "baselines": {
+        "cheapest": {
+          "ask_omi": 27000,
+          "ask_usd": 7.48,
+          "mint": 799,
+          "premium_to_floor_pct": -16.14,
+          "signal_class": "EDGE"
+        },
+        "control": {
+          "ask_omi": 27000,
+          "ask_usd": 7.48,
+          "mint": 1071,
+          "premium_to_floor_pct": -16.14,
+          "signal_class": "EDGE"
+        },
+        "deepest_discount": {
+          "ask_omi": 27000,
+          "ask_usd": 7.48,
+          "mint": 1077,
+          "premium_to_floor_pct": -16.14,
+          "signal_class": "EDGE"
+        }
+      },
+      "checkpoints": {},
+      "collectible": "Foam Machine",
+      "confidence": 83.0,
+      "first_seen": "2026-10-13T23:23:49.222964+00:00",
+      "floor_usd": 8.92,
+      "key": "https://vevealpha.com/c/foam-machine-secret-rare|1131",
+      "last_seen": "2026-10-13T23:23:49.222964+00:00",
+      "latest_ask_usd": 7.48,
+      "latest_floor_usd": 8.92,
+      "listed_date": "2026-10-13",
+      "mint": 1131,
+      "mint_score": 0.0,
+      "opportunity_score": 46.03,
+      "premium_to_floor_pct": -16.14,
+      "resolved_sale": null,
+      "signal_class": "EDGE",
+      "source_url": "https://vevealpha.com/c/foam-machine-secret-rare",
+      "stackr_url": "https://www.stackr.world/collections/veve/collectible/545f8c91-7a0e-4bd4-83d5-c806fe2d832b",
+      "status": "open",
+      "veve_url": "https://www.veve.me/collectibles/en/market/collectibles/545f8c91-7a0e-4bd4-83d5-c806fe2d832b"
+    },
+    {
+      "ask_omi": 27000,
+      "ask_usd": 7.48,
+      "baseline_outcomes": {},
+      "baselines": {
+        "cheapest": {
+          "ask_omi": 27000,
+          "ask_usd": 7.48,
+          "mint": 821,
+          "premium_to_floor_pct": -16.14,
+          "signal_class": "EDGE"
+        },
+        "control": {
+          "ask_omi": 27000,
+          "ask_usd": 7.48,
+          "mint": 1077,
+          "premium_to_floor_pct": -16.14,
+          "signal_class": "EDGE"
+        },
+        "deepest_discount": {
+          "ask_omi": 27000,
+          "ask_usd": 7.48,
+          "mint": 1077,
+          "premium_to_floor_pct": -16.14,
+          "signal_class": "EDGE"
+        }
+      },
+      "checkpoints": {},
+      "collectible": "Foam Machine",
+      "confidence": 83.0,
+      "first_seen": "2026-10-13T23:23:49.222964+00:00",
+      "floor_usd": 8.92,
+      "key": "https://vevealpha.com/c/foam-machine-secret-rare|799",
+      "last_seen": "2026-10-13T23:23:49.222964+00:00",
+      "latest_ask_usd": 7.48,
+      "latest_floor_usd": 8.92,
+      "listed_date": "2026-10-13",
+      "mint": 799,
+      "mint_score": 0.0,
+      "opportunity_score": 46.03,
+      "premium_to_floor_pct": -16.14,
+      "resolved_sale": null,
+      "signal_class": "EDGE",
+      "source_url": "https://vevealpha.com/c/foam-machine-secret-rare",
+      "stackr_url": "https://www.stackr.world/collections/veve/collectible/545f8c91-7a0e-4bd4-83d5-c806fe2d832b",
+      "status": "open",
+      "veve_url": "https://www.veve.me/collectibles/en/market/collectibles/545f8c91-7a0e-4bd4-83d5-c806fe2d832b"
+    },
+    {
+      "ask_omi": 27000,
+      "ask_usd": 7.48,
+      "baseline_outcomes": {},
+      "baselines": {
+        "cheapest": {
+          "ask_omi": 27000,
+          "ask_usd": 7.48,
+          "mint": 799,
+          "premium_to_floor_pct": -16.14,
+          "signal_class": "EDGE"
+        },
+        "control": {
+          "ask_omi": 27000,
+          "ask_usd": 7.48,
+          "mint": 1077,
+          "premium_to_floor_pct": -16.14,
+          "signal_class": "EDGE"
+        },
+        "deepest_discount": {
+          "ask_omi": 27000,
+          "ask_usd": 7.48,
+          "mint": 1077,
+          "premium_to_floor_pct": -16.14,
+          "signal_class": "EDGE"
+        }
+      },
+      "checkpoints": {},
+      "collectible": "Foam Machine",
+      "confidence": 83.0,
+      "first_seen": "2026-10-13T23:23:49.222964+00:00",
+      "floor_usd": 8.92,
+      "key": "https://vevealpha.com/c/foam-machine-secret-rare|821",
+      "last_seen": "2026-10-13T23:23:49.222964+00:00",
+      "latest_ask_usd": 7.48,
+      "latest_floor_usd": 8.92,
+      "listed_date": "2026-10-13",
+      "mint": 821,
+      "mint_score": 0.0,
+      "opportunity_score": 46.03,
+      "premium_to_floor_pct": -16.14,
+      "resolved_sale": null,
+      "signal_class": "EDGE",
+      "source_url": "https://vevealpha.com/c/foam-machine-secret-rare",
+      "stackr_url": "https://www.stackr.world/collections/veve/collectible/545f8c91-7a0e-4bd4-83d5-c806fe2d832b",
+      "status": "open",
+      "veve_url": "https://www.veve.me/collectibles/en/market/collectibles/545f8c91-7a0e-4bd4-83d5-c806fe2d832b"
+    },
+    {
+      "ask_omi": 65000,
+      "ask_usd": 18.01,
+      "baseline_outcomes": {},
+      "baselines": {
+        "cheapest": {
+          "ask_omi": 69000,
+          "ask_usd": 19.12,
+          "mint": 8317,
+          "premium_to_floor_pct": -33.72,
+          "signal_class": "EDGE"
+        },
+        "control": {
+          "ask_omi": 74000,
+          "ask_usd": 20.5,
+          "mint": 8459,
+          "premium_to_floor_pct": -28.91,
+          "signal_class": "EDGE"
+        },
+        "deepest_discount": {
+          "ask_omi": 69000,
+          "ask_usd": 19.12,
+          "mint": 8317,
+          "premium_to_floor_pct": -33.72,
+          "signal_class": "EDGE"
+        }
+      },
+      "checkpoints": {},
+      "collectible": "Journey Into Mystery #83",
+      "confidence": 83.0,
+      "first_seen": "2026-10-13T23:23:49.222964+00:00",
+      "floor_usd": 28.84,
+      "key": "https://vevealpha.com/c/journey-into-mystery-common-769342|3977",
+      "last_seen": "2026-10-13T23:23:49.222964+00:00",
+      "latest_ask_usd": 18.01,
+      "latest_floor_usd": 28.84,
+      "listed_date": "2026-10-12",
+      "mint": 3977,
+      "mint_score": 0.0,
+      "opportunity_score": 49.89,
+      "premium_to_floor_pct": -37.56,
+      "resolved_sale": null,
+      "signal_class": "EDGE",
+      "source_url": "https://vevealpha.com/c/journey-into-mystery-common-769342",
+      "stackr_url": "https://www.stackr.world/collections/veve/comic-cover/7693425f-edad-4cd9-900c-075b1e26012c",
+      "status": "open",
+      "veve_url": "https://www.veve.me/collectibles/en/market/comics/7693425f-edad-4cd9-900c-075b1e26012c"
+    },
+    {
+      "ask_omi": 950000,
+      "ask_usd": 263.2,
+      "baseline_outcomes": {},
+      "baselines": {
+        "cheapest": {
+          "ask_omi": 1500000,
+          "ask_usd": 415.57,
+          "mint": 274,
+          "premium_to_floor_pct": 15.69,
+          "signal_class": "MARKET"
+        },
+        "control": {
+          "ask_omi": 1500000,
+          "ask_usd": 415.57,
+          "mint": 274,
+          "premium_to_floor_pct": 15.69,
+          "signal_class": "MARKET"
+        },
+        "deepest_discount": {
+          "ask_omi": 1500000,
+          "ask_usd": 415.57,
+          "mint": 274,
+          "premium_to_floor_pct": 15.69,
+          "signal_class": "MARKET"
+        }
+      },
+      "checkpoints": {},
+      "collectible": "Spider-Man - Animated",
+      "confidence": 83.0,
+      "first_seen": "2026-10-13T23:23:49.222964+00:00",
+      "floor_usd": 359.2,
+      "key": "https://vevealpha.com/c/spider-man-animated|1290",
+      "last_seen": "2026-10-13T23:23:49.222964+00:00",
+      "latest_ask_usd": 263.2,
+      "latest_floor_usd": 359.2,
+      "listed_date": "2026-10-13",
+      "mint": 1290,
+      "mint_score": 0.0,
+      "opportunity_score": 49.08,
+      "premium_to_floor_pct": -26.73,
+      "resolved_sale": null,
+      "signal_class": "EDGE",
+      "source_url": "https://vevealpha.com/c/spider-man-animated",
+      "stackr_url": "https://www.stackr.world/collections/veve/collectible/d03f035e-fe59-40f6-9977-3cef76ee112b",
+      "status": "open",
+      "veve_url": "https://www.veve.me/collectibles/en/market/collectibles/d03f035e-fe59-40f6-9977-3cef76ee112b"
+    },
+    {
+      "ask_omi": 375000,
+      "ask_usd": 103.89,
+      "baseline_outcomes": {},
+      "baselines": {
+        "cheapest": {
+          "ask_omi": 444444,
+          "ask_usd": 123.13,
+          "mint": 1005,
+          "premium_to_floor_pct": -4.44,
+          "signal_class": "MARKET"
+        },
+        "control": {
+          "ask_omi": 444444,
+          "ask_usd": 123.13,
+          "mint": 1005,
+          "premium_to_floor_pct": -4.44,
+          "signal_class": "MARKET"
+        },
+        "deepest_discount": {
+          "ask_omi": 444444,
+          "ask_usd": 123.13,
+          "mint": 1005,
+          "premium_to_floor_pct": -4.44,
+          "signal_class": "MARKET"
+        }
+      },
+      "checkpoints": {},
+      "collectible": "Thanos - Warrior",
+      "confidence": 83.0,
+      "first_seen": "2026-10-13T23:23:49.222964+00:00",
+      "floor_usd": 128.85,
+      "key": "https://vevealpha.com/c/thanos-warrior|1780",
+      "last_seen": "2026-10-13T23:23:49.222964+00:00",
+      "latest_ask_usd": 103.89,
+      "latest_floor_usd": 128.85,
+      "listed_date": "2026-10-10",
+      "mint": 1780,
+      "mint_score": 0.0,
+      "opportunity_score": 42.17,
+      "premium_to_floor_pct": -19.37,
+      "resolved_sale": null,
+      "signal_class": "EDGE",
+      "source_url": "https://vevealpha.com/c/thanos-warrior",
+      "stackr_url": "https://www.stackr.world/collections/veve/collectible/5e9b0f4f-6120-487c-93e7-12f8c268fbca",
+      "status": "open",
+      "veve_url": "https://www.veve.me/collectibles/en/market/collectibles/5e9b0f4f-6120-487c-93e7-12f8c268fbca"
+    },
+    {
+      "ask_omi": 1495000,
+      "ask_usd": 414.19,
+      "baseline_outcomes": {},
+      "baselines": {
+        "cheapest": {
+          "ask_omi": 1489000,
+          "ask_usd": 412.53,
+          "mint": 98,
+          "premium_to_floor_pct": -55.83,
+          "signal_class": "EDGE"
+        },
+        "control": {
+          "ask_omi": 1750000,
+          "ask_usd": 484.84,
+          "mint": 882,
+          "premium_to_floor_pct": -48.08,
+          "signal_class": "EDGE"
+        },
+        "deepest_discount": {
+          "ask_omi": 1489000,
+          "ask_usd": 412.53,
+          "mint": 98,
+          "premium_to_floor_pct": -55.83,
+          "signal_class": "EDGE"
+        }
+      },
+      "checkpoints": {},
+      "collectible": "The Amazing Spider-Man #1000",
+      "confidence": 83.0,
+      "first_seen": "2026-10-13T23:23:49.222964+00:00",
+      "floor_usd": 933.9,
+      "key": "https://vevealpha.com/c/the-amazing-spider-man-secret-rare-78e7f8|819",
+      "last_seen": "2026-10-13T23:23:49.222964+00:00",
+      "latest_ask_usd": 414.19,
+      "latest_floor_usd": 933.9,
+      "listed_date": "2026-10-12",
+      "mint": 819,
+      "mint_score": 0.0,
+      "opportunity_score": 55.48,
+      "premium_to_floor_pct": -55.65,
+      "resolved_sale": null,
+      "signal_class": "EDGE",
+      "source_url": "https://vevealpha.com/c/the-amazing-spider-man-secret-rare-78e7f8",
+      "stackr_url": "https://www.stackr.world/collections/veve/comic-cover/78e7f81f-9032-4596-b8cd-14a5df3fbcd2",
+      "status": "open",
+      "veve_url": "https://www.veve.me/collectibles/en/market/comics/78e7f81f-9032-4596-b8cd-14a5df3fbcd2"
+    },
+    {
+      "ask_omi": 1750000,
+      "ask_usd": 484.84,
+      "baseline_outcomes": {},
+      "baselines": {
+        "cheapest": {
+          "ask_omi": 1489000,
+          "ask_usd": 412.53,
+          "mint": 98,
+          "premium_to_floor_pct": -55.83,
+          "signal_class": "EDGE"
+        },
+        "control": {
+          "ask_omi": 1495000,
+          "ask_usd": 414.19,
+          "mint": 819,
+          "premium_to_floor_pct": -55.65,
+          "signal_class": "EDGE"
+        },
+        "deepest_discount": {
+          "ask_omi": 1489000,
+          "ask_usd": 412.53,
+          "mint": 98,
+          "premium_to_floor_pct": -55.83,
+          "signal_class": "EDGE"
+        }
+      },
+      "checkpoints": {},
+      "collectible": "The Amazing Spider-Man #1000",
+      "confidence": 83.0,
+      "first_seen": "2026-10-13T23:23:49.222964+00:00",
+      "floor_usd": 933.9,
+      "key": "https://vevealpha.com/c/the-amazing-spider-man-secret-rare-78e7f8|882",
+      "last_seen": "2026-10-13T23:23:49.222964+00:00",
+      "latest_ask_usd": 484.84,
+      "latest_floor_usd": 933.9,
+      "listed_date": "2026-10-10",
+      "mint": 882,
+      "mint_score": 0.0,
+      "opportunity_score": 54.85,
+      "premium_to_floor_pct": -48.08,
+      "resolved_sale": null,
+      "signal_class": "EDGE",
+      "source_url": "https://vevealpha.com/c/the-amazing-spider-man-secret-rare-78e7f8",
+      "stackr_url": "https://www.stackr.world/collections/veve/comic-cover/78e7f81f-9032-4596-b8cd-14a5df3fbcd2",
+      "status": "open",
+      "veve_url": "https://www.veve.me/collectibles/en/market/comics/78e7f81f-9032-4596-b8cd-14a5df3fbcd2"
+    },
+    {
+      "ask_omi": 1489000,
+      "ask_usd": 412.53,
+      "baseline_outcomes": {},
+      "baselines": {
+        "cheapest": {
+          "ask_omi": 1495000,
+          "ask_usd": 414.19,
+          "mint": 819,
+          "premium_to_floor_pct": -55.65,
+          "signal_class": "EDGE"
+        },
+        "control": {
+          "ask_omi": 1750000,
+          "ask_usd": 484.84,
+          "mint": 882,
+          "premium_to_floor_pct": -48.08,
+          "signal_class": "EDGE"
+        },
+        "deepest_discount": {
+          "ask_omi": 1495000,
+          "ask_usd": 414.19,
+          "mint": 819,
+          "premium_to_floor_pct": -55.65,
+          "signal_class": "EDGE"
+        }
+      },
+      "checkpoints": {},
+      "collectible": "The Amazing Spider-Man #1000",
+      "confidence": 90.0,
+      "first_seen": "2026-10-13T23:23:49.222964+00:00",
+      "floor_usd": 933.9,
+      "key": "https://vevealpha.com/c/the-amazing-spider-man-secret-rare-78e7f8|98",
+      "last_seen": "2026-10-13T23:23:49.222964+00:00",
+      "latest_ask_usd": 412.53,
+      "latest_floor_usd": 933.9,
+      "listed_date": "2026-10-12",
+      "mint": 98,
+      "mint_score": 86.0,
+      "opportunity_score": 90.02,
+      "premium_to_floor_pct": -55.83,
+      "resolved_sale": null,
+      "signal_class": "EDGE",
+      "source_url": "https://vevealpha.com/c/the-amazing-spider-man-secret-rare-78e7f8",
+      "stackr_url": "https://www.stackr.world/collections/veve/comic-cover/78e7f81f-9032-4596-b8cd-14a5df3fbcd2",
+      "status": "open",
+      "veve_url": "https://www.veve.me/collectibles/en/market/comics/78e7f81f-9032-4596-b8cd-14a5df3fbcd2"
+    },
+    {
+      "ask_omi": 70000,
+      "ask_usd": 19.39,
+      "baseline_outcomes": {},
+      "baselines": {
+        "cheapest": {
+          "ask_omi": 70000,
+          "ask_usd": 19.39,
+          "mint": 48181,
+          "premium_to_floor_pct": -26.32,
+          "signal_class": "EDGE"
+        },
+        "control": {
+          "ask_omi": 85000,
+          "ask_usd": 23.55,
+          "mint": 16386,
+          "premium_to_floor_pct": -10.53,
+          "signal_class": "MARKET"
+        },
+        "deepest_discount": {
+          "ask_omi": 70000,
+          "ask_usd": 19.39,
+          "mint": 48181,
+          "premium_to_floor_pct": -26.32,
+          "signal_class": "EDGE"
+        }
+      },
+      "checkpoints": {},
+      "collectible": "The Amazing Spider-Man #1",
+      "confidence": 83.0,
+      "first_seen": "2026-10-13T23:23:49.222964+00:00",
+      "floor_usd": 26.32,
+      "key": "https://vevealpha.com/c/the-amazing-spider-man-ultra-rare-2253a9|29937",
+      "last_seen": "2026-10-13T23:23:49.222964+00:00",
+      "latest_ask_usd": 19.39,
+      "latest_floor_usd": 26.32,
+      "listed_date": "2026-10-12",
+      "mint": 29937,
+      "mint_score": 0.0,
+      "opportunity_score": 48.99,
+      "premium_to_floor_pct": -26.32,
+      "resolved_sale": null,
+      "signal_class": "EDGE",
+      "source_url": "https://vevealpha.com/c/the-amazing-spider-man-ultra-rare-2253a9",
+      "stackr_url": "https://www.stackr.world/collections/veve/comic-cover/2253a922-25f9-4007-b9f2-0b0aa037f9f0",
+      "status": "open",
+      "veve_url": "https://www.veve.me/collectibles/en/market/comics/2253a922-25f9-4007-b9f2-0b0aa037f9f0"
+    },
+    {
+      "ask_omi": 300000,
+      "ask_usd": 83.11,
+      "baseline_outcomes": {},
+      "baselines": {
+        "cheapest": {
+          "ask_omi": 475000,
+          "ask_usd": 131.6,
+          "mint": 950,
+          "premium_to_floor_pct": -3.38,
+          "signal_class": "MARKET"
+        },
+        "control": {
+          "ask_omi": 475000,
+          "ask_usd": 131.6,
+          "mint": 950,
+          "premium_to_floor_pct": -3.38,
+          "signal_class": "MARKET"
+        },
+        "deepest_discount": {
+          "ask_omi": 475000,
+          "ask_usd": 131.6,
+          "mint": 950,
+          "premium_to_floor_pct": -3.38,
+          "signal_class": "MARKET"
+        }
+      },
+      "checkpoints": {},
+      "collectible": "Venom",
+      "confidence": 90.0,
+      "first_seen": "2026-10-13T23:23:49.222964+00:00",
+      "floor_usd": 136.2,
+      "key": "https://vevealpha.com/c/venom-ultra-rare-03fe42|148",
+      "last_seen": "2026-10-13T23:23:49.222964+00:00",
+      "latest_ask_usd": 83.11,
+      "latest_floor_usd": 136.2,
+      "listed_date": "2026-10-12",
+      "mint": 148,
+      "mint_score": 74.0,
+      "opportunity_score": 78.93,
+      "premium_to_floor_pct": -38.98,
+      "resolved_sale": null,
+      "signal_class": "EDGE",
+      "source_url": "https://vevealpha.com/c/venom-ultra-rare-03fe42",
+      "stackr_url": "https://www.stackr.world/collections/veve/collectible/03fe42ae-a098-4215-b3e1-a014aabddadf",
+      "status": "open",
+      "veve_url": "https://www.veve.me/collectibles/en/market/collectibles/03fe42ae-a098-4215-b3e1-a014aabddadf"
+    },
+    {
+      "ask_omi": 505000,
+      "ask_usd": 139.91,
+      "baseline_outcomes": {},
+      "baselines": {
+        "cheapest": {
+          "ask_omi": 460000,
+          "ask_usd": 127.44,
+          "mint": 460,
+          "premium_to_floor_pct": -37.88,
+          "signal_class": "EDGE"
+        },
+        "control": {
+          "ask_omi": 460000,
+          "ask_usd": 127.44,
+          "mint": 460,
+          "premium_to_floor_pct": -37.88,
+          "signal_class": "EDGE"
+        },
+        "deepest_discount": {
+          "ask_omi": 460000,
+          "ask_usd": 127.44,
+          "mint": 460,
+          "premium_to_floor_pct": -37.88,
+          "signal_class": "EDGE"
+        }
+      },
+      "checkpoints": {},
+      "collectible": "VeVe Logo Gold Silver v2",
+      "confidence": 83.0,
+      "first_seen": "2026-10-13T23:23:49.222964+00:00",
+      "floor_usd": 205.17,
+      "key": "https://vevealpha.com/c/veve-logo-gold-silver-v2|368",
+      "last_seen": "2026-10-13T23:23:49.222964+00:00",
+      "latest_ask_usd": 139.91,
+      "latest_floor_usd": 205.17,
+      "listed_date": "2026-10-13",
+      "mint": 368,
+      "mint_score": 0.0,
+      "opportunity_score": 51.19,
+      "premium_to_floor_pct": -31.81,
+      "resolved_sale": null,
+      "signal_class": "EDGE",
+      "source_url": "https://vevealpha.com/c/veve-logo-gold-silver-v2",
+      "stackr_url": "https://www.stackr.world/collections/veve/collectible/a23cccf0-e12e-4856-8877-1629e9313ccf",
+      "status": "open",
+      "veve_url": "https://www.veve.me/collectibles/en/market/collectibles/a23cccf0-e12e-4856-8877-1629e9313ccf"
+    },
+    {
+      "ask_omi": 460000,
+      "ask_usd": 127.44,
+      "baseline_outcomes": {},
+      "baselines": {
+        "cheapest": {
+          "ask_omi": 505000,
+          "ask_usd": 139.91,
+          "mint": 368,
+          "premium_to_floor_pct": -31.81,
+          "signal_class": "EDGE"
+        },
+        "control": {
+          "ask_omi": 505000,
+          "ask_usd": 139.91,
+          "mint": 368,
+          "premium_to_floor_pct": -31.81,
+          "signal_class": "EDGE"
+        },
+        "deepest_discount": {
+          "ask_omi": 505000,
+          "ask_usd": 139.91,
+          "mint": 368,
+          "premium_to_floor_pct": -31.81,
+          "signal_class": "EDGE"
+        }
+      },
+      "checkpoints": {},
+      "collectible": "VeVe Logo Gold Silver v2",
+      "confidence": 83.0,
+      "first_seen": "2026-10-13T23:23:49.222964+00:00",
+      "floor_usd": 205.17,
+      "key": "https://vevealpha.com/c/veve-logo-gold-silver-v2|460",
+      "last_seen": "2026-10-13T23:23:49.222964+00:00",
+      "latest_ask_usd": 127.44,
+      "latest_floor_usd": 205.17,
+      "listed_date": "2026-10-12",
+      "mint": 460,
+      "mint_score": 0.0,
+      "opportunity_score": 53.19,
+      "premium_to_floor_pct": -37.88,
+      "resolved_sale": null,
+      "signal_class": "EDGE",
+      "source_url": "https://vevealpha.com/c/veve-logo-gold-silver-v2",
+      "stackr_url": "https://www.stackr.world/collections/veve/collectible/a23cccf0-e12e-4856-8877-1629e9313ccf",
+      "status": "open",
+      "veve_url": "https://www.veve.me/collectibles/en/market/collectibles/a23cccf0-e12e-4856-8877-1629e9313ccf"
     }
   ],
   "summary": {
     "baseline_sell_through_pct": {
-      "cheapest": 1.42,
-      "control": 1.99,
-      "deepest_discount": 1.14
+      "cheapest": 1.36,
+      "control": 1.91,
+      "deepest_discount": 1.09
     },
     "checkpoint_counts": {
-      "168h": 294,
-      "1h": 386,
-      "24h": 377,
-      "720h": 76
+      "168h": 304,
+      "1h": 390,
+      "24h": 385,
+      "720h": 109
     },
-    "edge_sell_through_pct": 1.31,
+    "edge_sell_through_pct": 1.26,
     "grail_sell_through_pct": 0.0,
     "median_days_to_observed_sale": 2,
     "median_return_proxy_pct": 0.0,
-    "overall_sell_through_pct": 1.28,
+    "overall_sell_through_pct": 1.23,
     "resolved_sales": 5,
     "status": "directional",
-    "tracked_alerts": 390
+    "tracked_alerts": 406
   },
-  "updated_at": "2026-10-13T19:28:54.623303+00:00",
+  "updated_at": "2026-10-13T23:23:49.222964+00:00",
   "version": 2
 }
